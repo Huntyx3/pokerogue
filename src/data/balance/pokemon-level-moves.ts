@@ -7,6 +7,7 @@
 import { EVOLVE_MOVE, RELEARN_MOVE } from "#app/constants";
 import { MoveId } from "#enums/move-id";
 import { SpeciesId } from "#enums/species-id";
+import { Move } from "#types/move-types";
 import type { PokemonSpeciesFormLevelMoves, PokemonSpeciesLevelMoves } from "#types/pokemon-level-moves";
 
 export const pokemonSpeciesLevelMoves = {
@@ -1315,6 +1316,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.RAPIDASH]: [
     [ EVOLVE_MOVE, MoveId.SMART_STRIKE ],
+    [RELEARN_MOVE, MoveId.HIGH_HORSEPOWER], // TM
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.TAIL_WHIP ],
     [ 1, MoveId.GROWL ],
@@ -1352,6 +1354,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 45, MoveId.HEAL_PULSE ],
   ],
   [SpeciesId.SLOWBRO]: [
+    [ RELEARN_MOVE, MoveId.HYDRO_PUMP ], // TM
     [ RELEARN_MOVE, MoveId.FUTURE_SIGHT ],
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.GROWL ],
@@ -1442,6 +1445,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.DODRIO]: [
     [ EVOLVE_MOVE, MoveId.TRI_ATTACK ],
+    [ RELEARN_MOVE, MoveId.BRAVE_BIRD ], // TM
     [ 1, MoveId.TRI_ATTACK ],
     [ 1, MoveId.GROWL ],
     [ 1, MoveId.PECK ],
@@ -1478,6 +1482,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.DEWGONG]: [
     [ EVOLVE_MOVE, MoveId.SHEER_COLD ],
+    [ RELEARN_MOVE, MoveId.ENDURE ], // TM
     [ 1, MoveId.HEADBUTT ],
     [ 1, MoveId.GROWL ],
     [ 1, MoveId.ICY_WIND ],
@@ -1516,6 +1521,9 @@ export const pokemonSpeciesLevelMoves = {
     [ 48, MoveId.MEMENTO ],
   ],
   [SpeciesId.MUK]: [
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
+    [ RELEARN_MOVE, MoveId.FIRE_PUNCH ], // TM
+    [ RELEARN_MOVE, MoveId.ICE_PUNCH], // TM
     [ 1, MoveId.POUND ],
     [ 1, MoveId.HARDEN ],
     [ 1, MoveId.POISON_GAS ],
@@ -1605,6 +1613,8 @@ export const pokemonSpeciesLevelMoves = {
     [ 60, MoveId.DREAM_EATER ],
   ],
   [SpeciesId.GENGAR]: [
+    [ RELEARN_MOVE, MoveId.NASTY_PLOT ], // TM
+    [ RELEARN_MOVE, MoveId.SUBSTITUTE ], // TM
     [ 1, MoveId.HYPNOSIS ],
     [ 1, MoveId.CONFUSE_RAY ],
     [ 1, MoveId.LICK ],
@@ -1663,6 +1673,9 @@ export const pokemonSpeciesLevelMoves = {
     [ 49, MoveId.FUTURE_SIGHT ],
   ],
   [SpeciesId.HYPNO]: [
+    [ RELEARN_MOVE, MoveId.STORED_POWER ], // TM
+    [ RELEARN_MOVE, MoveId.SHADOW_BALL ], // TM
+    [ RELEARN_MOVE, MoveId.TRAILBLAZE ], // TM
     [ 1, MoveId.POUND ],
     [ 1, MoveId.DISABLE ],
     [ 1, MoveId.CONFUSION ],
@@ -1698,6 +1711,8 @@ export const pokemonSpeciesLevelMoves = {
     [ 48, MoveId.GUILLOTINE ],
   ],
   [SpeciesId.KINGLER]: [
+    [ RELEARN_MOVE, MoveId.HIGH_HORSEPOWER ], // TM
+    [ RELEARN_MOVE, MoveId.ENDURE ], // TM
     [ 1, MoveId.LEER ],
     [ 1, MoveId.WATER_GUN ],
     [ 1, MoveId.HARDEN ],
@@ -1773,6 +1788,8 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.EXEGGUTOR]: [
     [ EVOLVE_MOVE, MoveId.STOMP ],
+    [ RELEARN_MOVE, MoveId.ENDURE ], // TM
+    [ RELEARN_MOVE, MoveId.STORED_POWER ], // TM
     [ RELEARN_MOVE, MoveId.GROWTH ],
     [ 1, MoveId.BARRAGE ],
     [ 1, MoveId.SEED_BOMB ],
@@ -1810,6 +1827,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 48, MoveId.DOUBLE_EDGE ],
   ],
   [SpeciesId.MAROWAK]: [
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
     [ 1, MoveId.TAIL_WHIP ],
     [ 1, MoveId.GROWL ],
     [ 1, MoveId.MUD_SLAP ],
@@ -3495,6 +3513,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 60, MoveId.QUASH ],
   ],
   [SpeciesId.SLOWKING]: [
+    [ RELEARN_MOVE, MoveId.HYDRO_PUMP ], // TM
     [ RELEARN_MOVE, MoveId.FUTURE_SIGHT ],
     [ RELEARN_MOVE, MoveId.CHILLY_RECEPTION ],
     [ 1, MoveId.POWER_GEM ],
@@ -3640,6 +3659,10 @@ export const pokemonSpeciesLevelMoves = {
     [ 50, MoveId.SWORDS_DANCE ],
   ],
   [SpeciesId.STEELIX]: [
+    [ RELEARN_MOVE, MoveId.BODY_PRESS ], // TM
+    [ RELEARN_MOVE, MoveId.DRAGON_DANCE ], // TM
+    [ RELEARN_MOVE, MoveId.IRON_HEAD ], // TM
+    [ RELEARN_MOVE, MoveId.EARTHQUAKE ], // TM
     [ 1, MoveId.BIND ],
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.ROCK_THROW ],
@@ -8101,6 +8124,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 66, MoveId.DARK_PULSE ],
   ],
   [SpeciesId.MAGNEZONE]: [
+    [ RELEARN_MOVE, MoveId.CHARGE_BEAM ], // TM
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.SUPERSONIC ],
     [ 1, MoveId.THUNDER_SHOCK ],
@@ -8123,6 +8147,8 @@ export const pokemonSpeciesLevelMoves = {
     [ 64, MoveId.ZAP_CANNON ],
   ],
   [SpeciesId.LICKILICKY]: [
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
+    [ RELEARN_MOVE, MoveId.EARTHQUAKE ], // TM
     [ 1, MoveId.SUPERSONIC ],
     [ 1, MoveId.DEFENSE_CURL ],
     [ 1, MoveId.LICK ],
@@ -18151,6 +18177,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.ALOLA_EXEGGUTOR]: [
     [ EVOLVE_MOVE, MoveId.DRAGON_HAMMER ],
+    [ RELEARN_MOVE, MoveId.ENDURE ], // TM
     [ RELEARN_MOVE, MoveId.GROWTH ],
     [ 1, MoveId.BARRAGE ],
     [ 1, MoveId.SEED_BOMB ],
@@ -18173,6 +18200,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.ALOLA_MAROWAK]: [
     [ EVOLVE_MOVE, MoveId.SHADOW_BONE ],
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
     [ 1, MoveId.BONE_CLUB ],
     [ 1, MoveId.HEADBUTT ],
     [ 1, MoveId.DOUBLE_EDGE ],
@@ -18243,6 +18271,8 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.GALAR_RAPIDASH]: [
     [ EVOLVE_MOVE, MoveId.PSYCHO_CUT ],
+    [RELEARN_MOVE, MoveId.HIGH_HORSEPOWER], // TM
+    [RELEARN_MOVE, MoveId.SWORDS_DANCE], // TM
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.TAIL_WHIP ],
     [ 1, MoveId.GROWL ],
@@ -18280,6 +18310,8 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.GALAR_SLOWBRO]: [
     [ EVOLVE_MOVE, MoveId.SHELL_SIDE_ARM ],
+    [ RELEARN_MOVE, MoveId.FLAMETHROWER ], // TM
+    [ RELEARN_MOVE, MoveId.FIRE_BLAST ], // TM
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.GROWL ],
     [ 1, MoveId.ACID ],
@@ -18425,6 +18457,8 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.GALAR_SLOWKING]: [
     [ EVOLVE_MOVE, MoveId.EERIE_SPELL ],
+    [ RELEARN_MOVE, MoveId.FIRE_BLAST ], // TM
+    [ RELEARN_MOVE, MoveId.FLAMETHROWER ], // TM
     [ RELEARN_MOVE, MoveId.FUTURE_SIGHT ],
     [ RELEARN_MOVE, MoveId.CHILLY_RECEPTION ],
     [ RELEARN_MOVE, MoveId.TOXIC ],

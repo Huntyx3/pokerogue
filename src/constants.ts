@@ -18,7 +18,7 @@ export const CLASSIC_MODE_MYSTERY_ENCOUNTER_WAVES: [number, number] = [10, 180] 
 export const CHALLENGE_MODE_MYSTERY_ENCOUNTER_WAVES: [number, number] = [10, 180] as const;
 
 /** The raw percentage power boost for type boost items*/
-export const TYPE_BOOST_ITEM_BOOST_PERCENT = 20;
+export const TYPE_BOOST_ITEM_BOOST_PERCENT = 10; //Description doesn't update but functional
 
 /**
  * The default species that a new player can choose from

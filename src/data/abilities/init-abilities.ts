@@ -827,10 +827,10 @@ export function initAbilities() {
       .attr(PostTurnHurtIfSleepingAbAttr)
       .build(),
     new AbBuilder(AbilityId.PICKPOCKET, 5) //
-      .attr(PostDefendStealHeldItemAbAttr, (target, user, move) =>
-        move.doesFlagEffectApply({ flag: MoveFlags.MAKES_CONTACT, user, target }),
-      )
-      .condition(sheerForceHitDisableAbCondition)
+      //.attr(PostDefendStealHeldItemAbAttr, (target, user, move) =>
+      //  move.doesFlagEffectApply({ flag: MoveFlags.MAKES_CONTACT, user, target }),
+      //)
+      //.condition(sheerForceHitDisableAbCondition)
       .build(),
     new AbBuilder(AbilityId.SHEER_FORCE, 5) //
       .attr(MovePowerBoostAbAttr, (_user, _target, move) => move.chance >= 1, 1.3)
@@ -1034,9 +1034,10 @@ export function initAbilities() {
       .bypassFaint()
       .build(),
     new AbBuilder(AbilityId.ZEN_MODE, 5) //
-      .attr(PostBattleInitFormChangeAbAttr, () => 0)
-      .attr(PostSummonFormChangeAbAttr, p => (p.getHpRatio() <= 0.5 ? 1 : 0))
-      .attr(PostTurnFormChangeAbAttr, p => (p.getHpRatio() <= 0.5 ? 1 : 0))
+      //.attr(PostBattleInitFormChangeAbAttr, () => 0)
+      //.attr(PostSummonFormChangeAbAttr, p => (p.getHpRatio() <= 0.5 ? 1 : 0))
+      //.attr(PostTurnFormChangeAbAttr, p => (p.getHpRatio() <= 0.5 ? 1 : 0))
+      .attr(PostSummonFormChangeAbAttr, p => (p.level > 42 ? 1 : 0)) // Permanent Zen Mode at level 43+
       .attr(NoFusionAbilityAbAttr)
       .uncopiable()
       .unreplaceable()
@@ -1099,7 +1100,7 @@ export function initAbilities() {
       .ignorable()
       .build(),
     new AbBuilder(AbilityId.MAGICIAN, 6) //
-      .attr(PostAttackStealHeldItemAbAttr)
+      //.attr(PostAttackStealHeldItemAbAttr)
       .build(),
     new AbBuilder(AbilityId.BULLETPROOF, 6) //
       .attr(
@@ -1787,12 +1788,13 @@ export function initAbilities() {
       )
       .build(),
     new AbBuilder(AbilityId.ZERO_TO_HERO, 9) //
+      .attr(PostSummonFormChangeAbAttr, p => (p.level > 44 ? 1 : 0)) // Permanent Hero Form level 45+
       .uncopiable()
       .unreplaceable()
       .unsuppressable()
       .attr(NoTransformAbilityAbAttr)
       .attr(NoFusionAbilityAbAttr)
-      .attr(PostBattleInitFormChangeAbAttr, () => 0)
+      //.attr(PostBattleInitFormChangeAbAttr, () => 0) , Don't revert form
       .attr(PreSwitchOutFormChangeAbAttr, pokemon => (pokemon.isFainted() ? pokemon.formIndex : 1))
       .bypassFaint()
       .build(),

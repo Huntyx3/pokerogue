@@ -201,7 +201,10 @@ export const ClowningAroundEncounter: MysteryEncounter = MysteryEncounterBuilder
         // Spawn battle
         const config: EnemyPartyConfig = encounter.enemyPartyConfigs[0];
 
-        setEncounterRewards({ fillRemaining: true });
+        setEncounterRewards({
+          guaranteedModifierTiers: [ModifierTier.ROGUE],
+          fillRemaining: true
+        });
 
         // TODO: when Magic Room and Wonder Room are implemented, add those to start of battle
         encounter.startOfBattleEffects.push(
@@ -504,7 +507,7 @@ function generateItemsOfTier(pokemon: PlayerPokemon, numItems: number, tier: Mod
     [modifierTypes.SHELL_BELL, 4],
     [modifierTypes.SOUL_DEW, 10],
     [modifierTypes.SCOPE_LENS, 1],
-    [modifierTypes.BATON, 1],
+    //[modifierTypes.BATON, 0],
     [modifierTypes.FOCUS_BAND, 5],
     [modifierTypes.KINGS_ROCK, 3],
     [modifierTypes.GRIP_CLAW, 5],

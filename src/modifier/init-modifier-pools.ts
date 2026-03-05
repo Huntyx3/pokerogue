@@ -33,7 +33,9 @@ import type { WeightedModifierTypeWeightFunc } from "#types/modifier-types";
  * Initialize the wild modifier pool
  */
 function initWildModifierPool() {
-  wildModifierPool[ModifierTier.COMMON] = [new WeightedModifierType(modifierTypes.BERRY, 1)].map(m => {
+  wildModifierPool[ModifierTier.COMMON] = [new WeightedModifierType(modifierTypes.BERRY, 1)
+    
+  ].map(m => {
     m.setTier(ModifierTier.COMMON);
     return m;
   });
@@ -48,14 +50,14 @@ function initWildModifierPool() {
     m.setTier(ModifierTier.ULTRA);
     return m;
   });
-  wildModifierPool[ModifierTier.ROGUE] = [new WeightedModifierType(modifierTypes.LUCKY_EGG, 4)].map(m => {
+  /*wildModifierPool[ModifierTier.ROGUE] = [new WeightedModifierType(modifierTypes.LUCKY_EGG, 4)].map(m => {
     m.setTier(ModifierTier.ROGUE);
     return m;
   });
   wildModifierPool[ModifierTier.MASTER] = [new WeightedModifierType(modifierTypes.GOLDEN_EGG, 1)].map(m => {
     m.setTier(ModifierTier.MASTER);
     return m;
-  });
+  });*/
 }
 
 /**
@@ -142,7 +144,7 @@ function initCommonModifierPool() {
 function initGreatModifierPool() {
   modifierPool[ModifierTier.GREAT] = [
     //new WeightedModifierType(modifierTypes.GREAT_BALL, () => (hasMaximumBalls(PokeballType.GREAT_BALL) ? 0 : 6), 6),
-    new WeightedModifierType(modifierTypes.PP_UP, 2),
+    //new WeightedModifierType(modifierTypes.PP_UP, 2),
     /*new WeightedModifierType(
       modifierTypes.FULL_HEAL,
       (party: Pokemon[]) => {
@@ -275,7 +277,7 @@ function initGreatModifierPool() {
     ),*/
     new WeightedModifierType(modifierTypes.DIRE_HIT, 4),
     //new WeightedModifierType(modifierTypes.SUPER_LURE, lureWeightFunc(15, 4)),
-    new WeightedModifierType(modifierTypes.NUGGET, skipInLastClassicWaveOrDefault(5)),
+    new WeightedModifierType(modifierTypes.NUGGET, skipInLastClassicWaveOrDefault(8)),
     new WeightedModifierType(modifierTypes.SPECIES_STAT_BOOSTER, 2),
     new WeightedModifierType(
       modifierTypes.EVOLUTION_ITEM,
@@ -305,15 +307,15 @@ function initGreatModifierPool() {
       4,
     ),
     new WeightedModifierType(modifierTypes.BASE_STAT_BOOSTER, 3),
-    new WeightedModifierType(modifierTypes.TERA_SHARD, (party: Pokemon[]) =>
+/*    new WeightedModifierType(modifierTypes.TERA_SHARD, (party: Pokemon[]) =>
       party.filter(
         p =>
           !(p.hasSpecies(SpeciesId.TERAPAGOS) || p.hasSpecies(SpeciesId.OGERPON) || p.hasSpecies(SpeciesId.SHEDINJA)),
       ).length > 0
-        ? 1
+        ? 3
         : 0,
     ),
-    /*new WeightedModifierType(
+    new WeightedModifierType(
       modifierTypes.DNA_SPLICERS,
       (party: readonly Pokemon[]) => {
         if (party.filter(p => !p.fusionSpecies).length > 1) {
@@ -347,8 +349,8 @@ function initUltraModifierPool() {
   modifierPool[ModifierTier.ULTRA] = [
     //new WeightedModifierType(modifierTypes.ULTRA_BALL, () => (hasMaximumBalls(PokeballType.ULTRA_BALL) ? 0 : 15), 15),
     //new WeightedModifierType(modifierTypes.MAX_LURE, lureWeightFunc(30, 4)),
-    new WeightedModifierType(modifierTypes.BIG_NUGGET, skipInLastClassicWaveOrDefault(12)),
-    new WeightedModifierType(modifierTypes.PP_MAX, 15),
+    new WeightedModifierType(modifierTypes.BIG_NUGGET, skipInLastClassicWaveOrDefault(27)),
+    //new WeightedModifierType(modifierTypes.PP_MAX, 15),
     //new WeightedModifierType(modifierTypes.MINT, 4),
     new WeightedModifierType(
       modifierTypes.RARE_EVOLUTION_ITEM,
@@ -425,7 +427,7 @@ function initUltraModifierPool() {
                 //AbilityId.QUICK_FEET,
                 //AbilityId.GUTS,
                 //AbilityId.MARVEL_SCALE,
-                AbilityId.MAGIC_GUARD,
+                //AbilityId.MAGIC_GUARD,
               ].some(a => p.hasAbility(a, false, true));
               const hasSpecificAbility = [AbilityId.TOXIC_BOOST, AbilityId.POISON_HEAL].some(a =>
                 p.hasAbility(a, false, true),
@@ -576,7 +578,7 @@ function initRogueModifierPool() {
     new WeightedModifierType(modifierTypes.BERRY_POUCH, 4),
     new WeightedModifierType(modifierTypes.GRIP_CLAW, 5),
     new WeightedModifierType(modifierTypes.SCOPE_LENS, 4),
-    //new WeightedModifierType(modifierTypes.BATON, 2),
+    new WeightedModifierType(modifierTypes.BATON, 0),
     new WeightedModifierType(modifierTypes.SOUL_DEW, 7),
     //new WeightedModifierType(modifierTypes.CATCHING_CHARM, () => (globalScene.gameMode.isClassic ? 0 : 4), 4),
     //new WeightedModifierType(modifierTypes.ABILITY_CHARM, skipInClassicAfterWave(189, 6)),
@@ -674,7 +676,7 @@ function initTrainerModifierPool() {
   });
   trainerModifierPool[ModifierTier.ROGUE] = [
     new WeightedModifierType(modifierTypes.FOCUS_BAND, 2),
-    new WeightedModifierType(modifierTypes.LUCKY_EGG, 4),
+    //new WeightedModifierType(modifierTypes.LUCKY_EGG, 4),
     new WeightedModifierType(modifierTypes.QUICK_CLAW, 1),
     new WeightedModifierType(modifierTypes.GRIP_CLAW, 1),
     new WeightedModifierType(modifierTypes.WIDE_LENS, 1),

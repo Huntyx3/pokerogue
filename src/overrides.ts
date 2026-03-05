@@ -49,7 +49,11 @@ import type { IntClosedRange, TupleOf } from "type-fest";
  * }
  * ```
  */
-const overrides = {} satisfies Partial<InstanceType<OverridesType>>;
+const overrides = {
+  //STARTING_MODIFIER_OVERRIDE: [{name: "RARE_FORM_CHANGE_ITEM", type: FormChangeItem.MAX_MUSHROOMS}],
+  //ITEM_REWARD_OVERRIDE: [{name: "TERA_SHARD", type: PokemonType.GHOST}],
+  //ABILITY_OVERRIDE: AbilityId.LIGHTNING_ROD,
+} satisfies Partial<InstanceType<OverridesType>>;
 
 /**
  * If you need to add Overrides values for local testing do that inside {@linkcode overrides}
@@ -310,7 +314,7 @@ class DefaultOverrides {
    *
    * Note that, for all items in the array, `count` is not used.
    */
-  readonly ITEM_REWARD_OVERRIDE: ModifierOverride[] = [];
+  readonly ITEM_REWARD_OVERRIDE: ModifierOverride[] = []; //{name: "TERA_SHARD", type: PokemonType.FIRE}
 
   /** If `true`, disable all non-scripted opponent trainer encounters. */
   readonly DISABLE_STANDARD_TRAINERS_OVERRIDE: boolean = false;

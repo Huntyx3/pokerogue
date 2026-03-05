@@ -9,7 +9,7 @@
 export const BASE_SHINY_CHANCE = 64;
 
 /** `256/65536 -> 1/256` */
-export const BASE_HIDDEN_ABILITY_CHANCE = 256;
+export const BASE_HIDDEN_ABILITY_CHANCE = 13107; // 20% chance
 
 // #region Egg properties
 

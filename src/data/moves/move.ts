@@ -9632,7 +9632,7 @@ export function initMoves() {
       .attr(MultiHitPowerIncrementAttr, 3)
       .checkAllHits(),
     new AttackMove(MoveId.THIEF, PokemonType.DARK, MoveCategory.PHYSICAL, 60, 100, 25, -1, 0, 2)
-      .attr(StealHeldItemChanceAttr, 0.3)
+      //.attr(StealHeldItemChanceAttr, 0.3)
       .edgeCase(),
     // Should not be able to steal held item if user faints due to Rough Skin, Iron Barbs, etc.
     // Should be able to steal items from pokemon with Sticky Hold if the damage causes them to faint
@@ -10292,7 +10292,7 @@ export function initMoves() {
       .attr(HighCritAttr)
       .attr(StatusEffectAttr, StatusEffect.POISON),
     new AttackMove(MoveId.COVET, PokemonType.NORMAL, MoveCategory.PHYSICAL, 60, 100, 25, -1, 0, 3)
-      .attr(StealHeldItemChanceAttr, 0.3)
+      //.attr(StealHeldItemChanceAttr, 0.3)
       // Should not be able to steal held item if user faints due to Rough Skin, Iron Barbs, etc.
       // Should be able to steal items from pokemon with Sticky Hold if the damage causes them to faint
       .edgeCase(),

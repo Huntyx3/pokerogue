@@ -180,7 +180,7 @@ export const MysteriousChestEncounter: MysteryEncounter = MysteryEncounterBuilde
         } else {
           // Your highest level unfainted Pokemon gets OHKO. Start battle against a Gimmighoul (35%)
           const highestLevelPokemon = getHighestLevelPlayerPokemon(true, false);
-          koPlayerPokemon(highestLevelPokemon);
+          // koPlayerPokemon(highestLevelPokemon); Disabled KO
 
           encounter.setDialogueToken("pokeName", highestLevelPokemon.getNameToRender());
           await showEncounterText(`${namespace}:option.1.bad`);

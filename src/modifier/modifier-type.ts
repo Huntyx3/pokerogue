@@ -2638,6 +2638,7 @@ export function getPlayerShopModifierTypeOptionsForWave(waveIndex: number, baseC
       //new ModifierTypeOption(modifierTypeInitObj.REVIVE(), 0, baseCost * 2),
       new ModifierTypeOption(modifierTypeInitObj.FULL_HEAL(), 0, baseCost),
       new ModifierTypeOption(modifierTypeInitObj.MEMORY_MUSHROOM(), 0, baseCost * 4),
+      new ModifierTypeOption(modifierTypeInitObj.PP_MAX(), 0, baseCost),
     ],
     [
       new ModifierTypeOption(modifierTypeInitObj.SUPER_POTION(), 0, baseCost * 0.45),

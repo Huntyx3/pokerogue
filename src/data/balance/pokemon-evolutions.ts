@@ -512,8 +512,8 @@ export const pokemonEvolutions: PokemonEvolutions = {
     new SpeciesEvolution(SpeciesId.ELECTRODE, 30, null, null)
   ],
   [SpeciesId.EXEGGCUTE]: [
-    new SpeciesEvolution(SpeciesId.ALOLA_EXEGGUTOR, 30, null, null),
     new SpeciesEvolution(SpeciesId.EXEGGUTOR, 30, null, null),
+    new SpeciesEvolution(SpeciesId.ALOLA_EXEGGUTOR, 30, null, null),
   ],
   [SpeciesId.CUBONE]: [
     new SpeciesEvolution(SpeciesId.MAROWAK, 26, null, null),
@@ -1088,8 +1088,8 @@ export const pokemonEvolutions: PokemonEvolutions = {
     new SpeciesEvolution(SpeciesId.DEWOTT, 24, null, null)
   ],
   [SpeciesId.DEWOTT]: [
+    new SpeciesEvolution(SpeciesId.SAMUROTT, 38, null, null),
     new SpeciesEvolution(SpeciesId.HISUI_SAMUROTT, 38, null, null),
-    new SpeciesEvolution(SpeciesId.SAMUROTT, 38, null, null)
   ],
   [SpeciesId.PATRAT]: [
     new SpeciesEvolution(SpeciesId.WATCHOG, 20, null, null)
@@ -1679,7 +1679,7 @@ export const pokemonEvolutions: PokemonEvolutions = {
   ],
   [SpeciesId.GALAR_SLOWPOKE]: [
     new SpeciesEvolution(SpeciesId.GALAR_SLOWBRO, 28, null, null),
-    new SpeciesEvolution(SpeciesId.GALAR_SLOWKING, 28, null, null)
+    new SpeciesEvolution(SpeciesId.GALAR_SLOWKING, 28, null, null),
   ],
   [SpeciesId.GALAR_FARFETCHD]: [
     new SpeciesEvolution(SpeciesId.SIRFETCHD, 34, null, null)
@@ -1808,7 +1808,7 @@ export const pokemonEvolutions: PokemonEvolutions = {
     new SpeciesEvolution(SpeciesId.WUGTRIO, 19, null, null)
   ],
   [SpeciesId.FINIZEN]: [
-    new SpeciesEvolution(SpeciesId.PALAFIN, 27, null, null)
+    new SpeciesEvolution(SpeciesId.PALAFIN, 1, null, null)
   ],
   [SpeciesId.VAROOM]: [
     new SpeciesEvolution(SpeciesId.REVAVROOM, 28, null, null)
