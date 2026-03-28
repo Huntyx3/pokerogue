@@ -253,7 +253,7 @@ function endTrainerBattleAndShowDialogue(): Promise<void> {
 function getVictorTrainerConfig(): EnemyPartyConfig {
   return {
     trainerType: TrainerType.VICTOR,
-    pokemonConfigs: [
+    /*pokemonConfigs: [
       {
         species: getPokemonSpecies(SpeciesId.SWELLOW),
         isBoss: false,
@@ -290,14 +290,14 @@ function getVictorTrainerConfig(): EnemyPartyConfig {
           },
         ],
       },
-    ],
+    ],*/
   };
 }
 
 function getVictoriaTrainerConfig(): EnemyPartyConfig {
   return {
     trainerType: TrainerType.VICTORIA,
-    pokemonConfigs: [
+    /*pokemonConfigs: [
       {
         species: getPokemonSpecies(SpeciesId.ROSERADE),
         isBoss: false,
@@ -339,14 +339,14 @@ function getVictoriaTrainerConfig(): EnemyPartyConfig {
           },
         ],
       },
-    ],
+    ],*/
   };
 }
 
 function getViviTrainerConfig(): EnemyPartyConfig {
   return {
     trainerType: TrainerType.VIVI,
-    pokemonConfigs: [
+    /*pokemonConfigs: [
       {
         species: getPokemonSpecies(SpeciesId.SEAKING),
         isBoss: false,
@@ -398,14 +398,14 @@ function getViviTrainerConfig(): EnemyPartyConfig {
           },
         ],
       },
-    ],
+    ],*/
   };
 }
 
 function getVickyTrainerConfig(): EnemyPartyConfig {
   return {
     trainerType: TrainerType.VICKY,
-    pokemonConfigs: [
+    /*pokemonConfigs: [
       {
         species: getPokemonSpecies(SpeciesId.MEDICHAM),
         isBoss: false,
@@ -419,14 +419,14 @@ function getVickyTrainerConfig(): EnemyPartyConfig {
           },
         ],
       },
-    ],
+    ],*/
   };
 }
 
 function getVitoTrainerConfig(): EnemyPartyConfig {
   return {
     trainerType: TrainerType.VITO,
-    pokemonConfigs: [
+    /*pokemonConfigs: [
       {
         species: getPokemonSpecies(SpeciesId.HISUI_ELECTRODE),
         isBoss: false,
@@ -536,6 +536,6 @@ function getVitoTrainerConfig(): EnemyPartyConfig {
           },
         ],
       },
-    ],
+    ],*/
   };
 }

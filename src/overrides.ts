@@ -50,9 +50,11 @@ import type { IntClosedRange, TupleOf } from "type-fest";
  * ```
  */
 const overrides = {
-  //STARTING_MODIFIER_OVERRIDE: [{name: "RARE_FORM_CHANGE_ITEM", type: FormChangeItem.MAX_MUSHROOMS}],
+  //STARTING_HELD_ITEMS_OVERRIDE: [{name: "RARE_FORM_CHANGE_ITEM", type: FormChangeItem.MAX_MUSHROOMS}],
   //ITEM_REWARD_OVERRIDE: [{name: "TERA_SHARD", type: PokemonType.GHOST}],
-  //ABILITY_OVERRIDE: AbilityId.LIGHTNING_ROD,
+  //ABILITY_OVERRIDE: AbilityId.INNER_FOCUS,
+  ENEMY_IVS_OVERRIDE: 31,
+  //STARTING_HELD_ITEMS_OVERRIDE: [{name: "BERRY", type: BerryType.LEPPA, count: 99999}], // For Ditto
 } satisfies Partial<InstanceType<OverridesType>>;
 
 /**

@@ -122,24 +122,27 @@ const PHYSICAL_TUTOR_MOVES = [
   MoveId.MEGAHORN,
   MoveId.ATTACK_ORDER,
   MoveId.BUG_BITE,
-  MoveId.FIRST_IMPRESSION,
+  //MoveId.FIRST_IMPRESSION,
   MoveId.LUNGE,
+  MoveId.FELL_STINGER,
 ] as const;
 
 const SPECIAL_TUTOR_MOVES = [
   MoveId.SILVER_WIND,
-  MoveId.SIGNAL_BEAM,
+  //MoveId.SIGNAL_BEAM,
   MoveId.BUG_BUZZ,
   MoveId.POLLEN_PUFF,
   MoveId.STRUGGLE_BUG,
+  MoveId.TAIL_GLOW,
 ] as const;
 
 const STATUS_TUTOR_MOVES = [
   MoveId.STRING_SHOT,
   MoveId.DEFEND_ORDER,
-  MoveId.RAGE_POWDER,
+  //MoveId.RAGE_POWDER,
   MoveId.STICKY_WEB,
   MoveId.SILK_TRAP,
+  MoveId.VICTORY_DANCE,
 ] as const;
 
 const MISC_TUTOR_MOVES = [

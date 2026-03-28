@@ -850,12 +850,12 @@ export class BaseStatModifier extends PokemonHeldItemModifier {
    * @returns always `true`
    */
   override apply(_pokemon: Pokemon, baseStats: number[]): boolean {
-    baseStats[this.stat] = Math.floor(baseStats[this.stat] * (1 + this.getStackCount() * 0.1));
+    baseStats[this.stat] = Math.floor(baseStats[this.stat] * (1 + this.getStackCount() * 0.05)); // Changed to 5%
     return true;
   }
 
   getScoreMultiplier(): number {
-    return 1.1;
+    return 1.05; // Changed to 5%
   }
 
   getMaxHeldItemCount(pokemon: Pokemon): number {
@@ -1478,7 +1478,7 @@ export class AttackTypeBoosterModifier extends PokemonHeldItemModifier {
   }
 
   getScoreMultiplier(): number {
-    return 1.2;
+    return 1.1;
   }
 
   getMaxHeldItemCount(_pokemon: Pokemon): number {
@@ -2630,7 +2630,7 @@ export class PokemonNatureWeightModifier extends PokemonHeldItemModifier {
    */
   override apply(_pokemon: Pokemon, multiplier: NumberHolder): boolean {
     if (multiplier.value !== 1) {
-      multiplier.value += 0.1 * this.getStackCount() * (multiplier.value > 1 ? 1 : -1);
+      multiplier.value += 0.05 * this.getStackCount() * (multiplier.value > 1 ? 1 : -1); // Soul Dew changed to 5%
       return true;
     }
 
@@ -2638,7 +2638,7 @@ export class PokemonNatureWeightModifier extends PokemonHeldItemModifier {
   }
 
   getMaxHeldItemCount(_pokemon: Pokemon): number {
-    return 10;
+    return 19; // Since it's half effective
   }
 }
 

@@ -257,6 +257,10 @@ function handleLoseMinigame() {
       await showEncounterText(`${namespace}:ko`);
       const reviveCost = globalScene.getWaveMoneyAmount(1.5);
       updatePlayerMoney(-reviveCost, true, false);
+      setEncounterRewards({
+        guaranteedModifierTypeFuncs: [modifierTypes.MULTI_LENS, modifierTypes.SCOPE_LENS, modifierTypes.WIDE_LENS],
+        fillRemaining: false,
+      });
     }
 
     resolve();
@@ -277,14 +281,14 @@ function handleNextTurn() {
     const healthRatio = wobbuffet.hp / wobbuffet.getMaxHp();
     let resultMessageKey: string;
     let isHealPhase = false;
-    if (healthRatio < 0.10) {
+    //if (healthRatio < 1) {
       // Grand prize
       setEncounterRewards({
-        guaranteedModifierTypeFuncs: [modifierTypes.MULTI_LENS],
+        guaranteedModifierTypeFuncs: [modifierTypes.MULTI_LENS, modifierTypes.SCOPE_LENS, modifierTypes.WIDE_LENS],
         fillRemaining: false,
       });
       resultMessageKey = `${namespace}:bestResult`;
-    } else if (healthRatio < 0.25) {
+    /*} else if (healthRatio < 0.25) {
       // 2nd prize
       setEncounterRewards({
         guaranteedModifierTypeFuncs: [modifierTypes.SCOPE_LENS],
@@ -302,7 +306,7 @@ function handleNextTurn() {
       // No prize
       isHealPhase = true;
       resultMessageKey = `${namespace}:badResult`;
-    }
+    }*/
 
     // End the battle
     wobbuffet.hideInfo();

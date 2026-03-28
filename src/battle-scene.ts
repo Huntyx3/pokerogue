@@ -1614,13 +1614,113 @@ export class BattleScene extends SceneBase {
     }
 
     switch (species.speciesId) {
+      case SpeciesId.BUTTERFREE:
+      case SpeciesId.BEEDRILL:
+      case SpeciesId.PIDGEOT:
+      case SpeciesId.MEOWTH:
+      case SpeciesId.ALAKAZAM:
+      case SpeciesId.MACHAMP:
+      case SpeciesId.SLOWBRO:
+      case SpeciesId.KINGLER:
+      case SpeciesId.KANGASKHAN:
+      case SpeciesId.PINSIR:
+      case SpeciesId.GYARADOS:
+      case SpeciesId.LAPRAS:
+      case SpeciesId.AERODACTYL:
+      case SpeciesId.SNORLAX:
+      case SpeciesId.AMPHAROS:
+      case SpeciesId.STEELIX:
+      case SpeciesId.SCIZOR:
+      case SpeciesId.HERACROSS:
+      case SpeciesId.HOUNDOOM:
+      case SpeciesId.TYRANITAR:
+      case SpeciesId.SCEPTILE:
+      case SpeciesId.BLAZIKEN:
+      case SpeciesId.SWAMPERT:
+      case SpeciesId.GARDEVOIR:
+      case SpeciesId.SABLEYE:
+      case SpeciesId.MAWILE:
+      case SpeciesId.AGGRON:
+      case SpeciesId.MEDICHAM:
+      case SpeciesId.MANECTRIC:
+      case SpeciesId.SHARPEDO:
+      case SpeciesId.CAMERUPT:
+      case SpeciesId.ALTARIA:
+      case SpeciesId.BANETTE:
+      case SpeciesId.ABSOL:
+      case SpeciesId.GLALIE:
+      case SpeciesId.SALAMENCE:
+      case SpeciesId.METAGROSS:
+      case SpeciesId.LATIAS:
+      case SpeciesId.LATIOS:
+      case SpeciesId.KYOGRE:
+      case SpeciesId.GROUDON:
+      case SpeciesId.RAYQUAZA:
+      case SpeciesId.LOPUNNY:
+      case SpeciesId.GARCHOMP:
+      case SpeciesId.LUCARIO:
+      case SpeciesId.ABOMASNOW:
+      case SpeciesId.GALLADE:
+      case SpeciesId.AUDINO:
+      case SpeciesId.GARBODOR:
+      case SpeciesId.DIANCIE:
+      case SpeciesId.HOOPA:
+      case SpeciesId.MELMETAL:
+      case SpeciesId.RILLABOOM:
+      case SpeciesId.CINDERACE:
+      case SpeciesId.INTELEON:
+      case SpeciesId.CORVIKNIGHT:
+      case SpeciesId.ORBEETLE:
+      case SpeciesId.DREDNAW:
+      case SpeciesId.COALOSSAL:
+      case SpeciesId.FLAPPLE:
+      case SpeciesId.APPLETUN:
+      case SpeciesId.SANDACONDA:
+      case SpeciesId.CENTISKORCH:
+      case SpeciesId.HATTERENE:
+      case SpeciesId.GRIMMSNARL:
+      case SpeciesId.COPPERAJAH:
+      case SpeciesId.DURALUDON:
+      case SpeciesId.ZACIAN:
+      case SpeciesId.ZAMAZENTA:
+        if (this.currentBattle?.waveIndex < 94) {
+          return 0
+        }
+          return 1;
+      case SpeciesId.VENUSAUR:
+      case SpeciesId.BLASTOISE:
+      case SpeciesId.GENGAR:
+      case SpeciesId.MEWTWO:
+      case SpeciesId.KYUREM:
+      case SpeciesId.CALYREX:
+        if (this.currentBattle?.waveIndex < 94) {
+          return 0
+        }
+          return randSeedInt (2 , 1);
+      case SpeciesId.CHARIZARD:
+      case SpeciesId.NECROZMA:
+        if (this.currentBattle?.waveIndex < 94) {
+          return 0
+        }
+          return randSeedInt (3 , 1);
       case SpeciesId.UNOWN:
+      case SpeciesId.DEOXYS:
+      case SpeciesId.BURMY:
+      case SpeciesId.WORMADAM:
       case SpeciesId.SHELLOS:
       case SpeciesId.GASTRODON:
       case SpeciesId.ROTOM:
+      case SpeciesId.DIALGA:
+      case SpeciesId.PALKIA:
+      case SpeciesId.GIRATINA:
+      case SpeciesId.SHAYMIN:
       case SpeciesId.BASCULIN:
       case SpeciesId.DEERLING:
       case SpeciesId.SAWSBUCK:
+      case SpeciesId.TORNADUS:
+      case SpeciesId.THUNDURUS:
+      case SpeciesId.LANDORUS:
+      case SpeciesId.MELOETTA:
       case SpeciesId.SCATTERBUG:
       case SpeciesId.SPEWPA:
       case SpeciesId.VIVILLON:
@@ -1631,10 +1731,15 @@ export class BattleScene extends SceneBase {
       case SpeciesId.PUMPKABOO:
       case SpeciesId.GOURGEIST:
       case SpeciesId.ORICORIO:
+      case SpeciesId.ROCKRUFF:
+      case SpeciesId.LYCANROC:
+      case SpeciesId.SILVALLY:
       case SpeciesId.MAGEARNA:
       case SpeciesId.ZARUDE:
+      case SpeciesId.ENAMORUS:
       case SpeciesId.SQUAWKABILLY:
       case SpeciesId.TATSUGIRI:
+      case SpeciesId.GIMMIGHOUL:
       case SpeciesId.PALDEA_TAUROS:
         return randSeedInt(species.forms.length);
       case SpeciesId.SINISTEA:
@@ -1647,30 +1752,34 @@ export class BattleScene extends SceneBase {
       case SpeciesId.PICHU:
         return randSeedInt(8) ? 0 : 1;
       case SpeciesId.PIKACHU:
-        if (isTrainerBattle && this.currentBattle?.waveIndex < 30) {
-          return 0; // Ban Cosplay and Partner Pika from Trainers before wave 30
+        if (this.currentBattle?.waveIndex < 94) {
+          return randSeedInt(8)
         }
-        return randSeedInt(8);
+          return 8;
       case SpeciesId.EEVEE:
-        if (isTrainerBattle && this.currentBattle?.waveIndex < 30 && !isEggPhase) {
-          return 0; // No Partner Eevee for Wave 12 Preschoolers
+        if (this.currentBattle?.waveIndex < 94) {
+          return randSeedInt(2)
         }
-        return randSeedInt(2);
+          return 2;
       case SpeciesId.FROAKIE:
       case SpeciesId.FROGADIER:
       case SpeciesId.GRENINJA:
-        if (isTrainerBattle && !isEggPhase) {
-          return 0; // Don't give trainers Battle Bond Greninja, Froakie or Frogadier
-        }
         return randSeedInt(2);
       case SpeciesId.URSHIFU:
-        return randSeedInt(2);
+        if (this.currentBattle?.waveIndex < 94) {
+          return randSeedInt(2)
+        }
+          return randSeedInt(2 , 2);
       case SpeciesId.ZYGARDE:
+      case SpeciesId.OGERPON:
         return randSeedInt(4);
       case SpeciesId.MINIOR:
         return randSeedInt(7);
       case SpeciesId.ALCREMIE:
-        return randSeedInt(9);
+        if (this.currentBattle?.waveIndex < 94) {
+          return randSeedInt(9)
+        }
+          return 9;
       case SpeciesId.MEOWSTIC:
       case SpeciesId.INDEEDEE:
       case SpeciesId.BASCULEGION:
@@ -1696,39 +1805,8 @@ export class BattleScene extends SceneBase {
         }
         return 0;
       }
-      case SpeciesId.GIMMIGHOUL:
-        // In game modes with MEs (currently Classic only),
-        // chest form Gimmighoul is only allowed to appear in the Mysterious Chest Encounter
-        if (this.gameMode.hasMysteryEncounters && !isEggPhase) {
-          return 1; // Wandering form
-        }
-        return randSeedInt(species.forms.length);
-      case SpeciesId.BURMY:
-      case SpeciesId.WORMADAM:
-        if (ignoreArena) {
-          return randSeedInt(species.forms.length);
-        }
-        switch (this.arena.biomeId) {
-          case BiomeId.BEACH:
-            return 1;
-          case BiomeId.SLUM:
-            return 2;
-        }
-        return 0;
-      case SpeciesId.LYCANROC:
-        if (ignoreArena) {
-          return randSeedInt(species.forms.length);
-        }
-        switch (this.arena.getTimeOfDay()) {
-          case TimeOfDay.DAWN:
-          case TimeOfDay.DAY:
-            return 0;
-          case TimeOfDay.DUSK:
-            return 2;
-          case TimeOfDay.NIGHT:
-            return 1;
-        }
-        return 0;
+      case SpeciesId.ARCEUS:
+        randSeedInt (18);
     }
 
     return 0;

@@ -9163,8 +9163,9 @@ export function initMoves() {
     new AttackMove(MoveId.SCRATCH, PokemonType.NORMAL, MoveCategory.PHYSICAL, 40, 100, 35, -1, 0, 1),
     new AttackMove(MoveId.VISE_GRIP, PokemonType.NORMAL, MoveCategory.PHYSICAL, 55, 100, 30, -1, 0, 1),
     new AttackMove(MoveId.GUILLOTINE, PokemonType.NORMAL, MoveCategory.PHYSICAL, 250, 30, 5, -1, 0, 1)
-      .attr(OneHitKOAttr)
-      .attr(OneHitKOAccuracyAttr),
+      //.attr(OneHitKOAttr)
+      //.attr(OneHitKOAccuracyAttr)
+      ,
     new ChargingAttackMove(MoveId.RAZOR_WIND, PokemonType.NORMAL, MoveCategory.SPECIAL, 80, 100, 10, -1, 0, 1)
       .chargeText(i18next.t("moveTriggers:whippedUpAWhirlwind", { pokemonName: "{USER}" }))
       .attr(HighCritAttr)
@@ -9185,9 +9186,9 @@ export function initMoves() {
       .hidesTarget()
       .windMove()
       .reflectable(),
-    new ChargingAttackMove(MoveId.FLY, PokemonType.FLYING, MoveCategory.PHYSICAL, 90, 95, 15, -1, 0, 1)
-      .chargeText(i18next.t("moveTriggers:flewUpHigh", { pokemonName: "{USER}" }))
-      .chargeAttr(SemiInvulnerableAttr, BattlerTagType.FLYING)
+    new AttackMove(MoveId.FLY, PokemonType.FLYING, MoveCategory.PHYSICAL, 90, 95, 15, -1, 0, 1)
+      //.chargeText(i18next.t("moveTriggers:flewUpHigh", { pokemonName: "{USER}" }))
+      //.chargeAttr(SemiInvulnerableAttr, BattlerTagType.FLYING)
       .affectedByGravity(),
     new AttackMove(MoveId.BIND, PokemonType.NORMAL, MoveCategory.PHYSICAL, 15, 85, 20, -1, 0, 1) //
       .attr(TrapAttr, BattlerTagType.BIND),
@@ -9216,8 +9217,9 @@ export function initMoves() {
     new AttackMove(MoveId.FURY_ATTACK, PokemonType.NORMAL, MoveCategory.PHYSICAL, 15, 85, 20, -1, 0, 1) //
       .attr(MultiHitAttr),
     new AttackMove(MoveId.HORN_DRILL, PokemonType.NORMAL, MoveCategory.PHYSICAL, 250, 30, 5, -1, 0, 1)
-      .attr(OneHitKOAttr)
-      .attr(OneHitKOAccuracyAttr),
+      //.attr(OneHitKOAttr)
+      //.attr(OneHitKOAccuracyAttr)
+      ,
     new AttackMove(MoveId.TACKLE, PokemonType.NORMAL, MoveCategory.PHYSICAL, 40, 100, 35, -1, 0, 1),
     new AttackMove(MoveId.BODY_SLAM, PokemonType.NORMAL, MoveCategory.PHYSICAL, 85, 100, 15, 30, 0, 1)
       .attr(AlwaysHitMinimizeAttr)
@@ -9401,13 +9403,14 @@ export function initMoves() {
       .makesContact(false)
       .target(MoveTarget.ALL_NEAR_OTHERS),
     new AttackMove(MoveId.FISSURE, PokemonType.GROUND, MoveCategory.PHYSICAL, 250, 30, 5, -1, 0, 1)
-      .attr(OneHitKOAttr)
-      .attr(OneHitKOAccuracyAttr)
+      //.attr(OneHitKOAttr)
+      //.attr(OneHitKOAccuracyAttr)
       .attr(HitsTagAttr, BattlerTagType.UNDERGROUND)
       .makesContact(false),
-    new ChargingAttackMove(MoveId.DIG, PokemonType.GROUND, MoveCategory.PHYSICAL, 80, 100, 10, -1, 0, 1)
-      .chargeText(i18next.t("moveTriggers:dugAHole", { pokemonName: "{USER}" }))
-      .chargeAttr(SemiInvulnerableAttr, BattlerTagType.UNDERGROUND),
+    new AttackMove(MoveId.DIG, PokemonType.GROUND, MoveCategory.PHYSICAL, 80, 100, 10, -1, 0, 1)
+      //.chargeText(i18next.t("moveTriggers:dugAHole", { pokemonName: "{USER}" }))
+      //.chargeAttr(SemiInvulnerableAttr, BattlerTagType.UNDERGROUND)
+      ,
     new StatusMove(MoveId.TOXIC, PokemonType.POISON, 90, 10, -1, 0, 1)
       .attr(StatusEffectAttr, StatusEffect.TOXIC)
       .attr(ToxicAccuracyAttr)
@@ -9737,7 +9740,7 @@ export function initMoves() {
         return !(lastTurnMove?.move === move.id && lastTurnMove.result === MoveResult.SUCCESS);
       }),
     new StatusMove(MoveId.PERISH_SONG, PokemonType.NORMAL, -1, 5, -1, 0, 2)
-      .attr(AddBattlerTagAttr, BattlerTagType.PERISH_SONG, false, true, 4)
+      //.attr(AddBattlerTagAttr, BattlerTagType.PERISH_SONG, false, true, 4)  Removed Perish Song
       .attr(MessageAttr, (_user, target) =>
         i18next.t("moveTriggers:faintCountdown", { pokemonName: getPokemonNameWithAffix(target), turnCount: 3 }),
       )
@@ -10119,10 +10122,10 @@ export function initMoves() {
     new AttackMove(MoveId.SECRET_POWER, PokemonType.NORMAL, MoveCategory.PHYSICAL, 70, 100, 20, 30, 0, 3)
       .makesContact(false)
       .attr(SecretPowerAttr),
-    new ChargingAttackMove(MoveId.DIVE, PokemonType.WATER, MoveCategory.PHYSICAL, 80, 100, 10, -1, 0, 3)
-      .chargeText(i18next.t("moveTriggers:hidUnderwater", { pokemonName: "{USER}" }))
-      .chargeAttr(SemiInvulnerableAttr, BattlerTagType.UNDERWATER)
-      .chargeAttr(GulpMissileTagAttr),
+    new AttackMove(MoveId.DIVE, PokemonType.WATER, MoveCategory.PHYSICAL, 80, 100, 10, -1, 0, 3)
+      //.chargeText(i18next.t("moveTriggers:hidUnderwater", { pokemonName: "{USER}" }))
+      //.chargeAttr(SemiInvulnerableAttr, BattlerTagType.UNDERWATER)
+      .attr(GulpMissileTagAttr),
     new AttackMove(MoveId.ARM_THRUST, PokemonType.FIGHTING, MoveCategory.PHYSICAL, 15, 100, 20, -1, 0, 3) //
       .attr(MultiHitAttr),
     new SelfStatusMove(MoveId.CAMOUFLAGE, PokemonType.NORMAL, -1, 20, -1, 0, 3) //
@@ -10252,8 +10255,9 @@ export function initMoves() {
       .makesContact(false),
     new AttackMove(MoveId.SHEER_COLD, PokemonType.ICE, MoveCategory.SPECIAL, 250, 30, 5, -1, 0, 3)
       .attr(IceNoEffectTypeAttr)
-      .attr(OneHitKOAttr)
-      .attr(SheerColdAccuracyAttr),
+      //.attr(OneHitKOAttr)
+      //.attr(SheerColdAccuracyAttr)
+      ,
     new AttackMove(MoveId.MUDDY_WATER, PokemonType.WATER, MoveCategory.SPECIAL, 90, 85, 10, 30, 0, 3)
       .attr(StatStageChangeAttr, [Stat.ACC], -1)
       .target(MoveTarget.ALL_NEAR_ENEMIES),
@@ -10281,9 +10285,9 @@ export function initMoves() {
       .attr(RechargeAttr),
     new SelfStatusMove(MoveId.BULK_UP, PokemonType.FIGHTING, -1, 20, -1, 0, 3) //
       .attr(StatStageChangeAttr, [Stat.ATK, Stat.DEF], 1, true),
-    new ChargingAttackMove(MoveId.BOUNCE, PokemonType.FLYING, MoveCategory.PHYSICAL, 85, 85, 5, 30, 0, 3)
-      .chargeText(i18next.t("moveTriggers:sprangUp", { pokemonName: "{USER}" }))
-      .chargeAttr(SemiInvulnerableAttr, BattlerTagType.FLYING)
+    new AttackMove(MoveId.BOUNCE, PokemonType.FLYING, MoveCategory.PHYSICAL, 85, 85, 5, 30, 0, 3)
+      //.chargeText(i18next.t("moveTriggers:sprangUp", { pokemonName: "{USER}" }))
+      //.chargeAttr(SemiInvulnerableAttr, BattlerTagType.FLYING)
       .attr(StatusEffectAttr, StatusEffect.PARALYSIS)
       .affectedByGravity(),
     new AttackMove(MoveId.MUD_SHOT, PokemonType.GROUND, MoveCategory.SPECIAL, 55, 95, 15, 100, 0, 3) //
@@ -10636,7 +10640,7 @@ export function initMoves() {
       .attr(FormChangeItemTypeAttr),
     new AttackMove(MoveId.BUG_BITE, PokemonType.BUG, MoveCategory.PHYSICAL, 60, 100, 20, -1, 0, 4) //
       .attr(StealEatBerryAttr),
-    new AttackMove(MoveId.CHARGE_BEAM, PokemonType.ELECTRIC, MoveCategory.SPECIAL, 50, 90, 10, 70, 0, 4) //
+    new AttackMove(MoveId.CHARGE_BEAM, PokemonType.ELECTRIC, MoveCategory.SPECIAL, 50, 90, 10, 100, 0, 4) //
       .attr(StatStageChangeAttr, [Stat.SPATK], 1, true),
     new AttackMove(MoveId.WOOD_HAMMER, PokemonType.GRASS, MoveCategory.PHYSICAL, 120, 100, 15, -1, 0, 4)
       .attr(RecoilAttr, false, 0.33)
@@ -10677,9 +10681,9 @@ export function initMoves() {
     new AttackMove(MoveId.OMINOUS_WIND, PokemonType.GHOST, MoveCategory.SPECIAL, 60, 100, 5, 10, 0, 4)
       .attr(StatStageChangeAttr, [Stat.ATK, Stat.DEF, Stat.SPATK, Stat.SPDEF, Stat.SPD], 1, true)
       .windMove(),
-    new ChargingAttackMove(MoveId.SHADOW_FORCE, PokemonType.GHOST, MoveCategory.PHYSICAL, 120, 100, 5, -1, 0, 4)
-      .chargeText(i18next.t("moveTriggers:vanishedInstantly", { pokemonName: "{USER}" }))
-      .chargeAttr(SemiInvulnerableAttr, BattlerTagType.HIDDEN)
+    new AttackMove(MoveId.SHADOW_FORCE, PokemonType.GHOST, MoveCategory.PHYSICAL, 120, 100, 5, -1, 0, 4)
+      //.chargeText(i18next.t("moveTriggers:vanishedInstantly", { pokemonName: "{USER}" }))
+      //.chargeAttr(SemiInvulnerableAttr, BattlerTagType.HIDDEN)
       .ignoresProtect(),
     new SelfStatusMove(MoveId.HONE_CLAWS, PokemonType.DARK, -1, 15, -1, 0, 5) //
       .attr(StatStageChangeAttr, [Stat.ATK, Stat.ACC], 1, true),
@@ -11061,9 +11065,9 @@ export function initMoves() {
       .reflectable(),
     new AttackMove(MoveId.FELL_STINGER, PokemonType.BUG, MoveCategory.PHYSICAL, 50, 100, 25, -1, 0, 6) //
       .attr(PostVictoryStatStageChangeAttr, [Stat.ATK], 3, true),
-    new ChargingAttackMove(MoveId.PHANTOM_FORCE, PokemonType.GHOST, MoveCategory.PHYSICAL, 90, 100, 10, -1, 0, 6)
-      .chargeText(i18next.t("moveTriggers:vanishedInstantly", { pokemonName: "{USER}" }))
-      .chargeAttr(SemiInvulnerableAttr, BattlerTagType.HIDDEN)
+    new AttackMove(MoveId.PHANTOM_FORCE, PokemonType.GHOST, MoveCategory.PHYSICAL, 90, 100, 10, -1, 0, 6)
+      //.chargeText(i18next.t("moveTriggers:vanishedInstantly", { pokemonName: "{USER}" }))
+      //.chargeAttr(SemiInvulnerableAttr, BattlerTagType.HIDDEN)
       .ignoresProtect(),
     new StatusMove(MoveId.TRICK_OR_TREAT, PokemonType.GHOST, 100, 20, -1, 0, 6)
       .attr(AddTypeAttr, PokemonType.GHOST)

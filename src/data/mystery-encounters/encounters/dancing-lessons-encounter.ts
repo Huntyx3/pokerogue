@@ -39,6 +39,7 @@ import { MoveRequirement } from "#mystery-encounters/mystery-encounter-requireme
 import { DANCING_MOVES } from "#mystery-encounters/requirement-groups";
 import { PokemonData } from "#system/pokemon-data";
 import type { OptionSelectItem } from "#ui/abstract-option-select-ui-handler";
+import { randSeedInt } from "#utils/common";
 import { getPokemonSpecies } from "#utils/pokemon-utils";
 import i18next from "i18next";
 
@@ -98,7 +99,7 @@ export const DancingLessonsEncounter: MysteryEncounter = MysteryEncounterBuilder
   MysteryEncounterType.DANCING_LESSONS,
 )
   .withEncounterTier(MysteryEncounterTier.GREAT)
-  .withSceneWaveRangeRequirement(...CLASSIC_MODE_MYSTERY_ENCOUNTER_WAVES)
+  .withSceneWaveRangeRequirement(70, CLASSIC_MODE_MYSTERY_ENCOUNTER_WAVES[1])
   .withIntroSpriteConfigs([]) // Uses a real Pokemon sprite instead of ME Intro Visuals
   .withAnimations(EncounterAnim.DANCE)
   .withHideWildIntroMessage(true)
@@ -141,7 +142,7 @@ export const DancingLessonsEncounter: MysteryEncounter = MysteryEncounterBuilder
     // Set the form index based on the biome
     // Defaults to Baile style if somehow nothing matches
     const currentBiome = globalScene.arena.biomeId;
-    if (BAILE_STYLE_BIOMES.includes(currentBiome)) {
+    /*if (BAILE_STYLE_BIOMES.includes(currentBiome)) {
       enemyPokemon.formIndex = 0;
     } else if (POM_POM_STYLE_BIOMES.includes(currentBiome)) {
       enemyPokemon.formIndex = 1;
@@ -151,7 +152,8 @@ export const DancingLessonsEncounter: MysteryEncounter = MysteryEncounterBuilder
       enemyPokemon.formIndex = 3;
     } else {
       enemyPokemon.formIndex = 0;
-    }
+    }*/
+    enemyPokemon.formIndex = randSeedInt(4);
 
     const oricorioData = new PokemonData(enemyPokemon);
     const oricorio = globalScene.addEnemyPokemon(species, level, TrainerSlot.NONE, false, false, oricorioData);

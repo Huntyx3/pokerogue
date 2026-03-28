@@ -56,8 +56,8 @@ const namespace = "mysteryEncounters/clowningAround";
 const RANDOM_ABILITY_POOL = [
   AbilityId.STURDY,
   AbilityId.PICKUP,
-  AbilityId.INTIMIDATE,
-  AbilityId.GUTS,
+  //AbilityId.INTIMIDATE,
+  //AbilityId.GUTS,
   AbilityId.DROUGHT,
   AbilityId.DRIZZLE,
   AbilityId.SNOW_WARNING,
@@ -65,10 +65,14 @@ const RANDOM_ABILITY_POOL = [
   AbilityId.ELECTRIC_SURGE,
   AbilityId.PSYCHIC_SURGE,
   AbilityId.GRASSY_SURGE,
-  AbilityId.MISTY_SURGE,
-  AbilityId.MAGICIAN,
+  //AbilityId.MISTY_SURGE,
+  //AbilityId.MAGICIAN,
   AbilityId.SHEER_FORCE,
-  AbilityId.PRANKSTER,
+  //AbilityId.PRANKSTER,
+  AbilityId.FUR_COAT,
+  AbilityId.ICE_SCALES,
+  AbilityId.MOLD_BREAKER,
+  AbilityId.SIMPLE,
 ];
 
 /**

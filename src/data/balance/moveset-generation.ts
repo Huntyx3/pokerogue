@@ -202,6 +202,8 @@ export const STAB_BLACKLIST: ReadonlySet<MoveId> = new Set([
   MoveId.UPPER_HAND,
   MoveId.WHIRLPOOL,
   MoveId.WRAP,
+  MoveId.FOUL_PLAY,
+  MoveId.RAZOR_WIND,
 ]);
 
 //#endregion Constants
