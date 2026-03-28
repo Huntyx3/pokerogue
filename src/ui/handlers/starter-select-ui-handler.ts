@@ -4,7 +4,7 @@ import { globalScene } from "#app/global-scene";
 import { starterColors } from "#app/global-vars/starter-colors";
 import Overrides from "#app/overrides";
 import { handleTutorial, Tutorial } from "#app/tutorial";
-import { speciesEggMoves } from "#balance/egg-moves";
+import { speciesEggMoves } from "#balance/moves/egg-moves";
 import { pokemonPrevolutions } from "#balance/pokemon-evolutions";
 import { pokemonFormLevelMoves, pokemonSpeciesLevelMoves } from "#balance/pokemon-level-moves";
 import {
@@ -93,108 +93,120 @@ interface LanguageSetting {
 const languageSettings: { [key: string]: LanguageSetting } = {
   en: {
     starterInfoTextSize: "56px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
   },
   de: {
     starterInfoTextSize: "54px",
-    instructionTextSize: "35px",
+    instructionTextSize: "25px",
     starterInfoXPos: 35,
   },
   "es-ES": {
     starterInfoTextSize: "50px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
     starterInfoYOffset: 0.5,
     starterInfoXPos: 38,
   },
   "es-419": {
     starterInfoTextSize: "50px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
     starterInfoYOffset: 0.5,
     starterInfoXPos: 38,
   },
   fr: {
     starterInfoTextSize: "54px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
   },
   it: {
     starterInfoTextSize: "56px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
   },
   "pt-BR": {
     starterInfoTextSize: "48px",
-    instructionTextSize: "42px",
+    instructionTextSize: "32px",
     starterInfoYOffset: 0.5,
     starterInfoXPos: 33,
   },
   zh: {
     starterInfoTextSize: "56px",
-    instructionTextSize: "36px",
+    instructionTextSize: "26px",
     starterInfoXPos: 26,
   },
   ko: {
     starterInfoTextSize: "60px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
     starterInfoYOffset: -0.5,
     starterInfoXPos: 30,
   },
   ja: {
     starterInfoTextSize: "48px",
-    instructionTextSize: "40px",
+    instructionTextSize: "32px",
     starterInfoYOffset: 1,
     starterInfoXPos: 32,
   },
   ca: {
     starterInfoTextSize: "48px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
+    starterInfoYOffset: 0.5,
+    starterInfoXPos: 29,
+  },
+  eu: {
+    starterInfoTextSize: "48px",
+    instructionTextSize: "28px",
     starterInfoYOffset: 0.5,
     starterInfoXPos: 29,
   },
   da: {
     starterInfoTextSize: "56px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
+  },
+  th: {
+    starterInfoTextSize: "50px",
+    instructionTextSize: "30px",
+    starterInfoYOffset: 0.5,
+    starterInfoXPos: 40,
   },
   tr: {
     starterInfoTextSize: "56px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
     starterInfoXPos: 34,
   },
   ro: {
     starterInfoTextSize: "56px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
   },
   ru: {
     starterInfoTextSize: "46px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
     starterInfoYOffset: 0.5,
     starterInfoXPos: 26,
   },
   uk: {
     starterInfoTextSize: "46px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
     starterInfoYOffset: 0.5,
     starterInfoXPos: 26,
   },
   id: {
     starterInfoTextSize: "48px",
-    instructionTextSize: "42px",
+    instructionTextSize: "32px",
     starterInfoYOffset: 0.5,
     starterInfoXPos: 37,
   },
   hi: {
     starterInfoTextSize: "56px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
   },
   tl: {
     starterInfoTextSize: "56px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
   },
   "nb-NO": {
     starterInfoTextSize: "56px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
   },
   sv: {
     starterInfoTextSize: "56px",
-    instructionTextSize: "38px",
+    instructionTextSize: "28px",
   },
 };
 
@@ -791,7 +803,7 @@ export class StarterSelectUiHandler extends MessageUiHandler {
 
     // TODO: Apply the same logic done in the pokedex to only have 81 containers whose sprites are cycled
     for (const species of allSpecies) {
-      if (!speciesStarterCosts.hasOwnProperty(species.speciesId) || !species.isObtainable()) {
+      if (!Object.hasOwn(speciesStarterCosts, species.speciesId)) {
         continue;
       }
 
@@ -3558,8 +3570,7 @@ export class StarterSelectUiHandler extends MessageUiHandler {
         this.showStats();
       } else {
         this.statsContainer.setVisible(false);
-        //@ts-expect-error
-        this.statsContainer.updateIvs(null); // TODO: resolve ts-ignore. what. how? huh?
+        this.statsContainer.updateIvs(null);
       }
     }
 
@@ -4615,8 +4626,7 @@ export class StarterSelectUiHandler extends MessageUiHandler {
       this.statsMode = false;
       this.statsContainer.setVisible(false);
       this.pokemonSprite.setVisible(!!this.speciesStarterDexEntry?.caughtAttr);
-      //@ts-expect-error
-      this.statsContainer.updateIvs(null); // TODO: resolve ts-ignore. !?!?
+      this.statsContainer.updateIvs(null);
       this.teraIcon.setVisible(this.allowTera);
       const props = globalScene.gameData.getSpeciesDexAttrProps(
         this.lastSpecies,

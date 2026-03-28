@@ -1,4 +1,5 @@
 import { getRandomRivalPartyMemberFunc } from "#app/ai/rival-team-gen";
+import { timedEventManager } from "#app/global-event-manager";
 import { globalScene } from "#app/global-scene";
 import { signatureSpecies } from "#balance/signature-species";
 import { tmSpecies } from "#balance/tm-species-map";
@@ -131,8 +132,19 @@ export class TrainerConfig {
   public title: string;
   public titleDouble: string;
   public hasGenders = false;
+  /**
+   * Whether this trainer has a **random** chance to appear as a double battle variant instead of a single battle variant.
+   * @remarks
+   * Mutually exclusive with `doubleOnly`.
+   */
+  // TODO: Enforce mutual exclusivity
   public hasDouble = false;
   public hasCharSprite = false;
+  /**
+   * Whether this trainer can **only** appear inside a double battle.
+   * @remarks
+   * Mutually exclusive with `hasDouble`.
+   */
   public doubleOnly = false;
   public moneyMultiplier = 1;
   public isBoss = false;
@@ -204,6 +216,12 @@ export class TrainerConfig {
       // Get the derived type for the double trainer since the sprite key is based on the derived type
       ret = TrainerType[this.getDerivedType(this.trainerTypeDouble)].toString().toLowerCase();
     }
+
+    const replacement = timedEventManager.getEventTrainerSpriteReplacement(this.trainerType);
+    if (replacement) {
+      ret = replacement;
+    }
+
     return ret;
   }
 
@@ -623,20 +641,14 @@ export class TrainerConfig {
    * Initializes the trainer configuration for an evil team leader. Temporarily hardcoding evil leader teams though.
    * @param signatureSpecies The signature species for the evil team leader.
    * @param specialtyType The specialty type for the evil team Leader.
-   * @param boolean Whether or not this is the rematch fight
    * @returns The updated TrainerConfig instance.
    */
   initForEvilTeamLeader(
     title: string,
     signatureSpecies: (SpeciesId | SpeciesId[])[],
-    rematch = false,
     specialtyType?: PokemonType,
   ): TrainerConfig {
-    if (rematch) {
-      this.setPartyTemplates(trainerPartyTemplates.ELITE_FOUR);
-    } else {
-      this.setPartyTemplates(trainerPartyTemplates.RIVAL_5);
-    }
+    this.setPartyTemplates(trainerPartyTemplates.EVIL_LEADER);
     signatureSpecies.forEach((speciesPool, s) => {
       this.setPartyMemberFunc(-(s + 1), getRandomPartyMemberFunc(coerceArray(speciesPool)));
     });
@@ -2108,7 +2120,6 @@ export const trainerConfigs: TrainerConfigs = {
     })*/,
   [TrainerType.SCUBA_DIVER]: new TrainerConfig(++t)
     .setHasGenders("Free Diver")
-    //.setHasDouble("Divers")
     .setMoneyMultiplier(1.5)
     .setEncounterBgm(TrainerType.PARASOL_LADY)
     .setPartyTemplates(
@@ -5647,7 +5658,7 @@ export const trainerConfigs: TrainerConfigs = {
     )*/,
   [TrainerType.ROCKET_BOSS_GIOVANNI_2]: new TrainerConfig(++t)
     .setName("Giovanni")
-    .initForEvilTeamLeader("Rocket Boss", [], true)
+    .initForEvilTeamLeader("Rocket Boss", [])
     .setMixedBattleBgm("battle_rocket_boss")
     .setVictoryBgm("victory_team_plasma")
     /*.setPartyMemberFunc(
@@ -5754,7 +5765,7 @@ export const trainerConfigs: TrainerConfigs = {
     )*/,
   [TrainerType.MAXIE_2]: new TrainerConfig(++t)
     .setName("Maxie")
-    .initForEvilTeamLeader("Magma Boss", [], true)
+    .initForEvilTeamLeader("Magma Boss", [])
     .setMixedBattleBgm("battle_aqua_magma_boss")
     .setVictoryBgm("victory_team_plasma")
     /*.setPartyMemberFunc(
@@ -5844,7 +5855,7 @@ export const trainerConfigs: TrainerConfigs = {
     )*/,
   [TrainerType.ARCHIE_2]: new TrainerConfig(++t)
     .setName("Archie")
-    .initForEvilTeamLeader("Aqua Boss", [], true)
+    .initForEvilTeamLeader("Aqua Boss", [])
     .setMixedBattleBgm("battle_aqua_magma_boss")
     .setVictoryBgm("victory_team_plasma")
     /*.setPartyMemberFunc(
@@ -5920,7 +5931,7 @@ export const trainerConfigs: TrainerConfigs = {
     )*/,
   [TrainerType.CYRUS_2]: new TrainerConfig(++t)
     .setName("Cyrus")
-    .initForEvilTeamLeader("Galactic Boss", [], true)
+    .initForEvilTeamLeader("Galactic Boss", [])
     .setMixedBattleBgm("battle_galactic_boss")
     .setVictoryBgm("victory_team_plasma")
     /*.setPartyMemberFunc(
@@ -5986,7 +5997,7 @@ export const trainerConfigs: TrainerConfigs = {
     )*/,
   [TrainerType.GHETSIS_2]: new TrainerConfig(++t)
     .setName("Ghetsis")
-    .initForEvilTeamLeader("Plasma Boss", [], true)
+    .initForEvilTeamLeader("Plasma Boss", [])
     .setMixedBattleBgm("battle_plasma_boss")
     .setVictoryBgm("victory_team_plasma")
     /*.setPartyMemberFunc(
@@ -6041,15 +6052,15 @@ export const trainerConfigs: TrainerConfigs = {
     .setVictoryBgm("victory_team_plasma")
     /*.setPartyMemberFunc(0, getRandomPartyMemberFunc([SpeciesId.MIENSHAO]))
     .setPartyMemberFunc(1, getRandomPartyMemberFunc([SpeciesId.HONCHKROW, SpeciesId.TALONFLAME]))
+    .setPartyMemberFunc(2, getRandomPartyMemberFunc([SpeciesId.MALAMAR]))
+    .setPartyMemberFunc(3, getRandomPartyMemberFunc([SpeciesId.AEGISLASH, SpeciesId.HISUI_GOODRA]))
     .setPartyMemberFunc(
-      2,
+      4,
       getRandomPartyMemberFunc([SpeciesId.PYROAR], TrainerSlot.TRAINER, true, p => {
         p.generateAndPopulateMoveset();
         p.gender = Gender.MALE;
       }),
     )
-    .setPartyMemberFunc(3, getRandomPartyMemberFunc([SpeciesId.MALAMAR]))
-    .setPartyMemberFunc(4, getRandomPartyMemberFunc([SpeciesId.AEGISLASH, SpeciesId.HISUI_GOODRA]))
     .setPartyMemberFunc(
       5,
       getRandomPartyMemberFunc([SpeciesId.GYARADOS], TrainerSlot.TRAINER, true, p => {
@@ -6063,7 +6074,7 @@ export const trainerConfigs: TrainerConfigs = {
     )*/,
   [TrainerType.LYSANDRE_2]: new TrainerConfig(++t)
     .setName("Lysandre")
-    .initForEvilTeamLeader("Flare Boss", [], true)
+    .initForEvilTeamLeader("Flare Boss", [])
     .setMixedBattleBgm("battle_flare_boss")
     .setVictoryBgm("victory_team_plasma")
     /*.setPartyMemberFunc(
@@ -6130,7 +6141,7 @@ export const trainerConfigs: TrainerConfigs = {
     )*/,
   [TrainerType.LUSAMINE_2]: new TrainerConfig(++t)
     .setName("Lusamine")
-    .initForEvilTeamLeader("Aether Boss", [], true)
+    .initForEvilTeamLeader("Aether Boss", [])
     .setMixedBattleBgm("battle_aether_boss")
     .setVictoryBgm("victory_team_plasma")
     /*.setPartyMemberFunc(
@@ -6232,7 +6243,7 @@ export const trainerConfigs: TrainerConfigs = {
     )*/,
   [TrainerType.GUZMA_2]: new TrainerConfig(++t)
     .setName("Guzma")
-    .initForEvilTeamLeader("Skull Boss", [], true)
+    .initForEvilTeamLeader("Skull Boss", [])
     .setMixedBattleBgm("battle_skull_boss")
     .setVictoryBgm("victory_team_plasma")
     /*.setPartyMemberFunc(
@@ -6350,7 +6361,7 @@ export const trainerConfigs: TrainerConfigs = {
     )*/,
   [TrainerType.ROSE_2]: new TrainerConfig(++t)
     .setName("Rose")
-    .initForEvilTeamLeader("Macro Boss", [], true)
+    .initForEvilTeamLeader("Macro Boss", [])
     .setMixedBattleBgm("battle_macro_boss")
     .setVictoryBgm("victory_team_plasma")
     /*.setPartyMemberFunc(
@@ -6436,7 +6447,7 @@ export const trainerConfigs: TrainerConfigs = {
     .setInstantTera(4), // Tera Fairy Sylveon
   [TrainerType.PENNY_2]: new TrainerConfig(++t)
     .setName("Cassiopeia")
-    .initForEvilTeamLeader("Star Boss", [], true)
+    .initForEvilTeamLeader("Star Boss", [])
     .setMixedBattleBgm("battle_star_boss")
     .setVictoryBgm("victory_team_plasma")
     /*.setPartyMemberFunc(
@@ -6762,20 +6773,20 @@ export const trainerConfigs: TrainerConfigs = {
     .setEncounterBgm(TrainerType.ACE_TRAINER)
     .setLocalizedName("Expert Pokemon Breeder")
     .setPartyTemplates(new TrainerPartyTemplate(3, PartyMemberStrength.WEAK)),
-  [TrainerType.FUTURE_SELF_M]: new TrainerConfig(++t)
+  [TrainerType.PLAYER_M_ALTERNATE]: new TrainerConfig(++t)
     .setMoneyMultiplier(0)
     .setEncounterBgm("mystery_encounter_weird_dream")
     .setBattleBgm("mystery_encounter_weird_dream")
     .setMixedBattleBgm("mystery_encounter_weird_dream")
     .setVictoryBgm("mystery_encounter_weird_dream")
-    .setLocalizedName("Future Self M")
+    .setLocalizedName("Alternate Player M")
     .setPartyTemplates(new TrainerPartyTemplate(6, PartyMemberStrength.STRONG)),
-  [TrainerType.FUTURE_SELF_F]: new TrainerConfig(++t)
+  [TrainerType.PLAYER_F_ALTERNATE]: new TrainerConfig(++t)
     .setMoneyMultiplier(0)
     .setEncounterBgm("mystery_encounter_weird_dream")
     .setBattleBgm("mystery_encounter_weird_dream")
     .setMixedBattleBgm("mystery_encounter_weird_dream")
     .setVictoryBgm("mystery_encounter_weird_dream")
-    .setLocalizedName("Future Self F")
+    .setLocalizedName("Alternate Player  F")
     .setPartyTemplates(new TrainerPartyTemplate(6, PartyMemberStrength.STRONG)),
 };
