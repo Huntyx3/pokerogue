@@ -293,69 +293,101 @@ export const classicFixedBattles: FixedBattleConfigs = {
   [ClassicFixedBossWaves.ELITE_FOUR_1]: new FixedBattleConfig()
     .setBattleType(BattleType.TRAINER)
     .setGetTrainerFunc(
-      getRandomTrainerFunc([
+      getRandomTrainerFunc([[
         TrainerType.LORELEI,
+        TrainerType.BRUNO,
+        TrainerType.AGATHA,
+        TrainerType.LANCE,
         TrainerType.WILL,
-        TrainerType.SIDNEY,
+        TrainerType.KOGA,
+        TrainerType.KAREN,
         TrainerType.AARON,
-        TrainerType.SHAUNTAL,
-        TrainerType.MALVA,
-        [TrainerType.HALA, TrainerType.MOLAYNE],
-        [TrainerType.MARNIE_ELITE, TrainerType.BEDE_ELITE],
-        TrainerType.RIKA,
-        TrainerType.CRISPIN,
-      ]),
+        TrainerType.BERTHA,
+        TrainerType.FLINT,
+        TrainerType.SIEBOLD,
+        TrainerType.WIKSTROM,
+        TrainerType.OLIVIA,
+        TrainerType.KAHILI,
+        TrainerType.LARRY_ELITE,
+        TrainerType.LACEY,
+        TrainerType.GARDENIA,
+        TrainerType.VOLKNER,
+      ]]),
     ),
   [ClassicFixedBossWaves.ELITE_FOUR_2]: new FixedBattleConfig()
     .setBattleType(BattleType.TRAINER)
     .setSeedOffsetWave(ClassicFixedBossWaves.ELITE_FOUR_1)
     .setGetTrainerFunc(
-      getRandomTrainerFunc([
+      getRandomTrainerFunc([[
         TrainerType.BRUNO,
+        TrainerType.AGATHA,
+        TrainerType.LANCE,
+        TrainerType.WILL,
         TrainerType.KOGA,
-        TrainerType.PHOEBE,
+        TrainerType.KAREN,
+        TrainerType.AARON,
         TrainerType.BERTHA,
-        TrainerType.MARSHAL,
+        TrainerType.FLINT,
         TrainerType.SIEBOLD,
+        TrainerType.WIKSTROM,
         TrainerType.OLIVIA,
-        TrainerType.NESSA_ELITE,
-        TrainerType.POPPY,
-        TrainerType.AMARYS,
-      ]),
+        TrainerType.KAHILI,
+        TrainerType.LARRY_ELITE,
+        TrainerType.LACEY,
+        TrainerType.GARDENIA,
+        TrainerType.VOLKNER,
+        TrainerType.LORELEI,
+      ]]),
     ),
   [ClassicFixedBossWaves.ELITE_FOUR_3]: new FixedBattleConfig()
     .setBattleType(BattleType.TRAINER)
     .setSeedOffsetWave(ClassicFixedBossWaves.ELITE_FOUR_1)
     .setGetTrainerFunc(
-      getRandomTrainerFunc([
+      getRandomTrainerFunc([[
         TrainerType.AGATHA,
-        TrainerType.BRUNO,
-        TrainerType.GLACIA,
+        TrainerType.LANCE,
+        TrainerType.WILL,
+        TrainerType.KOGA,
+        TrainerType.KAREN,
+        TrainerType.AARON,
+        TrainerType.BERTHA,
         TrainerType.FLINT,
-        TrainerType.GRIMSLEY,
+        TrainerType.SIEBOLD,
         TrainerType.WIKSTROM,
-        TrainerType.ACEROLA,
-        [TrainerType.BEA_ELITE, TrainerType.ALLISTER_ELITE],
+        TrainerType.OLIVIA,
+        TrainerType.KAHILI,
         TrainerType.LARRY_ELITE,
         TrainerType.LACEY,
-      ]),
+        TrainerType.GARDENIA,
+        TrainerType.VOLKNER,
+        TrainerType.LORELEI,
+        TrainerType.BRUNO,
+      ]]),
     ),
   [ClassicFixedBossWaves.ELITE_FOUR_4]: new FixedBattleConfig()
     .setBattleType(BattleType.TRAINER)
     .setSeedOffsetWave(ClassicFixedBossWaves.ELITE_FOUR_1)
     .setGetTrainerFunc(
-      getRandomTrainerFunc([
+      getRandomTrainerFunc([[
         TrainerType.LANCE,
+        TrainerType.WILL,
+        TrainerType.KOGA,
         TrainerType.KAREN,
-        TrainerType.DRAKE,
-        TrainerType.LUCIAN,
-        TrainerType.CAITLIN,
-        TrainerType.DRASNA,
+        TrainerType.AARON,
+        TrainerType.BERTHA,
+        TrainerType.FLINT,
+        TrainerType.SIEBOLD,
+        TrainerType.WIKSTROM,
+        TrainerType.OLIVIA,
         TrainerType.KAHILI,
-        TrainerType.RAIHAN_ELITE,
-        TrainerType.HASSEL,
-        TrainerType.DRAYTON,
-      ]),
+        TrainerType.LARRY_ELITE,
+        TrainerType.LACEY,
+        TrainerType.GARDENIA,
+        TrainerType.VOLKNER,
+        TrainerType.LORELEI,
+        TrainerType.BRUNO,
+        TrainerType.AGATHA,
+      ]]),
     ),
   [ClassicFixedBossWaves.CHAMPION]: new FixedBattleConfig()
     .setBattleType(BattleType.TRAINER)

@@ -635,56 +635,92 @@ export class SingleGenerationChallenge extends Challenge {
           });
         return true;
       case ClassicFixedBossWaves.ELITE_FOUR_1:
-        trainerTypes = [
+        trainerTypes = [[
           TrainerType.LORELEI,
+          TrainerType.BRUNO,
+          TrainerType.AGATHA,
+          TrainerType.LANCE,
           TrainerType.WILL,
-          TrainerType.SIDNEY,
+          TrainerType.KOGA,
+          TrainerType.KAREN,
           TrainerType.AARON,
-          TrainerType.SHAUNTAL,
-          TrainerType.MALVA,
-          randSeedItem([TrainerType.HALA, TrainerType.MOLAYNE]),
-          randSeedItem([TrainerType.MARNIE_ELITE, TrainerType.BEDE_ELITE]),
-          TrainerType.RIKA,
-        ];
+          TrainerType.BERTHA,
+          TrainerType.FLINT,
+          TrainerType.SIEBOLD,
+          TrainerType.WIKSTROM,
+          TrainerType.OLIVIA,
+          TrainerType.KAHILI,
+          TrainerType.LARRY_ELITE,
+          TrainerType.LACEY,
+          TrainerType.GARDENIA,
+          TrainerType.VOLKNER,
+        ]];
         break;
       case ClassicFixedBossWaves.ELITE_FOUR_2:
-        trainerTypes = [
+        trainerTypes = [[
+          TrainerType.LORELEI,
           TrainerType.BRUNO,
+          TrainerType.AGATHA,
+          TrainerType.LANCE,
+          TrainerType.WILL,
           TrainerType.KOGA,
-          TrainerType.PHOEBE,
+          TrainerType.KAREN,
+          TrainerType.AARON,
           TrainerType.BERTHA,
-          TrainerType.MARSHAL,
+          TrainerType.FLINT,
           TrainerType.SIEBOLD,
+          TrainerType.WIKSTROM,
           TrainerType.OLIVIA,
-          TrainerType.NESSA_ELITE,
-          TrainerType.POPPY,
-        ];
+          TrainerType.KAHILI,
+          TrainerType.LARRY_ELITE,
+          TrainerType.LACEY,
+          TrainerType.GARDENIA,
+          TrainerType.VOLKNER,
+        ]];
         break;
       case ClassicFixedBossWaves.ELITE_FOUR_3:
-        trainerTypes = [
-          TrainerType.AGATHA,
+        trainerTypes = [[
+          TrainerType.LORELEI,
           TrainerType.BRUNO,
-          TrainerType.GLACIA,
+          TrainerType.AGATHA,
+          TrainerType.LANCE,
+          TrainerType.WILL,
+          TrainerType.KOGA,
+          TrainerType.KAREN,
+          TrainerType.AARON,
+          TrainerType.BERTHA,
           TrainerType.FLINT,
-          TrainerType.GRIMSLEY,
+          TrainerType.SIEBOLD,
           TrainerType.WIKSTROM,
-          TrainerType.ACEROLA,
-          randSeedItem([TrainerType.BEA_ELITE, TrainerType.ALLISTER_ELITE]),
+          TrainerType.OLIVIA,
+          TrainerType.KAHILI,
           TrainerType.LARRY_ELITE,
-        ];
+          TrainerType.LACEY,
+          TrainerType.GARDENIA,
+          TrainerType.VOLKNER,
+        ]];
         break;
       case ClassicFixedBossWaves.ELITE_FOUR_4:
-        trainerTypes = [
+        trainerTypes = [[
+          TrainerType.LORELEI,
+          TrainerType.BRUNO,
+          TrainerType.AGATHA,
           TrainerType.LANCE,
+          TrainerType.WILL,
+          TrainerType.KOGA,
           TrainerType.KAREN,
-          TrainerType.DRAKE,
-          TrainerType.LUCIAN,
-          TrainerType.CAITLIN,
-          TrainerType.DRASNA,
+          TrainerType.AARON,
+          TrainerType.BERTHA,
+          TrainerType.FLINT,
+          TrainerType.SIEBOLD,
+          TrainerType.WIKSTROM,
+          TrainerType.OLIVIA,
           TrainerType.KAHILI,
-          TrainerType.RAIHAN_ELITE,
-          TrainerType.HASSEL,
-        ];
+          TrainerType.LARRY_ELITE,
+          TrainerType.LACEY,
+          TrainerType.GARDENIA,
+          TrainerType.VOLKNER,
+        ]];
         break;
       case ClassicFixedBossWaves.CHAMPION:
         trainerTypes = [

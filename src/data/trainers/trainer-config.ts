@@ -3435,7 +3435,7 @@ export const trainerConfigs: TrainerConfigs = {
     .setBattleBgm("battle_sinnoh_gym")
     .setMixedBattleBgm("battle_sinnoh_gym"),
   [TrainerType.GARDENIA]: new TrainerConfig(++t)
-    .initForGymLeader(signatureSpecies["GARDENIA"], false, PokemonType.GRASS, false, -1)
+    .initForEliteFour(signatureSpecies["GARDENIA"], false, PokemonType.GRASS, -1)
     .setBattleBgm("battle_sinnoh_gym")
     .setMixedBattleBgm("battle_sinnoh_gym"),
   [TrainerType.MAYLENE]: new TrainerConfig(++t)
@@ -3459,7 +3459,7 @@ export const trainerConfigs: TrainerConfigs = {
     .setBattleBgm("battle_sinnoh_gym")
     .setMixedBattleBgm("battle_sinnoh_gym"),
   [TrainerType.VOLKNER]: new TrainerConfig(++t)
-    .initForGymLeader(signatureSpecies["VOLKNER"], true, PokemonType.ELECTRIC, false, -1)
+    .initForEliteFour(signatureSpecies["VOLKNER"], true, PokemonType.ELECTRIC, -1)
     .setBattleBgm("battle_sinnoh_gym")
     .setMixedBattleBgm("battle_sinnoh_gym"),
   [TrainerType.CILAN]: new TrainerConfig(++t)
@@ -4502,7 +4502,7 @@ export const trainerConfigs: TrainerConfigs = {
     )*/,
   [TrainerType.LARRY_ELITE]: new TrainerConfig(++t)
     .setName("Larry")
-    .initForEliteFour(signatureSpecies["LARRY_ELITE"], true, PokemonType.FLYING, 4)
+    .initForEliteFour(signatureSpecies["LARRY_ELITE"], true, PokemonType.NORMAL, 4)
     .setMixedBattleBgm("battle_paldea_elite")
     /*.setPartyMemberFunc(0, getRandomPartyMemberFunc([SpeciesId.ALTARIA]))
     .setPartyMemberFunc(

@@ -2875,6 +2875,8 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.FURRET]: [
     [ EVOLVE_MOVE, MoveId.AGILITY ],
+    [ RELEARN_MOVE, MoveId.RETURN ], // TM
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
     [ 1, MoveId.SCRATCH ],
     [ 1, MoveId.QUICK_ATTACK ],
     [ 1, MoveId.DEFENSE_CURL ],
@@ -2908,6 +2910,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 39, MoveId.DREAM_EATER ],
   ],
   [SpeciesId.NOCTOWL]: [
+    [ RELEARN_MOVE, MoveId.NASTY_PLOT ], // TM
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.GROWL ],
     [ 1, MoveId.PECK ],
@@ -3038,6 +3041,10 @@ export const pokemonSpeciesLevelMoves = {
     [ EVOLVE_MOVE, MoveId.STOCKPILE ],
     [ EVOLVE_MOVE, MoveId.SPIT_UP ],
     [ EVOLVE_MOVE, MoveId.SWALLOW ],
+    [ RELEARN_MOVE, MoveId.SURF ], // TM
+    [ RELEARN_MOVE, MoveId.ICE_BEAM ], // TM
+    [ RELEARN_MOVE, MoveId.CHARGE_BEAM ], // TM
+    [ RELEARN_MOVE, MoveId.AGILITY ], // TM
     [ 1, MoveId.SUPERSONIC ],
     [ 1, MoveId.WATER_GUN ],
     [ 1, MoveId.SPOTLIGHT ],
@@ -18722,6 +18729,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.HISUI_TYPHLOSION]: [
     [ EVOLVE_MOVE, MoveId.INFERNAL_PARADE ],
+    [ RELEARN_MOVE, MoveId.SHADOW_BALL ], // TM
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.DOUBLE_EDGE ],
     [ 1, MoveId.LEER ],
