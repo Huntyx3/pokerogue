@@ -3141,6 +3141,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.XATU]: [
     [ EVOLVE_MOVE, MoveId.AIR_SLASH ],
+    [ RELEARN_MOVE, MoveId.HEAT_WAVE ], // TM
     [ 1, MoveId.LEER ],
     [ 1, MoveId.PECK ],
     [ 1, MoveId.TELEPORT ],
