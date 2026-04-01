@@ -15,22 +15,6 @@ const pokemonPool: BiomePokemonPools = {
     [TimeOfDay.DUSK]: [],
     [TimeOfDay.NIGHT]: [],
     [TimeOfDay.ALL]: [
-      
-    ],
-  },
-  [BiomePoolTier.UNCOMMON]: {
-    [TimeOfDay.DAWN]: [],
-    [TimeOfDay.DAY]: [],
-    [TimeOfDay.DUSK]: [],
-    [TimeOfDay.NIGHT]: [],
-    [TimeOfDay.ALL]: [],
-  },
-  [BiomePoolTier.RARE]: {
-    [TimeOfDay.DAWN]: [],
-    [TimeOfDay.DAY]: [],
-    [TimeOfDay.DUSK]: [],
-    [TimeOfDay.NIGHT]: [],
-    [TimeOfDay.ALL]: [
       SpeciesId.VENUSAUR,
       SpeciesId.CHARIZARD,
       SpeciesId.BLASTOISE,
@@ -512,7 +496,21 @@ const pokemonPool: BiomePokemonPools = {
       SpeciesId.HISUI_AVALUGG,
       SpeciesId.HISUI_DECIDUEYE,
       SpeciesId.PALDEA_TAUROS,
-        ],
+    ],
+  },
+  [BiomePoolTier.UNCOMMON]: {
+    [TimeOfDay.DAWN]: [],
+    [TimeOfDay.DAY]: [],
+    [TimeOfDay.DUSK]: [],
+    [TimeOfDay.NIGHT]: [],
+    [TimeOfDay.ALL]: [],
+  },
+  [BiomePoolTier.RARE]: {
+    [TimeOfDay.DAWN]: [],
+    [TimeOfDay.DAY]: [],
+    [TimeOfDay.DUSK]: [],
+    [TimeOfDay.NIGHT]: [],
+    [TimeOfDay.ALL]: [],
   },
   [BiomePoolTier.SUPER_RARE]: {
     [TimeOfDay.DAWN]: [],

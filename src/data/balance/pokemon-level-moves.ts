@@ -8280,6 +8280,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.TOGEKISS]: [
     [ EVOLVE_MOVE, MoveId.AIR_SLASH ],
+    [ RELEARN_MOVE, MoveId.ENDURE ], // TM
     [ 1, MoveId.POUND ],
     [ 1, MoveId.DOUBLE_EDGE ],
     [ 1, MoveId.GROWL ],
