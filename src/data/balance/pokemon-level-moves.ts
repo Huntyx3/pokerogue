@@ -3192,6 +3192,8 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.AMPHAROS]: [
     [ EVOLVE_MOVE, MoveId.THUNDER_PUNCH ],
+    [ RELEARN_MOVE, MoveId.CHARGE_BEAM ], // TM
+    [ RELEARN_MOVE, MoveId.TRAILBLAZE ], // TM
     [ 1, MoveId.FIRE_PUNCH ],
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.GROWL ],
@@ -3352,6 +3354,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 44, MoveId.MEMENTO ],
   ],
   [SpeciesId.JUMPLUFF]: [
+    [ RELEARN_MOVE, MoveId.SWORDS_DANCE ], // TM
     [ 1, MoveId.TAIL_WHIP ],
     [ 1, MoveId.ABSORB ],
     [ 1, MoveId.SPLASH ],
@@ -3404,6 +3407,8 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.SUNFLORA]: [
     [ RELEARN_MOVE, MoveId.SEED_BOMB ], // Previous Stage Move
+    [ RELEARN_MOVE, MoveId.EARTH_POWER ], // TM
+    [ RELEARN_MOVE, MoveId.TRAILBLAZE ], // TM
     [ 1, MoveId.POUND ],
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.GROWTH ],
@@ -3457,6 +3462,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 40, MoveId.EARTHQUAKE ],
   ],
   [SpeciesId.QUAGSIRE]: [
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
     [ 1, MoveId.TAIL_WHIP ],
     [ 1, MoveId.WATER_GUN ],
     [ 1, MoveId.RAIN_DANCE ],
@@ -7487,6 +7493,10 @@ export const pokemonSpeciesLevelMoves = {
     [ 53, MoveId.MEMENTO ],
   ],
   [SpeciesId.AMBIPOM]: [
+    [ RELEARN_MOVE, MoveId.TAIL_SLAP ], // TM
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
+    [ RELEARN_MOVE, MoveId.DOUBLE_EDGE ], // TM
+    [ RELEARN_MOVE, MoveId.ENDURE ], // TM
     [ 1, MoveId.SCRATCH ],
     [ 1, MoveId.SAND_ATTACK ],
     [ 1, MoveId.TAIL_WHIP ],
@@ -7582,6 +7592,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 56, MoveId.HIGH_JUMP_KICK ],
   ],
   [SpeciesId.MISMAGIUS]: [
+    [ RELEARN_MOVE, MoveId.CHARGE_BEAM ], // TM
     // Previous Stage Relearn Learnset
     [ RELEARN_MOVE, MoveId.CONFUSION ],
     [ RELEARN_MOVE, MoveId.CONFUSE_RAY ],
@@ -8304,6 +8315,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.YANMEGA]: [
     [ RELEARN_MOVE, MoveId.HYPNOSIS ],
+    [ RELEARN_MOVE, MoveId.ENDURE ], // TM
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.DOUBLE_TEAM ],
     [ 1, MoveId.AIR_CUTTER ], // Previous Stage Move
@@ -17087,6 +17099,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.CLODSIRE]: [
     [ EVOLVE_MOVE, MoveId.AMNESIA ],
+    [ RELEARN_MOVE, MoveId.GUNK_SHOT ], // TM
     [ 1, MoveId.TACKLE ], // Previous Stage Move
     [ 1, MoveId.TAIL_WHIP ],
     [ 1, MoveId.POISON_STING ],
@@ -17102,6 +17115,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 48, MoveId.EARTHQUAKE ],
   ],
   [SpeciesId.FARIGIRAF]: [
+    [ RELEARN_MOVE, MoveId.TRAILBLAZE ], // TM
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.GROWL ],
     [ 1, MoveId.ASTONISH ],

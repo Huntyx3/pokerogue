@@ -57,11 +57,12 @@ const overrides = {
   //ITEM_REWARD_OVERRIDE: [{name: "TERA_SHARD", type: PokemonType.GHOST}],
   //ABILITY_OVERRIDE: AbilityId.INNER_FOCUS,
   //STARTING_HELD_ITEMS_OVERRIDE: [{name: "BERRY", type: BerryType.LEPPA, count: 99999}], // For Ditto
-  //ENEMY_SPECIES_OVERRIDE: SpeciesId.BLISSEY,
+  //ENEMY_SPECIES_OVERRIDE: SpeciesId.DITTO,
   //STARTING_LEVEL_OVERRIDE: 100,
   //ENEMY_LEVEL_OVERRIDE: 100,
+  //ENEMY_ABILITY_OVERRIDE: AbilityId.FOREWARN,
   //STARTING_HELD_ITEMS_OVERRIDE: [{name: "MULTI_LENS", count: 2}],
-  //MOVESET_OVERRIDE: [MoveId.SEISMIC_TOSS],
+  //MOVESET_OVERRIDE: [MoveId.GEOMANCY, MoveId.DRAIN_PUNCH, MoveId.POWER_TRIP, MoveId.STORED_POWER],
 
 } satisfies Partial<InstanceType<OverridesType>>;
 
