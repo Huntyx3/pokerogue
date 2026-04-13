@@ -4028,6 +4028,8 @@ export const pokemonSpeciesLevelMoves = {
     [ 54, MoveId.HYPER_BEAM ],
   ],
   [SpeciesId.DELIBIRD]: [
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
+    [ RELEARN_MOVE, MoveId.TRAILBLAZE ], // TM
     [ 1, MoveId.PRESENT ],
     [ 1, MoveId.PECK ],
     [ 15, MoveId.ICY_WIND ],
