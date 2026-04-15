@@ -251,7 +251,7 @@ export const starterPassiveAbilities: StarterPassiveAbilities = {
   [SpeciesId.CORSOLA]: { 0: AbilityId.SIMPLE },
   [SpeciesId.REMORAID]: { 0: AbilityId.SIMPLE },
   [SpeciesId.OCTILLERY]: { 0: AbilityId.SIMPLE },
-  [SpeciesId.DELIBIRD]: { 0: AbilityId.HUGE_POWER },
+  [SpeciesId.DELIBIRD]: { 0: AbilityId.SIMPLE },
   [SpeciesId.SKARMORY]: { 0: AbilityId.TOUGH_CLAWS },
   [SpeciesId.HOUNDOUR]: { 0: AbilityId.BALL_FETCH },
   [SpeciesId.HOUNDOOM]: { 0: AbilityId.LIGHTNING_ROD, 1: AbilityId.LIGHTNING_ROD },

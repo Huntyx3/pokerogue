@@ -4029,7 +4029,6 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.DELIBIRD]: [
     [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
-    [ RELEARN_MOVE, MoveId.TRAILBLAZE ], // TM
     [ 1, MoveId.PRESENT ],
     [ 1, MoveId.PECK ],
     [ 15, MoveId.ICY_WIND ],
@@ -4098,6 +4097,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 56, MoveId.INFERNO ],
   ],
   [SpeciesId.HOUNDOOM]: [
+    [ RELEARN_MOVE, MoveId.FIRE_BLAST ], // TM
     [ 1, MoveId.LEER ],
     [ 1, MoveId.EMBER ],
     [ 1, MoveId.SMOG ],
