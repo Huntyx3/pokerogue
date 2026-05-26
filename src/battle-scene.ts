@@ -1784,9 +1784,6 @@ export class BattleScene extends SceneBase {
       case SpeciesId.METAGROSS:
       case SpeciesId.LATIAS:
       case SpeciesId.LATIOS:
-      case SpeciesId.KYOGRE:
-      case SpeciesId.GROUDON:
-      case SpeciesId.RAYQUAZA:
       case SpeciesId.LOPUNNY:
       case SpeciesId.GARCHOMP:
       case SpeciesId.LUCARIO:
@@ -1814,26 +1811,44 @@ export class BattleScene extends SceneBase {
       case SpeciesId.DURALUDON:
       case SpeciesId.ZACIAN:
       case SpeciesId.ZAMAZENTA:
-        if (this.currentBattle?.waveIndex < 94) {
+        if (this.currentBattle?.waveIndex < 95) {
           return 0
         }
           return 1;
       case SpeciesId.VENUSAUR:
       case SpeciesId.BLASTOISE:
       case SpeciesId.GENGAR:
-      case SpeciesId.MEWTWO:
       case SpeciesId.KYUREM:
       case SpeciesId.CALYREX:
-        if (this.currentBattle?.waveIndex < 94) {
+        if (this.currentBattle?.waveIndex < 95) {
           return 0
         }
           return randSeedInt (2 , 1);
       case SpeciesId.CHARIZARD:
-      case SpeciesId.NECROZMA:
-        if (this.currentBattle?.waveIndex < 94) {
+        if (this.currentBattle?.waveIndex < 95) {
           return 0
         }
-          return randSeedInt (3 , 1);
+          return randSeedInt (3, 1);
+      case SpeciesId.MEWTWO:
+        if (this.currentBattle?.waveIndex < 190) {
+          return 0
+        }
+          return randSeedInt (2, 1);
+      case SpeciesId.KYOGRE:
+      case SpeciesId.GROUDON:
+      case SpeciesId.RAYQUAZA:
+        if (this.currentBattle?.waveIndex < 190) {
+          return 0
+        }
+          return 1;
+      case SpeciesId.NECROZMA:
+        if (this.currentBattle?.waveIndex < 95) {
+          return 0
+        }
+        if (this.currentBattle?.waveIndex < 190) {
+          return randSeedInt (2, 1);
+        }
+          return 3;
       case SpeciesId.UNOWN:
       case SpeciesId.DEOXYS:
       case SpeciesId.BURMY:
@@ -1883,12 +1898,12 @@ export class BattleScene extends SceneBase {
       case SpeciesId.PICHU:
         return randSeedInt(8) ? 0 : 1;
       case SpeciesId.PIKACHU:
-        if (this.currentBattle?.waveIndex < 94) {
+        if (this.currentBattle?.waveIndex < 95) {
           return randSeedInt(8)
         }
           return 8;
       case SpeciesId.EEVEE:
-        if (this.currentBattle?.waveIndex < 94) {
+        if (this.currentBattle?.waveIndex < 95) {
           return randSeedInt(2)
         }
           return 2;
@@ -1897,7 +1912,7 @@ export class BattleScene extends SceneBase {
       case SpeciesId.GRENINJA:
         return randSeedInt(2);
       case SpeciesId.URSHIFU:
-        if (this.currentBattle?.waveIndex < 94) {
+        if (this.currentBattle?.waveIndex < 190) {
           return randSeedInt(2)
         }
           return randSeedInt(2 , 2);
@@ -1907,7 +1922,7 @@ export class BattleScene extends SceneBase {
       case SpeciesId.MINIOR:
         return randSeedInt(7);
       case SpeciesId.ALCREMIE:
-        if (this.currentBattle?.waveIndex < 94) {
+        if (this.currentBattle?.waveIndex < 95) {
           return randSeedInt(9)
         }
           return 9;

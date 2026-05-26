@@ -168,7 +168,7 @@ export const ATrainersTestEncounter: MysteryEncounter = MysteryEncounterBuilder.
           guaranteedModifierTiers: [ModifierTier.ROGUE, ModifierTier.ROGUE],
           fillRemaining: true,
         },
-        [eggOptions],
+        //[eggOptions],
       );
       await initBattleWithEnemyConfig(config);
     },

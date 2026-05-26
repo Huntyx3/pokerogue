@@ -7,7 +7,6 @@
 import { EVOLVE_MOVE, RELEARN_MOVE } from "#app/constants";
 import { MoveId } from "#enums/move-id";
 import { SpeciesId } from "#enums/species-id";
-import { Move } from "#types/move-types";
 import type { PokemonSpeciesFormLevelMoves, PokemonSpeciesLevelMoves } from "#types/pokemon-level-moves";
 
 export const pokemonSpeciesLevelMoves = {
@@ -1846,6 +1845,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.HITMONLEE]: [
     [ EVOLVE_MOVE, MoveId.BRICK_BREAK ],
+    [ RELEARN_MOVE, MoveId.THROAT_CHOP ], // TM
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.FOCUS_ENERGY ],
     [ 1, MoveId.FAKE_OUT ],
@@ -2184,6 +2184,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 44, MoveId.SWORDS_DANCE ],
   ],
   [SpeciesId.JYNX]: [
+    [ RELEARN_MOVE, MoveId.ICE_BEAM ], // TM
     [ 1, MoveId.POUND ],
     [ 1, MoveId.LICK ],
     [ 1, MoveId.POWDER_SNOW ],
@@ -4237,6 +4238,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.HITMONTOP]: [
     [ EVOLVE_MOVE, MoveId.TRIPLE_KICK ],
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.FOCUS_ENERGY ],
     [ 1, MoveId.RAPID_SPIN ],
@@ -4309,6 +4311,10 @@ export const pokemonSpeciesLevelMoves = {
     [ 48, MoveId.FIRE_BLAST ],
   ],
   [SpeciesId.MILTANK]: [
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
+    [ RELEARN_MOVE, MoveId.RETURN ], // TM
+    [ RELEARN_MOVE, MoveId.DOUBLE_EDGE ], // TM
+    [ RELEARN_MOVE, MoveId.EARTHQUAKE ], // TM
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.GROWL ],
     [ 5, MoveId.ROLLOUT ],
@@ -4346,6 +4352,8 @@ export const pokemonSpeciesLevelMoves = {
     [ 52, MoveId.HEALING_WISH ],
   ],
   [SpeciesId.RAIKOU]: [
+    [ RELEARN_MOVE, MoveId.AURA_SPHERE ], // TM
+    [ RELEARN_MOVE, MoveId.CHARGE_BEAM ], // TM
     [ 1, MoveId.LEER ],
     [ 1, MoveId.THUNDER_SHOCK ],
     [ 1, MoveId.QUICK_ATTACK ],
@@ -4368,6 +4376,7 @@ export const pokemonSpeciesLevelMoves = {
   [SpeciesId.ENTEI]: [
     [ RELEARN_MOVE, MoveId.SACRED_FIRE ],
     [ RELEARN_MOVE, MoveId.EXTREME_SPEED ],
+    [ RELEARN_MOVE, MoveId.STONE_EDGE ], // TM
     [ 1, MoveId.STOMP ],
     [ 1, MoveId.LEER ],
     [ 1, MoveId.EMBER ],
@@ -4389,6 +4398,7 @@ export const pokemonSpeciesLevelMoves = {
   [SpeciesId.SUICUNE]: [
     [ RELEARN_MOVE, MoveId.EXTREME_SPEED ],
     [ RELEARN_MOVE, MoveId.SHEER_COLD ],
+    [ RELEARN_MOVE, MoveId.ICE_BEAM ], // TM
     [ 1, MoveId.GUST ],
     [ 1, MoveId.LEER ],
     [ 1, MoveId.MIST ],
@@ -4470,6 +4480,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.LUGIA]: [
     [ RELEARN_MOVE, MoveId.DRAGON_RUSH ],
+    [ RELEARN_MOVE, MoveId.CHARGE_BEAM ], // TM
     [ 1, MoveId.GUST ],
     [ 1, MoveId.WHIRLWIND ],
     [ 1, MoveId.ANCIENT_POWER ],
@@ -4486,6 +4497,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 90, MoveId.SKY_ATTACK ],
   ],
   [SpeciesId.HO_OH]: [
+    [ RELEARN_MOVE, MoveId.EARTHQUAKE ], // TM
     [ 1, MoveId.GUST ],
     [ 1, MoveId.WHIRLWIND ],
     [ 1, MoveId.ANCIENT_POWER ],
@@ -4503,6 +4515,8 @@ export const pokemonSpeciesLevelMoves = {
     [ 99, MoveId.OVERHEAT ],
   ],
   [SpeciesId.CELEBI]: [
+    [ RELEARN_MOVE, MoveId.CHARGE_BEAM ], // TM
+    [ RELEARN_MOVE, MoveId.AURA_SPHERE ], // TM
     [ 1, MoveId.CONFUSION ],
     [ 1, MoveId.HEAL_BELL ],
     [ 10, MoveId.MAGICAL_LEAF ],
@@ -15710,6 +15724,8 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.WYRDEER]: [
     [ EVOLVE_MOVE, MoveId.PSYSHIELD_BASH ],
+    [ RELEARN_MOVE, MoveId.RETURN ], // TM
+    [ RELEARN_MOVE, MoveId.EARTHQUAKE ], // TM
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.ME_FIRST ], // Previous Stage Move
     [ 3, MoveId.LEER ],
