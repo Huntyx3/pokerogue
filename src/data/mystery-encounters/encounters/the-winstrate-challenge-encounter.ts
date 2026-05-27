@@ -5,23 +5,14 @@ import { modifierTypes } from "#data/data-lists";
 import { SpeciesFormChangeAbilityTrigger } from "#data/form-change-triggers";
 import { AbilityId } from "#enums/ability-id";
 import { BattlerTagType } from "#enums/battler-tag-type";
-import { BerryType } from "#enums/berry-type";
-import { ModifierTier } from "#enums/modifier-tier";
-import { MoveId } from "#enums/move-id";
 import { MysteryEncounterMode } from "#enums/mystery-encounter-mode";
 import { MysteryEncounterTier } from "#enums/mystery-encounter-tier";
 import { MysteryEncounterType } from "#enums/mystery-encounter-type";
-import { Nature } from "#enums/nature";
-import { PokemonType } from "#enums/pokemon-type";
 import { SpeciesId } from "#enums/species-id";
-import { Stat } from "#enums/stat";
 import { TrainerType } from "#enums/trainer-type";
-import type { PokemonHeldItemModifierType } from "#modifiers/modifier-type";
 import { showEncounterDialogue, showEncounterText } from "#mystery-encounters/encounter-dialogue-utils";
 import type { EnemyPartyConfig } from "#mystery-encounters/encounter-phase-utils";
 import {
-  generateModifierType,
-  generateModifierTypeOption,
   initBattleWithEnemyConfig,
   leaveEncounterWithoutBattle,
   setEncounterRewards,
@@ -29,7 +20,6 @@ import {
 } from "#mystery-encounters/encounter-phase-utils";
 import type { MysteryEncounter } from "#mystery-encounters/mystery-encounter";
 import { MysteryEncounterBuilder } from "#mystery-encounters/mystery-encounter";
-import { getPokemonSpecies } from "#utils/pokemon-utils";
 import i18next from "i18next";
 
 /** the i18n namespace for the encounter */
@@ -169,11 +159,15 @@ async function spawnNextTrainerOrEndEncounter() {
 
     await showEncounterDialogue(`${namespace}:victory2`, `${namespace}:speaker`);
     globalScene.ui.clearText(); // Clears "Winstrate" title from screen as rewards get animated in
-    const machoBrace = generateModifierTypeOption(modifierTypes.MYSTERY_ENCOUNTER_MACHO_BRACE)!;
-    machoBrace.type.tier = ModifierTier.MASTER;
+    //const machoBrace = generateModifierTypeOption(modifierTypes.MYSTERY_ENCOUNTER_MACHO_BRACE)!;
+    //machoBrace.type.tier = ModifierTier.MASTER;
     setEncounterRewards({
-      guaranteedModifierTypeOptions: [machoBrace],
-      fillRemaining: false,
+      guaranteedModifierTypeFuncs: [
+        modifierTypes.MINI_BLACK_HOLE,
+        modifierTypes.HEALING_CHARM,
+        modifierTypes.BERRY_POUCH,
+      ],
+      fillRemaining: true,
     });
     encounter.doContinueEncounter = undefined;
     leaveEncounterWithoutBattle(false, MysteryEncounterMode.NO_BATTLE);
