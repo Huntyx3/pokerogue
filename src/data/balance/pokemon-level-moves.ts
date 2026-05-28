@@ -4635,6 +4635,8 @@ export const pokemonSpeciesLevelMoves = {
     [ RELEARN_MOVE, MoveId.EMBER ],
     [ RELEARN_MOVE, MoveId.FLAMETHROWER ],
     [ RELEARN_MOVE, MoveId.FEATHER_DANCE ],
+    [ RELEARN_MOVE, MoveId.EARTHQUAKE ], // TM
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
     [ 1, MoveId.DOUBLE_KICK ],
     [ 1, MoveId.SCRATCH ],
     [ 1, MoveId.GROWL ],
