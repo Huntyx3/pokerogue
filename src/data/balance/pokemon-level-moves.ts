@@ -4694,6 +4694,7 @@ export const pokemonSpeciesLevelMoves = {
     [ RELEARN_MOVE, MoveId.EARTHQUAKE ],
     [ RELEARN_MOVE, MoveId.ROCK_SMASH ],
     [ RELEARN_MOVE, MoveId.HAMMER_ARM ],
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
     [ 1, MoveId.MUD_SHOT ],
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.GROWL ],
@@ -4767,6 +4768,7 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.LINOONE]: [
     [ EVOLVE_MOVE, MoveId.SLASH ],
+    [ RELEARN_MOVE, MoveId.RETURN ], // TM
     [ 1, MoveId.SAND_ATTACK ],
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.TAIL_WHIP ],
@@ -4965,6 +4967,8 @@ export const pokemonSpeciesLevelMoves = {
     [ RELEARN_MOVE, MoveId.ASTONISH ],
     [ RELEARN_MOVE, MoveId.EXTRASENSORY ],
     [ RELEARN_MOVE, MoveId.SUCKER_PUNCH ],
+    [ RELEARN_MOVE, MoveId.TRAILBLAZE ], // TM
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
     [ 1, MoveId.AIR_CUTTER ],
     [ 1, MoveId.HURRICANE ],
     [ 1, MoveId.PAYBACK ],
@@ -4986,6 +4990,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 45, MoveId.REVERSAL ],
   ],
   [SpeciesId.SWELLOW]: [
+    [ RELEARN_MOVE, MoveId.HEAT_WAVE ], // TM
     [ 1, MoveId.BRAVE_BIRD ],
     [ 1, MoveId.AIR_SLASH ],
     [ 1, MoveId.PLUCK ],
@@ -5016,6 +5021,7 @@ export const pokemonSpeciesLevelMoves = {
     [ 45, MoveId.HURRICANE ],
   ],
   [SpeciesId.PELIPPER]: [
+    [ RELEARN_MOVE, MoveId.ICE_BEAM ], // TM
     [ 1, MoveId.PROTECT ],
     [ 1, MoveId.SOAK ],
     [ 1, MoveId.QUICK_ATTACK ],
@@ -5109,6 +5115,7 @@ export const pokemonSpeciesLevelMoves = {
   [SpeciesId.MASQUERAIN]: [
     [ RELEARN_MOVE, MoveId.BATON_PASS ], // Previous Stage Move
     [ RELEARN_MOVE, MoveId.STICKY_WEB ], // Previous Stage Move
+    [ RELEARN_MOVE, MoveId.HYDRO_PUMP ], // TM
     [ 1, MoveId.WHIRLWIND ],
     [ 1, MoveId.WATER_GUN ],
     [ 1, MoveId.QUICK_ATTACK ],
@@ -5145,6 +5152,10 @@ export const pokemonSpeciesLevelMoves = {
   [SpeciesId.BRELOOM]: [
     [ EVOLVE_MOVE, MoveId.MACH_PUNCH ],
     [ RELEARN_MOVE, MoveId.SPORE ],
+    [ RELEARN_MOVE, MoveId.POWER_UP_PUNCH ], // TM
+    [ RELEARN_MOVE, MoveId.BULLDOZE ], // TM
+    [ RELEARN_MOVE, MoveId.ROCK_TOMB ], // TM
+    [ RELEARN_MOVE, MoveId.STONE_EDGE ], // TM
     [ 1, MoveId.POISON_POWDER ],
     [ 1, MoveId.GIGA_DRAIN ], // Previous Stage Move
     [ 1, MoveId.GROWTH ],
@@ -15111,6 +15122,8 @@ export const pokemonSpeciesLevelMoves = {
   ],
   [SpeciesId.OBSTAGOON]: [
     [ EVOLVE_MOVE, MoveId.OBSTRUCT ],
+    [ RELEARN_MOVE, MoveId.BRICK_BREAK ], // TM
+    [ RELEARN_MOVE, MoveId.BULK_UP ], // TM
     [ 1, MoveId.SAND_ATTACK ],
     [ 1, MoveId.TACKLE ],
     [ 1, MoveId.PIN_MISSILE ],
