@@ -1,6 +1,6 @@
 import { pokerogueApi } from "#api/api";
 import { clientSessionId, getSessionDataLocalStorageKey, loggedInUser, updateUserInfo } from "#app/account";
-import { defaultStarterSpecies, saveKey } from "#app/constants";
+import { defaultStarterSpecies } from "#app/constants";
 import { getGameMode } from "#app/game-mode";
 import { audioManager } from "#app/global-audio-manager";
 import { globalScene } from "#app/global-scene";
@@ -78,7 +78,6 @@ import { decrypt, encrypt } from "#utils/data";
 import { getEnumKeys } from "#utils/enums";
 import { getPokemonSpecies } from "#utils/pokemon-utils";
 import { toCamelCase } from "#utils/strings";
-import { AES, enc } from "crypto-js";
 import i18next from "i18next";
 
 function getDataTypeKey(dataType: GameDataType, slotId = 0): string {
@@ -363,7 +362,7 @@ export class GameData {
     const cachedSystem = localStorage.getItem(`data_${loggedInUser?.username}`);
     return await this.initSystem(
       saveDataOrErr,
-      cachedSystem ? AES.decrypt(cachedSystem, saveKey).toString(enc.Utf8) : undefined,
+      cachedSystem ? cachedSystem : undefined, //AES.decrypt(cachedSystem, saveKey).toString(enc.Utf8) : undefined,
     );
   }
 
@@ -1447,7 +1446,7 @@ export class GameData {
       return false;
     }
 
-    const encryptedData = AES.encrypt(data, saveKey);
+    const encryptedData = data; //AES.encrypt(data, saveKey);
     const blob = new Blob([encryptedData.toString()], {
       type: "text/json",
     });
@@ -1537,7 +1536,7 @@ export class GameData {
       reader.onload = (_ => {
         return e => {
           const dataName = i18next.t(`gameData:${toCamelCase(GameDataType[dataType])}`);
-          let dataStr = AES.decrypt(e.target?.result?.toString()!, saveKey).toString(enc.Utf8); // TODO: is this bang correct?
+          let dataStr = e.target?.result?.toString()!; //AES.decrypt(e.target?.result?.toString()!, saveKey).toString(enc.Utf8); // TODO: is this bang correct?
           let valid = false;
           try {
             switch (dataType) {
