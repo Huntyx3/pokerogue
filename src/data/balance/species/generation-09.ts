@@ -6439,7 +6439,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.PALDEA_WOOPER,
     evolutions: [],
-    passives: AbilityId.THICK_FAT,
+    passives: AbilityId.SIMPLE,
     levelMoves: [
       [EVOLVE_MOVE, MoveId.AMNESIA],
       [1, MoveId.TACKLE],
@@ -11779,7 +11779,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     starterCost: 3,
     evolutions: [new SpeciesEvolution({ speciesId: SpeciesId.CLODSIRE, level: 16 })],
     eggTier: EggTier.RARE,
-    passives: AbilityId.POISON_TOUCH,
+    passives: AbilityId.SIMPLE,
     levelMoves: [
       [1, MoveId.TACKLE],
       [1, MoveId.TAIL_WHIP],

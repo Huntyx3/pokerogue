@@ -537,7 +537,7 @@ export function initGenerationFour(): SpeciesDataMapConfig {
     starterCost: 3,
     evolutions: [new SpeciesEvolution({ speciesId: SpeciesId.PRINPLUP, level: 23 })],
     eggTier: EggTier.COMMON,
-    passives: AbilityId.CUTE_CHARM,
+    passives: AbilityId.SPEED_BOOST,
     levelMoves: [
       [1, MoveId.POUND],
       [4, MoveId.GROWL],
@@ -649,7 +649,7 @@ export function initGenerationFour(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.PIPLUP,
     evolutions: [new SpeciesEvolution({ speciesId: SpeciesId.EMPOLEON, level: 37 })],
-    passives: AbilityId.DRIZZLE,
+    passives: AbilityId.SPEED_BOOST,
     levelMoves: [
       [EVOLVE_MOVE, MoveId.METAL_CLAW],
       [1, MoveId.POUND],
@@ -704,7 +704,7 @@ export function initGenerationFour(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.PIPLUP,
     evolutions: [],
-    passives: AbilityId.DRIZZLE,
+    passives: AbilityId.SPEED_BOOST,
     levelMoves: [
       [RELEARN_MOVE, MoveId.FLASH_CANNON],
       [EVOLVE_MOVE, MoveId.STEEL_WING],
@@ -5654,7 +5654,7 @@ export function initGenerationFour(): SpeciesDataMapConfig {
       }),
     ],
     eggTier: EggTier.RARE,
-    passives: AbilityId.CHEEK_POUCH,
+    passives: AbilityId.RIPEN,
     levelMoves: [
       [1, MoveId.TACKLE],
       [1, MoveId.METRONOME],
@@ -7475,7 +7475,7 @@ export function initGenerationFour(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.TANGELA,
     evolutions: [],
-    passives: AbilityId.TANGLING_HAIR,
+    passives: AbilityId.UNBURDEN,
     levelMoves: [
       [RELEARN_MOVE, MoveId.INGRAIN],
       [1, MoveId.BIND],
@@ -7999,7 +7999,7 @@ export function initGenerationFour(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.SWINUB,
     evolutions: [],
-    passives: AbilityId.SLUSH_RUSH,
+    passives: AbilityId.SPEED_BOOST,
     levelMoves: [
       [EVOLVE_MOVE, MoveId.DOUBLE_HIT],
       [1, MoveId.HORN_ATTACK],

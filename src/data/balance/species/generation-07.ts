@@ -4631,7 +4631,7 @@ export function initGenerationSeven(): SpeciesDataMapConfig {
       type2: null,
       height: 0.3,
       weight: 1.2,
-      ability1: AbilityId.INNARDS_OUT,
+      ability1: AbilityId.AFTERMATH,
       ability2: AbilityId.NONE,
       abilityHidden: AbilityId.UNAWARE,
       baseTotal: 410,
@@ -10611,7 +10611,7 @@ export function initGenerationSeven(): SpeciesDataMapConfig {
       }),
     ],
     eggTier: EggTier.RARE,
-    passives: AbilityId.ICE_SCALES,
+    passives: AbilityId.SNOW_WARNING,
     levelMoves: [
       [RELEARN_MOVE, MoveId.ROLLOUT],
       [1, MoveId.SCRATCH],
@@ -10738,7 +10738,7 @@ export function initGenerationSeven(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.ALOLA_SANDSHREW,
     evolutions: [],
-    passives: AbilityId.ICE_SCALES,
+    passives: AbilityId.SNOW_WARNING,
     levelMoves: [
       [EVOLVE_MOVE, MoveId.ICICLE_SPEAR],
       [1, MoveId.SCRATCH],

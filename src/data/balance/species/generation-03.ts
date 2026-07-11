@@ -708,7 +708,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     starterCost: 3,
     evolutions: [new SpeciesEvolution({ speciesId: SpeciesId.MARSHTOMP, level: 23 })],
     eggTier: EggTier.COMMON,
-    passives: AbilityId.REGENERATOR,
+    passives: AbilityId.NO_GUARD,
     levelMoves: [
       [1, MoveId.TACKLE],
       [1, MoveId.GROWL],
@@ -822,7 +822,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.MUDKIP,
     evolutions: [new SpeciesEvolution({ speciesId: SpeciesId.SWAMPERT, level: 37 })],
-    passives: AbilityId.REGENERATOR,
+    passives: AbilityId.NO_GUARD,
     levelMoves: [
       [EVOLVE_MOVE, MoveId.MUD_SHOT],
       [1, MoveId.AQUA_RING],
@@ -951,7 +951,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       }),
     ],
     passives: {
-      0: AbilityId.REGENERATOR,
+      0: AbilityId.NO_GUARD,
       1: AbilityId.DRIZZLE,
     },
     levelMoves: [
@@ -1210,7 +1210,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     starterCost: 2,
     evolutions: [new SpeciesEvolution({ speciesId: SpeciesId.LINOONE, level: 19 })],
     eggTier: EggTier.COMMON,
-    passives: AbilityId.RUN_AWAY,
+    passives: AbilityId.TOUGH_CLAWS,
     levelMoves: [
       [1, MoveId.TACKLE],
       [1, MoveId.GROWL],
@@ -1320,7 +1320,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.ZIGZAGOON,
     evolutions: [],
-    passives: AbilityId.RUN_AWAY,
+    passives: AbilityId.TOUGH_CLAWS,
     levelMoves: [
       [EVOLVE_MOVE, MoveId.SLASH],
       [1, MoveId.TACKLE],
@@ -3593,7 +3593,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       type2: PokemonType.GHOST,
       height: 0.8,
       weight: 1.2,
-      ability1: AbilityId.WONDER_GUARD,
+      ability1: AbilityId.STURDY,
       ability2: AbilityId.NONE,
       abilityHidden: AbilityId.NONE,
       baseTotal: 236,
@@ -9162,7 +9162,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     starterCost: 2,
     evolutions: [new SpeciesEvolution({ speciesId: SpeciesId.CLAYDOL, level: 28 })],
     eggTier: EggTier.COMMON,
-    passives: AbilityId.WELL_BAKED_BODY,
+    passives: AbilityId.SPEED_BOOST,
     levelMoves: [
       [1, MoveId.HARDEN],
       [1, MoveId.MUD_SLAP],
@@ -9284,7 +9284,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.BALTOY,
     evolutions: [],
-    passives: AbilityId.WELL_BAKED_BODY,
+    passives: AbilityId.SPEED_BOOST,
     levelMoves: [
       [EVOLVE_MOVE, MoveId.HYPER_BEAM],
       [1, MoveId.CONFUSION],

@@ -1203,8 +1203,8 @@ export function initGenerationEight(): SpeciesDataMapConfig {
       }),
     ],
     passives: {
-      0: AbilityId.IRON_BARBS,
-      1: AbilityId.IRON_BARBS,
+      0: AbilityId.GALE_WINGS,
+      1: AbilityId.GALE_WINGS,
     },
     levelMoves: [
       [RELEARN_MOVE, MoveId.IRON_DEFENSE],
@@ -5230,7 +5230,7 @@ export function initGenerationEight(): SpeciesDataMapConfig {
       weight: 0.4,
       ability1: AbilityId.WEAK_ARMOR,
       ability2: AbilityId.NONE,
-      abilityHidden: AbilityId.PERISH_BODY,
+      abilityHidden: AbilityId.CURSED_BODY,
       baseTotal: 510,
       baseHp: 60,
       baseAtk: 95,
@@ -8755,8 +8755,8 @@ export function initGenerationEight(): SpeciesDataMapConfig {
     ],
     eggTier: EggTier.LEGENDARY,
     passives: {
-      0: AbilityId.NEUTRALIZING_GAS,
-      1: AbilityId.NEUTRALIZING_GAS,
+      0: AbilityId.CLEAR_BODY,
+      1: AbilityId.CLEAR_BODY,
     },
     levelMoves: [
       [1, MoveId.AGILITY],
@@ -10151,7 +10151,7 @@ export function initGenerationEight(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.SCYTHER,
     evolutions: [],
-    passives: AbilityId.WEAK_ARMOR,
+    passives: AbilityId.TINTED_LENS,
     levelMoves: [
       [EVOLVE_MOVE, MoveId.STONE_AXE],
       [1, MoveId.LEER],
@@ -10518,7 +10518,7 @@ export function initGenerationEight(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.HISUI_QWILFISH,
     evolutions: [],
-    passives: AbilityId.MERCILESS,
+    passives: AbilityId.ADAPTABILITY,
     levelMoves: [
       [1, MoveId.TACKLE],
       [1, MoveId.POISON_STING],
@@ -13163,7 +13163,7 @@ export function initGenerationEight(): SpeciesDataMapConfig {
       }),
     ],
     eggTier: EggTier.RARE,
-    passives: AbilityId.MERCILESS,
+    passives: AbilityId.ADAPTABILITY,
     levelMoves: [
       [1, MoveId.TACKLE],
       [1, MoveId.POISON_STING],

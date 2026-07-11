@@ -5341,7 +5341,7 @@ export function initGenerationFive(): SpeciesDataMapConfig {
     starterCost: 4,
     evolutions: [new SpeciesEvolution({ speciesId: SpeciesId.DARMANITAN, level: 28 })],
     eggTier: EggTier.RARE,
-    passives: AbilityId.GORILLA_TACTICS,
+    passives: AbilityId.MOLD_BREAKER,
     levelMoves: [
       [1, MoveId.TACKLE],
       [1, MoveId.EMBER],
@@ -5515,7 +5515,7 @@ export function initGenerationFive(): SpeciesDataMapConfig {
       }),
     ],
     passives: {
-      0: AbilityId.GORILLA_TACTICS,
+      0: AbilityId.MOLD_BREAKER,
       1: AbilityId.PSYCHIC_SURGE,
     },
     levelMoves: [
