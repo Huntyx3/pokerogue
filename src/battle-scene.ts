@@ -62,7 +62,6 @@ import { SpeciesId } from "#enums/species-id";
 import { Stat } from "#enums/stat";
 import { StatusEffect } from "#enums/status-effect";
 import { TextStyle } from "#enums/text-style";
-import { TimeOfDay } from "#enums/time-of-day";
 import type { TrainerSlot } from "#enums/trainer-slot";
 import { TrainerType } from "#enums/trainer-type";
 import { TrainerVariant } from "#enums/trainer-variant";
@@ -1822,21 +1821,28 @@ export class BattleScene extends SceneBase {
       case SpeciesId.BUTTERFREE:
       case SpeciesId.BEEDRILL:
       case SpeciesId.PIDGEOT:
+      case SpeciesId.CLEFABLE:
       case SpeciesId.MEOWTH:
       case SpeciesId.ALAKAZAM:
       case SpeciesId.MACHAMP:
+      case SpeciesId.VICTREEBEL:
       case SpeciesId.SLOWBRO:
       case SpeciesId.KINGLER:
       case SpeciesId.KANGASKHAN:
+      case SpeciesId.STARMIE:
       case SpeciesId.PINSIR:
       case SpeciesId.GYARADOS:
       case SpeciesId.LAPRAS:
       case SpeciesId.AERODACTYL:
       case SpeciesId.SNORLAX:
+      case SpeciesId.DRAGONITE:
+      case SpeciesId.MEGANIUM:
+      case SpeciesId.FERALIGATR:
       case SpeciesId.AMPHAROS:
       case SpeciesId.STEELIX:
       case SpeciesId.SCIZOR:
       case SpeciesId.HERACROSS:
+      case SpeciesId.SKARMORY:
       case SpeciesId.HOUNDOOM:
       case SpeciesId.TYRANITAR:
       case SpeciesId.SCEPTILE:
@@ -1852,21 +1858,42 @@ export class BattleScene extends SceneBase {
       case SpeciesId.CAMERUPT:
       case SpeciesId.ALTARIA:
       case SpeciesId.BANETTE:
-      case SpeciesId.ABSOL:
+      case SpeciesId.CHIMECHO:
       case SpeciesId.GLALIE:
       case SpeciesId.SALAMENCE:
       case SpeciesId.METAGROSS:
       case SpeciesId.LATIAS:
       case SpeciesId.LATIOS:
+      case SpeciesId.STARAPTOR:
       case SpeciesId.LOPUNNY:
-      case SpeciesId.GARCHOMP:
-      case SpeciesId.LUCARIO:
       case SpeciesId.ABOMASNOW:
       case SpeciesId.GALLADE:
+      case SpeciesId.FROSLASS:
+      case SpeciesId.HEATRAN:
+      case SpeciesId.DARKRAI:
+      case SpeciesId.EMBOAR:
+      case SpeciesId.EXCADRILL:
       case SpeciesId.AUDINO:
+      case SpeciesId.SCOLIPEDE:
+      case SpeciesId.SCRAFTY:
       case SpeciesId.GARBODOR:
+      case SpeciesId.EELEKTROSS:
+      case SpeciesId.CHANDELURE:
+      case SpeciesId.GOLURK:
+      case SpeciesId.CHESNAUGHT:
+      case SpeciesId.DELPHOX:
+      case SpeciesId.GRENINJA:
+      case SpeciesId.PYROAR:
+      case SpeciesId.MALAMAR:
+      case SpeciesId.BARBARACLE:
+      case SpeciesId.DRAGALGE:
+      case SpeciesId.HAWLUCHA:
       case SpeciesId.DIANCIE:
       case SpeciesId.HOOPA:
+      case SpeciesId.CRABOMINABLE:
+      case SpeciesId.GOLISOPOD:
+      case SpeciesId.DRAMPA:
+      case SpeciesId.ZERAORA:
       case SpeciesId.MELMETAL:
       case SpeciesId.RILLABOOM:
       case SpeciesId.CINDERACE:
@@ -1881,48 +1908,57 @@ export class BattleScene extends SceneBase {
       case SpeciesId.CENTISKORCH:
       case SpeciesId.HATTERENE:
       case SpeciesId.GRIMMSNARL:
+      case SpeciesId.FALINKS:
       case SpeciesId.COPPERAJAH:
       case SpeciesId.DURALUDON:
       case SpeciesId.ZACIAN:
       case SpeciesId.ZAMAZENTA:
+      case SpeciesId.SCOVILLAIN:
+      case SpeciesId.GLIMMORA:
+      case SpeciesId.BAXCALIBUR:
+      case SpeciesId.ETERNAL_FLOETTE:
         if (this.currentBattle?.waveIndex < 95) {
-          return 0
+          return 0;
         }
-          return 1;
+        return 1;
       case SpeciesId.VENUSAUR:
       case SpeciesId.BLASTOISE:
+      case SpeciesId.RAICHU:
       case SpeciesId.GENGAR:
+      case SpeciesId.ABSOL:
+      case SpeciesId.GARCHOMP:
+      case SpeciesId.LUCARIO:
       case SpeciesId.KYUREM:
       case SpeciesId.CALYREX:
         if (this.currentBattle?.waveIndex < 95) {
-          return 0
+          return 0;
         }
-          return randSeedInt (2 , 1);
+        return randSeedInt(2, 1);
       case SpeciesId.CHARIZARD:
         if (this.currentBattle?.waveIndex < 95) {
-          return 0
+          return 0;
         }
-          return randSeedInt (3, 1);
+        return randSeedInt(3, 1);
       case SpeciesId.MEWTWO:
         if (this.currentBattle?.waveIndex < 190) {
-          return 0
+          return 0;
         }
-          return randSeedInt (2, 1);
+        return randSeedInt(2, 1);
       case SpeciesId.KYOGRE:
       case SpeciesId.GROUDON:
       case SpeciesId.RAYQUAZA:
         if (this.currentBattle?.waveIndex < 190) {
-          return 0
+          return 0;
         }
-          return 1;
+        return 1;
       case SpeciesId.NECROZMA:
         if (this.currentBattle?.waveIndex < 95) {
-          return 0
+          return 0;
         }
         if (this.currentBattle?.waveIndex < 190) {
-          return randSeedInt (2, 1);
+          return randSeedInt(2, 1);
         }
-          return 3;
+        return 3;
       case SpeciesId.UNOWN:
       case SpeciesId.DEOXYS:
       case SpeciesId.BURMY:
@@ -1971,34 +2007,49 @@ export class BattleScene extends SceneBase {
         return randSeedInt(8) ? 0 : 1;
       case SpeciesId.PIKACHU:
         if (this.currentBattle?.waveIndex < 95) {
-          return randSeedInt(8)
+          return randSeedInt(8);
         }
-          return 8;
+        return 8;
       case SpeciesId.EEVEE:
         if (this.currentBattle?.waveIndex < 95) {
-          return randSeedInt(2)
+          return randSeedInt(2);
         }
         return randSeedInt(2);
-      case SpeciesId.MAGEARNA:
       case SpeciesId.URSHIFU:
         return randSeedInt(2);
+      case SpeciesId.MAGEARNA:
+        if (this.currentBattle?.waveIndex < 95) {
+          return randSeedInt(2);
+        }
+        return randSeedInt(2, 2);
       case SpeciesId.TATSUGIRI:
-        return randSeedInt(3);
-      case SpeciesId.ZYGARDE:
+        if (this.currentBattle?.waveIndex < 95) {
+          return randSeedInt(3);
+        }
+        return randSeedInt(3, 3);
       case SpeciesId.OGERPON:
         return randSeedInt(4);
+      case SpeciesId.ZYGARDE:
+        if (this.currentBattle?.waveIndex < 190) {
+          return randSeedInt(4);
+        }
+        return 6;
       case SpeciesId.MINIOR:
         return randSeedInt(7);
       case SpeciesId.ALCREMIE:
         if (this.currentBattle?.waveIndex < 95) {
-          return randSeedInt(9)
+          return randSeedInt(9);
         }
-          return 9;
-      case SpeciesId.MEOWSTIC:
+        return 9;
       case SpeciesId.INDEEDEE:
       case SpeciesId.BASCULEGION:
       case SpeciesId.OINKOLOGNE:
         return gender === Gender.FEMALE ? 1 : 0;
+      case SpeciesId.MEOWSTIC:
+        if (this.currentBattle?.waveIndex < 95) {
+          return gender === Gender.FEMALE ? 1 : 0;
+        }
+        return 3;
       case SpeciesId.TOXTRICITY: {
         const lowkeyNatures: readonly Nature[] = [
           Nature.LONELY,
@@ -2020,7 +2071,7 @@ export class BattleScene extends SceneBase {
         return 0;
       }
       case SpeciesId.ARCEUS:
-        randSeedInt (18);
+        randSeedInt(18);
     }
 
     return 0;
