@@ -65,6 +65,7 @@ import { TextStyle } from "#enums/text-style";
 import type { TrainerSlot } from "#enums/trainer-slot";
 import { TrainerType } from "#enums/trainer-type";
 import { TrainerVariant } from "#enums/trainer-variant";
+import { TypeHints } from "#enums/type-hints";
 import { UiTheme } from "#enums/ui-theme";
 import { NewArenaEvent } from "#events/battle-scene";
 import { Arena, getBiomeHasProps, getBiomeKey } from "#field/arena";
@@ -240,12 +241,8 @@ export class BattleScene extends SceneBase {
   public hideUsername = false;
   /** Determines the selected battle style. */
   public battleStyle: BattleStyle = BattleStyle.SWITCH;
-  /**
-   * Defines whether or not to show type effectiveness hints
-   * - true: Show hints for moves
-   * - false: No hints
-   */
-  public typeHints = false;
+  /** Defines whether and how to show type effectiveness hints; see {@linkcode TypeHints}. */
+  public typeHints: TypeHints = TypeHints.OFF;
 
   public preferBatonPass = true;
 
@@ -1702,11 +1699,17 @@ export class BattleScene extends SceneBase {
     }
 
     for (const key of keysToClear) {
+      if (this.anims.exists(key)) {
+        console.log(`Removing animation for key ${key}..`);
+        this.anims.remove(key);
+      }
+
       if (this.textures.exists(key)) {
         this.textures.remove(key);
       }
     }
   }
+
   updateFieldScale(): Promise<void> {
     return new Promise(resolve => {
       const fieldScale =
