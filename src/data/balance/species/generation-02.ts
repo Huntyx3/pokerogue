@@ -269,6 +269,7 @@ export function initGenerationTwo(): SpeciesDataMapConfig {
     levelMoves: [
       [EVOLVE_MOVE, MoveId.PETAL_DANCE],
       [RELEARN_MOVE, MoveId.PETAL_BLIZZARD],
+      [RELEARN_MOVE, MoveId.TRAILBLAZE],
       [1, MoveId.MAGICAL_LEAF],
       [1, MoveId.TACKLE],
       [1, MoveId.GROWL],
@@ -819,6 +820,7 @@ export function initGenerationTwo(): SpeciesDataMapConfig {
       1: AbilityId.STRONG_JAW,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.PSYCHIC_FANGS],
       [1, MoveId.BUBBLE_BEAM],
       [1, MoveId.AGILITY],
       [1, MoveId.SCRATCH],

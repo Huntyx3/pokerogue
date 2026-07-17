@@ -1751,7 +1751,11 @@ export class BattleScene extends SceneBase {
   }
 
   // TODO: break this up
-  public getSpeciesFormIndex(species: PokemonSpecies, gender?: Gender, nature?: Nature, ignoreArena = false): number {
+  public getSpeciesFormIndex(
+    species: PokemonSpecies,
+    gender?: Gender,
+    nature?: Nature /* ignoreArena = false */,
+  ): number {
     if (species.forms == null) {
       console.warn(`Form data missing for ${species.name}!\n`, species);
       return 0;
@@ -2052,7 +2056,7 @@ export class BattleScene extends SceneBase {
         if (this.currentBattle?.waveIndex < 95) {
           return gender === Gender.FEMALE ? 1 : 0;
         }
-        return 3;
+        return 2;
       case SpeciesId.TOXTRICITY: {
         const lowkeyNatures: readonly Nature[] = [
           Nature.LONELY,

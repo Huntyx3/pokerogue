@@ -495,7 +495,7 @@ const pokemonPool: BiomePokemonPools = {
       SpeciesId.HISUI_AVALUGG,
       SpeciesId.HISUI_DECIDUEYE,
       SpeciesId.PALDEA_TAUROS,
-        ],
+    ],
   },
   [BiomePoolTier.UNCOMMON]: {
     [TimeOfDay.DAWN]: [],
@@ -711,9 +711,7 @@ const trainerPool: TrainerPools = {
 };
 
 const weatherPool: WeatherPool = {
-  [WeatherType.NONE]: 8,
-  [WeatherType.RAIN]: 3,
-  [WeatherType.SUNNY]: 5,
+  [WeatherType.NONE]: 1,
 };
 
 const terrainPool: TerrainPool = {

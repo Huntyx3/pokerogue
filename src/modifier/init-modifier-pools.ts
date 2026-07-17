@@ -1,23 +1,14 @@
-import { timedEventManager } from "#app/global-event-manager";
 import { globalScene } from "#app/global-scene";
 import { speciesDataRegistry } from "#app/global-species-data-registry";
 import { modifierTypes } from "#data/data-lists";
-import { MAX_PER_TYPE_POKEBALLS } from "#data/pokeball";
 import { AbilityId } from "#enums/ability-id";
-import { BerryType } from "#enums/berry-type";
 import { ModifierTier } from "#enums/modifier-tier";
 import { MoveId } from "#enums/move-id";
-import { PokeballType } from "#enums/pokeball";
 import { SpeciesId } from "#enums/species-id";
 import { StatusEffect } from "#enums/status-effect";
 import { Unlockables } from "#enums/unlockables";
 import type { Pokemon } from "#field/pokemon";
-import {
-  BerryModifier,
-  DoubleBattleChanceBoosterModifier,
-  SpeciesCritBoosterModifier,
-  TurnStatusEffectModifier,
-} from "#modifiers/modifier";
+import { SpeciesCritBoosterModifier } from "#modifiers/modifier";
 import {
   dailyStarterModifierPool,
   enemyBuffModifierPool,
@@ -33,9 +24,7 @@ import type { WeightedModifierTypeWeightFunc } from "#types/modifier-types";
  * Initialize the wild modifier pool
  */
 function initWildModifierPool() {
-  wildModifierPool[ModifierTier.COMMON] = [new WeightedModifierType(modifierTypes.BERRY, 1)
-    
-  ].map(m => {
+  wildModifierPool[ModifierTier.COMMON] = [new WeightedModifierType(modifierTypes.BERRY, 1)].map(m => {
     m.setTier(ModifierTier.COMMON);
     return m;
   });
@@ -303,7 +292,7 @@ function initGreatModifierPool() {
       4,
     ),
     new WeightedModifierType(modifierTypes.BASE_STAT_BOOSTER, 3),
-/*    new WeightedModifierType(modifierTypes.TERA_SHARD, (party: Pokemon[]) =>
+    /*    new WeightedModifierType(modifierTypes.TERA_SHARD, (party: Pokemon[]) =>
       party.filter(
         p =>
           !(p.hasSpecies(SpeciesId.TERAPAGOS) || p.hasSpecies(SpeciesId.OGERPON) || p.hasSpecies(SpeciesId.SHEDINJA)),
@@ -468,7 +457,7 @@ function initUltraModifierPool() {
               const hasGeneralAbility = [
                 AbilityId.QUICK_FEET,
                 AbilityId.GUTS,
-                AbilityId.MARVEL_SCALE,
+                //AbilityId.MARVEL_SCALE,
                 //AbilityId.MAGIC_GUARD,
               ].some(a => p.hasAbility(a, false, true));
               const hasSpecificAbility = [AbilityId.FLARE_BOOST].some(a => p.hasAbility(a, false, true));
@@ -835,7 +824,7 @@ function skipInLastClassicWaveOrDefault(defaultWeight: number): WeightedModifier
  * @param weight The desired weight for the lure when it does spawn
  * @returns A WeightedModifierTypeWeightFunc
  */
-function lureWeightFunc(maxBattles: number, weight: number): WeightedModifierTypeWeightFunc {
+/* function lureWeightFunc(maxBattles: number, weight: number): WeightedModifierTypeWeightFunc {
   return () => {
     const lures = globalScene.getModifiers(DoubleBattleChanceBoosterModifier);
     return !(globalScene.gameMode.isClassic && globalScene.currentBattle.waveIndex === 199)
@@ -844,13 +833,13 @@ function lureWeightFunc(maxBattles: number, weight: number): WeightedModifierTyp
       ? weight
       : 0;
   };
-}
+} */
 
 /**
  * Used to check if the player has max of a given ball type in Classic
  * @param ballType The {@linkcode PokeballType} being checked
  * @returns boolean: true if the player has the maximum of a given ball type
  */
-function hasMaximumBalls(ballType: PokeballType): boolean {
+/* function hasMaximumBalls(ballType: PokeballType): boolean {
   return globalScene.gameMode.isClassic && globalScene.pokeballCounts[ballType] >= MAX_PER_TYPE_POKEBALLS;
-}
+} */

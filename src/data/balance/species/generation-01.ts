@@ -11817,7 +11817,7 @@ export function initGenerationOne(): SpeciesDataMapConfig {
       }),
     ],
     eggTier: EggTier.COMMON,
-    passives: AbilityId.REGENERATOR,
+    passives: AbilityId.COMPOUND_EYES,
     levelMoves: [
       [1, MoveId.TACKLE],
       [1, MoveId.HARDEN],
@@ -11989,10 +11989,12 @@ export function initGenerationOne(): SpeciesDataMapConfig {
       }),
     ],
     passives: {
-      0: AbilityId.REGENERATOR,
-      1: AbilityId.REGENERATOR,
+      0: AbilityId.COMPOUND_EYES,
+      1: AbilityId.COMPOUND_EYES,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.BLIZZARD],
+      [RELEARN_MOVE, MoveId.THUNDER],
       [1, MoveId.TACKLE],
       [1, MoveId.HARDEN],
       [1, MoveId.SPOTLIGHT],
@@ -15207,6 +15209,7 @@ export function initGenerationOne(): SpeciesDataMapConfig {
       [RELEARN_MOVE, MoveId.FIRE_PUNCH],
       [RELEARN_MOVE, MoveId.THUNDER_PUNCH],
       [RELEARN_MOVE, MoveId.EXTREME_SPEED],
+      [RELEARN_MOVE, MoveId.HYDRO_PUMP],
       [EVOLVE_MOVE, MoveId.HURRICANE],
       [1, MoveId.WING_ATTACK],
       [1, MoveId.WRAP],
