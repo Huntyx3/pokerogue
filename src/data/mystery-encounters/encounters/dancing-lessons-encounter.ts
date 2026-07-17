@@ -1,7 +1,8 @@
 import { CLASSIC_MODE_MYSTERY_ENCOUNTER_WAVES } from "#app/constants";
 import { globalScene } from "#app/global-scene";
+import { speciesDataRegistry } from "#app/global-species-data-registry";
 import { EncounterBattleAnim } from "#data/battle-anims";
-import { modifierTypes } from "#data/data-lists";
+//import { modifierTypes } from "#data/data-lists";
 import { BattlerIndex } from "#enums/battler-index";
 import { BattlerTagType } from "#enums/battler-tag-type";
 import { BiomeId } from "#enums/biome-id";
@@ -38,10 +39,9 @@ import { MysteryEncounterOptionBuilder } from "#mystery-encounters/mystery-encou
 import { MoveRequirement } from "#mystery-encounters/mystery-encounter-requirements";
 import { DANCING_MOVES } from "#mystery-encounters/requirement-groups";
 import { PokemonData } from "#system/pokemon-data";
-import type { OptionSelectItem } from "#ui/abstract-option-select-ui-handler";
-import { randSeedInt } from "#utils/common";
-import { getPokemonSpecies } from "#utils/pokemon-utils";
+import type { OptionSelectItem } from "#types/ui-types";
 import { groupStatChange } from "#utils/stat-change";
+import { randSeedInt } from "#utils/common";
 import i18next from "i18next";
 
 /** the i18n namespace for this encounter */
@@ -98,7 +98,7 @@ export const DancingLessonsEncounter: MysteryEncounter = MysteryEncounterBuilder
   .withOnInit(() => {
     const encounter = globalScene.currentBattle.mysteryEncounter!;
 
-    const species = getPokemonSpecies(SpeciesId.ORICORIO);
+    const species = speciesDataRegistry.getSpecies(SpeciesId.ORICORIO);
     const level = getEncounterPokemonLevelForWave(STANDARD_ENCOUNTER_BOOSTED_LEVEL_MODIFIER);
     const enemyPokemon = new EnemyPokemon(species, level, TrainerSlot.NONE, false);
     if (!enemyPokemon.moveset.some(m => m && m.getMove().id === MoveId.REVELATION_DANCE)) {
@@ -162,7 +162,7 @@ export const DancingLessonsEncounter: MysteryEncounter = MysteryEncounterBuilder
       oricorioData,
     };
 
-    encounter.setDialogueToken("oricorioName", getPokemonSpecies(SpeciesId.ORICORIO).getName());
+    encounter.setDialogueToken("oricorioName", speciesDataRegistry.getSpecies(SpeciesId.ORICORIO).getName());
 
     return true;
   })
