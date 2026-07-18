@@ -8194,6 +8194,8 @@ export function initGenerationTwo(): SpeciesDataMapConfig {
       1: AbilityId.TOUGH_CLAWS,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.SWORDS_DANCE],
+      [RELEARN_MOVE, MoveId.FLY],
       [1, MoveId.LEER],
       [1, MoveId.PECK],
       [1, MoveId.FEINT],

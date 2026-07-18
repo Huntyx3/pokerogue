@@ -1,5 +1,5 @@
 import { EVOLVE_MOVE, RELEARN_MOVE } from "#app/constants";
-import { /*EvoCondKey,*/ EvolutionItem, SpeciesEvolution, SpeciesFormEvolution } from "#balance/pokemon-evolutions";
+import { /* EvoCondKey, EvolutionItem, */ SpeciesEvolution, SpeciesFormEvolution } from "#balance/pokemon-evolutions";
 import { GrowthRate } from "#data/exp";
 import { /*SpeciesFormChangeItemTrigger,*/ SpeciesFormChangeTimeOfDayTrigger } from "#data/form-change-triggers";
 import { SpeciesFormChange, SpeciesFormChangeCondition } from "#data/pokemon-forms";
@@ -2803,6 +2803,9 @@ export function initGenerationOne(): SpeciesDataMapConfig {
     },
     levelMoves: [
       [EVOLVE_MOVE, MoveId.THUNDER_PUNCH],
+      [RELEARN_MOVE, MoveId.CHARGE_BEAM],
+      [RELEARN_MOVE, MoveId.SURF],
+      [RELEARN_MOVE, MoveId.ZAP_CANNON],
       [1, MoveId.TAIL_WHIP],
       [1, MoveId.THUNDER_SHOCK],
       [1, MoveId.QUICK_ATTACK],
@@ -3580,9 +3583,7 @@ export function initGenerationOne(): SpeciesDataMapConfig {
     evolutions: [
       new SpeciesEvolution({
         speciesId: SpeciesId.CLEFABLE,
-        level: 1,
-        item: EvolutionItem.MOON_STONE,
-        evoDelay: [32, 32, 36],
+        level: 29,
       }),
     ],
     passives: AbilityId.PRANKSTER,
@@ -3740,6 +3741,7 @@ export function initGenerationOne(): SpeciesDataMapConfig {
     },
     levelMoves: [
       [EVOLVE_MOVE, MoveId.DISARMING_VOICE],
+      [RELEARN_MOVE, MoveId.CHARGE_BEAM],
       [1, MoveId.POUND],
       [1, MoveId.GROWL],
       [1, MoveId.SPOTLIGHT],
@@ -3994,9 +3996,7 @@ export function initGenerationOne(): SpeciesDataMapConfig {
     evolutions: [
       new SpeciesEvolution({
         speciesId: SpeciesId.WIGGLYTUFF,
-        level: 1,
-        item: EvolutionItem.MOON_STONE,
-        evoDelay: [30, 35, 40],
+        level: 22,
       }),
     ],
     passives: AbilityId.HUGE_POWER,
