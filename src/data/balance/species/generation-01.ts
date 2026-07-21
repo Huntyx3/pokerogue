@@ -2803,9 +2803,9 @@ export function initGenerationOne(): SpeciesDataMapConfig {
     },
     levelMoves: [
       [EVOLVE_MOVE, MoveId.THUNDER_PUNCH],
-      [RELEARN_MOVE, MoveId.CHARGE_BEAM],
-      [RELEARN_MOVE, MoveId.SURF],
-      [RELEARN_MOVE, MoveId.ZAP_CANNON],
+      [RELEARN_MOVE, MoveId.CHARGE_BEAM], // TM
+      [RELEARN_MOVE, MoveId.SURF], // TM
+      [RELEARN_MOVE, MoveId.ZAP_CANNON], // TM
       [1, MoveId.TAIL_WHIP],
       [1, MoveId.THUNDER_SHOCK],
       [1, MoveId.QUICK_ATTACK],
@@ -3741,7 +3741,7 @@ export function initGenerationOne(): SpeciesDataMapConfig {
     },
     levelMoves: [
       [EVOLVE_MOVE, MoveId.DISARMING_VOICE],
-      [RELEARN_MOVE, MoveId.CHARGE_BEAM],
+      [RELEARN_MOVE, MoveId.CHARGE_BEAM], // TM
       [1, MoveId.POUND],
       [1, MoveId.GROWL],
       [1, MoveId.SPOTLIGHT],
@@ -6986,7 +6986,7 @@ export function initGenerationOne(): SpeciesDataMapConfig {
     levelMoves: [
       [RELEARN_MOVE, MoveId.SWORDS_DANCE],
       [RELEARN_MOVE, MoveId.TOXIC_SPIKES],
-      [RELEARN_MOVE, MoveId.TRAILBLAZE],
+      [RELEARN_MOVE, MoveId.TRAILBLAZE], // TM
       [EVOLVE_MOVE, MoveId.LEAF_TORNADO],
       [1, MoveId.VINE_WHIP],
       [1, MoveId.RAZOR_LEAF],
@@ -11993,8 +11993,8 @@ export function initGenerationOne(): SpeciesDataMapConfig {
       1: AbilityId.COMPOUND_EYES,
     },
     levelMoves: [
-      [RELEARN_MOVE, MoveId.BLIZZARD],
-      [RELEARN_MOVE, MoveId.THUNDER],
+      [RELEARN_MOVE, MoveId.BLIZZARD], // TM
+      [RELEARN_MOVE, MoveId.THUNDER], // TM
       [1, MoveId.TACKLE],
       [1, MoveId.HARDEN],
       [1, MoveId.SPOTLIGHT],
@@ -15209,7 +15209,7 @@ export function initGenerationOne(): SpeciesDataMapConfig {
       [RELEARN_MOVE, MoveId.FIRE_PUNCH],
       [RELEARN_MOVE, MoveId.THUNDER_PUNCH],
       [RELEARN_MOVE, MoveId.EXTREME_SPEED],
-      [RELEARN_MOVE, MoveId.HYDRO_PUMP],
+      [RELEARN_MOVE, MoveId.HYDRO_PUMP], // TM
       [EVOLVE_MOVE, MoveId.HURRICANE],
       [1, MoveId.WING_ATTACK],
       [1, MoveId.WRAP],

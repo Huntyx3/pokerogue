@@ -2662,10 +2662,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     starter: SpeciesId.RALTS,
     evolutions: [
       new SpeciesEvolution({ speciesId: SpeciesId.GARDEVOIR, level: 25 }),
-      new SpeciesEvolution({
-        speciesId: SpeciesId.GALLADE,
-        level: 25,
-      }),
+      new SpeciesEvolution({ speciesId: SpeciesId.GALLADE, level: 25 }),
     ],
     passives: AbilityId.NEUROFORCE,
     levelMoves: [
@@ -3182,7 +3179,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       weight: 24,
       ability1: AbilityId.TRUANT,
       ability2: AbilityId.NONE,
-      abilityHidden: AbilityId.STALL,
+      abilityHidden: AbilityId.RUN_AWAY,
       baseTotal: 280,
       baseHp: 60,
       baseAtk: 60,
@@ -3375,7 +3372,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       weight: 130.5,
       ability1: AbilityId.TRUANT,
       ability2: AbilityId.NONE,
-      abilityHidden: AbilityId.STALL,
+      abilityHidden: AbilityId.RUN_AWAY,
       baseTotal: 670,
       baseHp: 150,
       baseAtk: 160,
@@ -3395,6 +3392,8 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     passives: AbilityId.COMATOSE,
     levelMoves: [
       [EVOLVE_MOVE, MoveId.SWAGGER],
+      [RELEARN_MOVE, MoveId.POWER_UP_PUNCH], // TM
+      [RELEARN_MOVE, MoveId.DOUBLE_EDGE], // TM
       [1, MoveId.SCRATCH],
       [1, MoveId.YAWN],
       [6, MoveId.ENCORE],
@@ -3460,7 +3459,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       new SpeciesEvolution({ speciesId: SpeciesId.SHEDINJA, level: 23 }),
     ],
     eggTier: EggTier.RARE,
-    passives: AbilityId.TECHNICIAN,
+    passives: AbilityId.STURDY,
     levelMoves: [
       [1, MoveId.SCRATCH],
       [1, MoveId.HARDEN],
@@ -3543,11 +3542,13 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.NINCADA,
     evolutions: [],
-    passives: AbilityId.TECHNICIAN,
+    passives: AbilityId.TERA_SHELL,
     levelMoves: [
       [EVOLVE_MOVE, MoveId.SCREECH],
       [EVOLVE_MOVE, MoveId.DOUBLE_TEAM],
       [EVOLVE_MOVE, MoveId.FURY_CUTTER],
+      [RELEARN_MOVE, MoveId.DUAL_WINGBEAT], // TM
+      [RELEARN_MOVE, MoveId.SWORDS_DANCE], // TM
       [1, MoveId.SCRATCH],
       [1, MoveId.HARDEN],
       [1, MoveId.AERIAL_ACE],
@@ -3842,6 +3843,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       [RELEARN_MOVE, MoveId.THUNDER_FANG],
       [RELEARN_MOVE, MoveId.ICE_FANG],
       [RELEARN_MOVE, MoveId.FIRE_FANG],
+      [RELEARN_MOVE, MoveId.HYDRO_PUMP], // TM
       [EVOLVE_MOVE, MoveId.CRUNCH],
       [1, MoveId.POUND],
       [1, MoveId.BITE],

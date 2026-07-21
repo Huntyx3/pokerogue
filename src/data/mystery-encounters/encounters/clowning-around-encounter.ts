@@ -56,24 +56,26 @@ const namespace = "mysteryEncounters/clowningAround";
 
 const RANDOM_ABILITY_POOL = [
   AbilityId.STURDY,
-  AbilityId.PICKUP,
+  //AbilityId.PICKUP,
   //AbilityId.INTIMIDATE,
-  //AbilityId.GUTS,
-  AbilityId.DROUGHT,
-  AbilityId.DRIZZLE,
-  AbilityId.SNOW_WARNING,
-  AbilityId.SAND_STREAM,
-  AbilityId.ELECTRIC_SURGE,
-  AbilityId.PSYCHIC_SURGE,
-  AbilityId.GRASSY_SURGE,
+  AbilityId.GUTS,
+  AbilityId.FLARE_BOOST,
+  //AbilityId.DROUGHT,
+  //AbilityId.DRIZZLE,
+  //AbilityId.SNOW_WARNING,
+  //AbilityId.SAND_STREAM,
+  //AbilityId.ELECTRIC_SURGE,
+  //AbilityId.PSYCHIC_SURGE,
+  //AbilityId.GRASSY_SURGE,
   //AbilityId.MISTY_SURGE,
   //AbilityId.MAGICIAN,
-  AbilityId.SHEER_FORCE,
-  //AbilityId.PRANKSTER,
   AbilityId.FUR_COAT,
   AbilityId.ICE_SCALES,
   AbilityId.MOLD_BREAKER,
   AbilityId.SIMPLE,
+  AbilityId.TOUGH_CLAWS,
+  AbilityId.BEAST_BOOST,
+  AbilityId.BATTLE_BOND,
 ];
 
 /**
@@ -210,7 +212,7 @@ export const ClowningAroundEncounter: MysteryEncounter = MysteryEncounterBuilder
 
         setEncounterRewards({
           guaranteedModifierTiers: [ModifierTier.ROGUE],
-          fillRemaining: true
+          fillRemaining: true,
         });
 
         // TODO: when Magic Room and Wonder Room are implemented, add those to start of battle

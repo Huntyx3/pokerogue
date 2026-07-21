@@ -33,6 +33,8 @@ export const FORBIDDEN_SINGLES_MOVES: ReadonlySet<MoveId> = new Set([
   MoveId.MAT_BLOCK,
   MoveId.QUICK_GUARD,
   MoveId.WIDE_GUARD,
+  // Custom
+  MoveId.FOUL_PLAY,
 ]);
 
 export const FORBIDDEN_TM_MOVES: ReadonlySet<MoveId> = new Set([

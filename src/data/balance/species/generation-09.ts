@@ -6746,6 +6746,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.GREAT_TUSK,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.GROUND,
       type2: PokemonType.FIGHTING,
@@ -6855,6 +6856,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.SCREAM_TAIL,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.FAIRY,
       type2: PokemonType.PSYCHIC,
@@ -6984,6 +6986,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.BRUTE_BONNET,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.GRASS,
       type2: PokemonType.DARK,
@@ -7080,6 +7083,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.FLUTTER_MANE,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.GHOST,
       type2: PokemonType.FAIRY,
@@ -7180,6 +7184,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.SLITHER_WING,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.BUG,
       type2: PokemonType.FIGHTING,
@@ -7286,6 +7291,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.SANDY_SHOCKS,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.ELECTRIC,
       type2: PokemonType.GROUND,
@@ -7392,6 +7398,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.IRON_TREADS,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.GROUND,
       type2: PokemonType.STEEL,
@@ -7496,6 +7503,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.IRON_BUNDLE,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.ICE,
       type2: PokemonType.WATER,
@@ -7590,6 +7598,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.IRON_HANDS,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.FIGHTING,
       type2: PokemonType.ELECTRIC,
@@ -7694,6 +7703,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.IRON_JUGULIS,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.DARK,
       type2: PokemonType.FLYING,
@@ -7806,6 +7816,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.IRON_MOTH,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.FIRE,
       type2: PokemonType.POISON,
@@ -7910,6 +7921,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.IRON_THORNS,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.ROCK,
       type2: PokemonType.ELECTRIC,
@@ -8891,6 +8903,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.ROARING_MOON,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.DRAGON,
       type2: PokemonType.DARK,
@@ -9013,6 +9026,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.IRON_VALIANT,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.FAIRY,
       type2: PokemonType.FIGHTING,
@@ -9430,6 +9444,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.WALKING_WAKE,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.WATER,
       type2: PokemonType.DRAGON,
@@ -9531,6 +9546,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.IRON_LEAVES,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.GRASS,
       type2: PokemonType.PSYCHIC,
@@ -10820,6 +10836,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.GOUGING_FIRE,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.FIRE,
       type2: PokemonType.DRAGON,
@@ -10930,6 +10947,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.RAGING_BOLT,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.ELECTRIC,
       type2: PokemonType.DRAGON,
@@ -11038,6 +11056,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.IRON_BOULDER,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.ROCK,
       type2: PokemonType.PSYCHIC,
@@ -11137,6 +11156,7 @@ export function initGenerationNine(): SpeciesDataMapConfig {
     species: new PokemonSpecies({
       id: SpeciesId.IRON_CROWN,
       generation: 9,
+      subLegendary: true,
       category: "Paradox Pokémon",
       type1: PokemonType.STEEL,
       type2: PokemonType.PSYCHIC,
