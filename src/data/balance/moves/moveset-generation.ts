@@ -229,6 +229,8 @@ export const STAB_BLACKLIST: ReadonlySet<MoveId> = new Set([
   // Moves that always change type.
   MoveId.NATURE_POWER,
   MoveId.HIDDEN_POWER,
+  // Custom
+  MoveId.FOUL_PLAY,
 ]);
 
 // #endregion Constants

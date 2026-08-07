@@ -712,6 +712,7 @@ const trainerPool: TrainerPools = {
 
 const weatherPool: WeatherPool = {
   [WeatherType.NONE]: 1,
+  [WeatherType.FOG]: 0,
 };
 
 const terrainPool: TerrainPool = {

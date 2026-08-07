@@ -3089,6 +3089,8 @@ export function initGenerationTwo(): SpeciesDataMapConfig {
     evolutions: [],
     passives: AbilityId.MISTY_SURGE,
     levelMoves: [
+      [RELEARN_MOVE, MoveId.POWER_UP_PUNCH], // TM
+      [RELEARN_MOVE, MoveId.TRAILBLAZE], // TM
       [1, MoveId.TACKLE],
       [1, MoveId.WATER_GUN],
       [1, MoveId.HELPING_HAND],

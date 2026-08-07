@@ -3909,7 +3909,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     starterCost: 3,
     evolutions: [new SpeciesEvolution({ speciesId: SpeciesId.HARIYAMA, level: 20 })],
     eggTier: EggTier.COMMON,
-    passives: AbilityId.STAMINA,
+    passives: AbilityId.CONTRARY,
     levelMoves: [
       [RELEARN_MOVE, MoveId.DETECT],
       [1, MoveId.TACKLE],
@@ -4036,9 +4036,10 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.MAKUHITA,
     evolutions: [],
-    passives: AbilityId.STAMINA,
+    passives: AbilityId.CONTRARY,
     levelMoves: [
       [RELEARN_MOVE, MoveId.DETECT],
+      [RELEARN_MOVE, MoveId.SUPERPOWER], // TM
       [1, MoveId.TACKLE],
       [1, MoveId.FOCUS_ENERGY],
       [1, MoveId.BRINE],
@@ -4330,7 +4331,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       }),
     ],
     eggTier: EggTier.COMMON,
-    passives: AbilityId.SCRAPPY,
+    passives: AbilityId.HUGE_POWER,
     levelMoves: [
       [1, MoveId.TACKLE],
       [1, MoveId.TAIL_WHIP],
@@ -4448,7 +4449,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.SKITTY,
     evolutions: [],
-    passives: AbilityId.SCRAPPY,
+    passives: AbilityId.HUGE_POWER,
     levelMoves: [
       [1, MoveId.TACKLE],
       [1, MoveId.TAIL_WHIP],
@@ -4564,10 +4565,11 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     ],
     eggTier: EggTier.COMMON,
     passives: {
-      0: AbilityId.UNNERVE,
-      1: AbilityId.UNNERVE,
+      0: AbilityId.QUICK_DRAW,
+      1: AbilityId.QUICK_DRAW,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.DRAIN_PUNCH], // TM
       [1, MoveId.SCRATCH],
       [1, MoveId.LEER],
       [1, MoveId.FORESIGHT],
@@ -4791,6 +4793,8 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       1: AbilityId.INTIMIDATE,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.ASSURANCE], // TM
+      [RELEARN_MOVE, MoveId.POWER_UP_PUNCH], // TM
       [1, MoveId.ASTONISH],
       [1, MoveId.GROWL],
       [1, MoveId.FAIRY_WIND],
