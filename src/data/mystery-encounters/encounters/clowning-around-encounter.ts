@@ -58,8 +58,8 @@ const RANDOM_ABILITY_POOL = [
   AbilityId.STURDY,
   //AbilityId.PICKUP,
   //AbilityId.INTIMIDATE,
-  AbilityId.GUTS,
-  AbilityId.FLARE_BOOST,
+  //AbilityId.GUTS,
+  //AbilityId.FLARE_BOOST,
   //AbilityId.DROUGHT,
   //AbilityId.DRIZZLE,
   //AbilityId.SNOW_WARNING,
@@ -73,9 +73,11 @@ const RANDOM_ABILITY_POOL = [
   AbilityId.ICE_SCALES,
   AbilityId.MOLD_BREAKER,
   AbilityId.SIMPLE,
-  AbilityId.TOUGH_CLAWS,
   AbilityId.BEAST_BOOST,
-  AbilityId.BATTLE_BOND,
+  AbilityId.POISON_HEAL,
+  AbilityId.MIRROR_ARMOR,
+  AbilityId.ADAPTABILITY,
+  AbilityId.SPEED_BOOST,
 ];
 
 /**
