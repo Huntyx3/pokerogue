@@ -378,9 +378,9 @@ export class Arena {
     if (NIGHT_TIME.includes(this.getTimeOfDay())) {
       weatherMap.set(WeatherType.SUNNY, 0);
       // forest is unique
-      if (this.biomeId === BiomeId.FOREST) {
+      /* if (this.biomeId === BiomeId.FOREST) {
         weatherMap.set(WeatherType.FOG, 1);
-      }
+      } */
     }
 
     if (weatherMap.values().every(v => v === 0)) {

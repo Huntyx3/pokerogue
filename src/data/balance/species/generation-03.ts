@@ -5155,6 +5155,8 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       1: AbilityId.ROCKY_PAYLOAD,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.POWER_UP_PUNCH], // TM
+      [RELEARN_MOVE, MoveId.STONE_EDGE], // TM
       [1, MoveId.TACKLE],
       [1, MoveId.HARDEN],
       [4, MoveId.MUD_SLAP],
@@ -5459,6 +5461,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       [RELEARN_MOVE, MoveId.FIRE_PUNCH],
       [RELEARN_MOVE, MoveId.ICE_PUNCH],
       [RELEARN_MOVE, MoveId.THUNDER_PUNCH],
+      [RELEARN_MOVE, MoveId.POWER_UP_PUNCH], // TM
       [1, MoveId.MEDITATE],
       [1, MoveId.BIDE],
       [4, MoveId.CONFUSION],
@@ -5681,6 +5684,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     },
     levelMoves: [
       [RELEARN_MOVE, MoveId.FIRE_FANG],
+      [RELEARN_MOVE, MoveId.CHARGE_BEAM], // TM
       [1, MoveId.TACKLE],
       [1, MoveId.LEER],
       [1, MoveId.THUNDER_SHOCK],
@@ -5741,10 +5745,12 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     starterCost: 2,
     evolutions: [],
     eggTier: EggTier.COMMON,
-    passives: AbilityId.POWER_SPOT,
+    passives: AbilityId.SIMPLE,
     levelMoves: [
       [RELEARN_MOVE, MoveId.SWITCHEROO],
       [RELEARN_MOVE, MoveId.NUZZLE],
+      [RELEARN_MOVE, MoveId.CHARGE_BEAM], // TM
+      [RELEARN_MOVE, MoveId.THUNDERBOLT], // TM
       [1, MoveId.GROWL],
       [1, MoveId.THUNDER_WAVE],
       [1, MoveId.QUICK_ATTACK],
@@ -5862,9 +5868,10 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     starterCost: 2,
     evolutions: [],
     eggTier: EggTier.COMMON,
-    passives: AbilityId.POWER_SPOT,
+    passives: AbilityId.CONTRARY,
     levelMoves: [
       [RELEARN_MOVE, MoveId.NUZZLE],
+      [RELEARN_MOVE, MoveId.THUNDERBOLT], // TM
       [1, MoveId.GROWL],
       [1, MoveId.THUNDER_WAVE],
       [1, MoveId.QUICK_ATTACK],
@@ -5924,7 +5931,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     starterCost: 2,
     evolutions: [],
     eggTier: EggTier.COMMON,
-    passives: AbilityId.HONEY_GATHER,
+    passives: AbilityId.HUGE_POWER,
     levelMoves: [
       [RELEARN_MOVE, MoveId.ENCORE],
       [1, MoveId.TACKLE],
@@ -6056,7 +6063,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     starterCost: 2,
     evolutions: [],
     eggTier: EggTier.COMMON,
-    passives: AbilityId.HONEY_GATHER,
+    passives: AbilityId.MEGA_SOL,
     levelMoves: [
       [1, MoveId.TACKLE],
       [1, MoveId.PLAY_NICE],
