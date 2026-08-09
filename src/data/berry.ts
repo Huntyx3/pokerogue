@@ -30,8 +30,7 @@ export function getBerryPredicate(berryType: BerryType): BerryPredicate {
       return (pokemon: Pokemon) =>
         (pokemon.status?.effect === StatusEffect.BURN
           && pokemon.hasAbility(AbilityId.GUTS || AbilityId.QUICK_FEET || AbilityId.FLARE_BOOST))
-        || pokemon.status?.effect === StatusEffect.TOXIC
-        || (pokemon.status?.effect === StatusEffect.POISON
+        || ((pokemon.status?.effect === StatusEffect.TOXIC || pokemon.status?.effect === StatusEffect.POISON)
           && pokemon.hasAbility(AbilityId.POISON_HEAL || AbilityId.MAGIC_GUARD || AbilityId.TOXIC_BOOST))
           ? !!pokemon.getTag(BattlerTagType.CONFUSED)
           : !!pokemon.status || !!pokemon.getTag(BattlerTagType.CONFUSED);
