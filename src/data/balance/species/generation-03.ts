@@ -6383,6 +6383,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     evolutions: [],
     passives: AbilityId.EARTH_EATER,
     levelMoves: [
+      [RELEARN_MOVE, MoveId.POWER_UP_PUNCH], // TM
       [EVOLVE_MOVE, MoveId.BODY_SLAM],
       [1, MoveId.POUND],
       [1, MoveId.SMOKESCREEN],
