@@ -27,7 +27,7 @@ export function getBerryPredicate(berryType: BerryType): BerryPredicate {
       return (pokemon: Pokemon) => pokemon.getHpRatio() < 0.5;
     case BerryType.LUM:
       return (pokemon: Pokemon) =>
-        (!!pokemon.status && pokemon.abilityIndex !== AbilityId.GUTS) || !!pokemon.getTag(BattlerTagType.CONFUSED);
+        (!!pokemon.status && pokemon.hasAbility(AbilityId.GUTS)) || !!pokemon.getTag(BattlerTagType.CONFUSED);
     case BerryType.ENIGMA:
       return (pokemon: Pokemon) =>
         pokemon.turnData.attacksReceived.some(
@@ -46,7 +46,7 @@ export function getBerryPredicate(berryType: BerryType): BerryPredicate {
         return (
           pokemon.getHpRatio() < hpRatioReq.value
           && pokemon.getStatStage(stat) < 6
-          && pokemon.abilityIndex !== AbilityId.CONTRARY
+          && pokemon.hasAbility(AbilityId.CONTRARY)
         );
       };
     case BerryType.LANSAT:
@@ -59,7 +59,7 @@ export function getBerryPredicate(berryType: BerryType): BerryPredicate {
       return (pokemon: Pokemon) => {
         const hpRatioReq = new NumberHolder(0.25);
         applyAbAttrs("ReduceBerryUseThresholdAbAttr", { pokemon, hpRatioReq });
-        return pokemon.getHpRatio() < 0.25 && pokemon.abilityIndex !== AbilityId.CONTRARY;
+        return pokemon.getHpRatio() < 0.25 && pokemon.hasAbility(AbilityId.CONTRARY);
       };
     case BerryType.LEPPA:
       return (pokemon: Pokemon) => {
