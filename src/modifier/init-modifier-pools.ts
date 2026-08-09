@@ -412,7 +412,7 @@ function initUltraModifierPool() {
                 //AbilityId.QUICK_FEET,
                 //AbilityId.GUTS,
                 //AbilityId.MARVEL_SCALE,
-                //AbilityId.MAGIC_GUARD,
+                AbilityId.MAGIC_GUARD,
               ].some(a => p.hasAbility(a, false, true));
               const hasSpecificAbility = [AbilityId.TOXIC_BOOST, AbilityId.POISON_HEAL].some(a =>
                 p.hasAbility(a, false, true),

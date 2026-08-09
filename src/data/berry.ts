@@ -7,6 +7,7 @@ import { BattlerTagType } from "#enums/battler-tag-type";
 import { BerryType } from "#enums/berry-type";
 import { HitResult } from "#enums/hit-result";
 import { type BattleStat, Stat } from "#enums/stat";
+import { StatusEffect } from "#enums/status-effect";
 import type { Pokemon } from "#field/pokemon";
 import { NumberHolder, randSeedInt, toDmgValue } from "#utils/common";
 import i18next from "i18next";
@@ -27,7 +28,13 @@ export function getBerryPredicate(berryType: BerryType): BerryPredicate {
       return (pokemon: Pokemon) => pokemon.getHpRatio() < 0.5;
     case BerryType.LUM:
       return (pokemon: Pokemon) =>
-        (!!pokemon.status && pokemon.hasAbility(AbilityId.GUTS)) || !!pokemon.getTag(BattlerTagType.CONFUSED);
+        (pokemon.status?.effect === StatusEffect.BURN
+          && pokemon.hasAbility(AbilityId.GUTS || AbilityId.QUICK_FEET || AbilityId.FLARE_BOOST))
+        || pokemon.status?.effect === StatusEffect.TOXIC
+        || (pokemon.status?.effect === StatusEffect.POISON
+          && pokemon.hasAbility(AbilityId.POISON_HEAL || AbilityId.MAGIC_GUARD || AbilityId.TOXIC_BOOST))
+          ? !!pokemon.getTag(BattlerTagType.CONFUSED)
+          : !!pokemon.status || !!pokemon.getTag(BattlerTagType.CONFUSED);
     case BerryType.ENIGMA:
       return (pokemon: Pokemon) =>
         pokemon.turnData.attacksReceived.some(
@@ -46,7 +53,7 @@ export function getBerryPredicate(berryType: BerryType): BerryPredicate {
         return (
           pokemon.getHpRatio() < hpRatioReq.value
           && pokemon.getStatStage(stat) < 6
-          && pokemon.hasAbility(AbilityId.CONTRARY)
+          && !pokemon.hasAbility(AbilityId.CONTRARY)
         );
       };
     case BerryType.LANSAT:
@@ -59,7 +66,7 @@ export function getBerryPredicate(berryType: BerryType): BerryPredicate {
       return (pokemon: Pokemon) => {
         const hpRatioReq = new NumberHolder(0.25);
         applyAbAttrs("ReduceBerryUseThresholdAbAttr", { pokemon, hpRatioReq });
-        return pokemon.getHpRatio() < 0.25 && pokemon.hasAbility(AbilityId.CONTRARY);
+        return pokemon.getHpRatio() < 0.25 && !pokemon.hasAbility(AbilityId.CONTRARY);
       };
     case BerryType.LEPPA:
       return (pokemon: Pokemon) => {

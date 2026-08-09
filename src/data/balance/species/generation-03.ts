@@ -5934,6 +5934,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     passives: AbilityId.HUGE_POWER,
     levelMoves: [
       [RELEARN_MOVE, MoveId.ENCORE],
+      [RELEARN_MOVE, MoveId.POWER_UP_PUNCH], // TM
       [1, MoveId.TACKLE],
       [1, MoveId.FLASH],
       [1, MoveId.PLAY_NICE],
