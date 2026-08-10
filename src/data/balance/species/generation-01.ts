@@ -13223,7 +13223,7 @@ export function initGenerationOne(): SpeciesDataMapConfig {
       weight: 4,
       ability1: AbilityId.LIMBER,
       ability2: AbilityId.NONE,
-      abilityHidden: AbilityId.IMPOSTER,
+      abilityHidden: AbilityId.PRANKSTER,
       baseTotal: 288,
       baseHp: 48,
       baseAtk: 48,
