@@ -1919,8 +1919,6 @@ export class BattleScene extends SceneBase {
       case SpeciesId.FALINKS:
       case SpeciesId.COPPERAJAH:
       case SpeciesId.DURALUDON:
-      case SpeciesId.ZACIAN:
-      case SpeciesId.ZAMAZENTA:
       case SpeciesId.SCOVILLAIN:
       case SpeciesId.GLIMMORA:
       case SpeciesId.BAXCALIBUR:
@@ -1936,9 +1934,13 @@ export class BattleScene extends SceneBase {
       case SpeciesId.ABSOL:
       case SpeciesId.GARCHOMP:
       case SpeciesId.LUCARIO:
+        if (this.currentBattle?.waveIndex < 95) {
+          return 0;
+        }
+        return randSeedInt(2, 1);
       case SpeciesId.KYUREM:
       case SpeciesId.CALYREX:
-        if (this.currentBattle?.waveIndex < 95) {
+        if (this.currentBattle?.waveIndex < 191) {
           return 0;
         }
         return randSeedInt(2, 1);
@@ -1948,22 +1950,24 @@ export class BattleScene extends SceneBase {
         }
         return randSeedInt(3, 1);
       case SpeciesId.MEWTWO:
-        if (this.currentBattle?.waveIndex < 190) {
+        if (this.currentBattle?.waveIndex < 195) {
           return 0;
         }
         return randSeedInt(2, 1);
       case SpeciesId.KYOGRE:
       case SpeciesId.GROUDON:
       case SpeciesId.RAYQUAZA:
-        if (this.currentBattle?.waveIndex < 190) {
+      case SpeciesId.ZACIAN:
+      case SpeciesId.ZAMAZENTA:
+        if (this.currentBattle?.waveIndex < 195) {
           return 0;
         }
         return 1;
       case SpeciesId.NECROZMA:
-        if (this.currentBattle?.waveIndex < 95) {
+        if (this.currentBattle?.waveIndex < 191) {
           return 0;
         }
-        if (this.currentBattle?.waveIndex < 190) {
+        if (this.currentBattle?.waveIndex < 195) {
           return randSeedInt(2, 1);
         }
         return 3;
@@ -2038,8 +2042,14 @@ export class BattleScene extends SceneBase {
       case SpeciesId.OGERPON:
         return randSeedInt(4);
       case SpeciesId.ZYGARDE:
-        if (this.currentBattle?.waveIndex < 190) {
-          return randSeedInt(4);
+        if (this.currentBattle?.waveIndex < 95) {
+          return 1;
+        }
+        if (this.currentBattle?.waveIndex < 191) {
+          return 0;
+        }
+        if (this.currentBattle?.waveIndex < 195) {
+          return 4;
         }
         return 6;
       case SpeciesId.MINIOR:

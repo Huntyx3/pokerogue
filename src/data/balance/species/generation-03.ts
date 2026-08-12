@@ -6686,7 +6686,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     starterCost: 2,
     evolutions: [new SpeciesEvolution({ speciesId: SpeciesId.WAILORD, level: 35 })],
     eggTier: EggTier.COMMON,
-    passives: AbilityId.LEVITATE,
+    passives: AbilityId.SIMPLE,
     levelMoves: [
       [1, MoveId.GROWL],
       [1, MoveId.SPLASH],
@@ -6787,7 +6787,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.WAILMER,
     evolutions: [],
-    passives: AbilityId.LEVITATE,
+    passives: AbilityId.SIMPLE,
     levelMoves: [
       [1, MoveId.GROWL],
       [1, MoveId.SPLASH],
@@ -7020,9 +7020,10 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     ],
     passives: {
       0: AbilityId.FUR_COAT,
-      1: AbilityId.STAMINA,
+      1: AbilityId.DESOLATE_LAND,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.FIRE_BLAST], // TM
       [EVOLVE_MOVE, MoveId.ROCK_SLIDE],
       [1, MoveId.TACKLE],
       [1, MoveId.GROWL],
@@ -7086,8 +7087,9 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     starterCost: 3,
     evolutions: [],
     eggTier: EggTier.COMMON,
-    passives: AbilityId.ANALYTIC,
+    passives: AbilityId.CONTRARY,
     levelMoves: [
+      [RELEARN_MOVE, MoveId.FLARE_BLITZ], // TM
       [1, MoveId.EMBER],
       [1, MoveId.SMOG],
       [4, MoveId.WITHDRAW],

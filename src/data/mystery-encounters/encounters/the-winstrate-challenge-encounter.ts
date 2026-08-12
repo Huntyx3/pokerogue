@@ -2,7 +2,7 @@ import { applyAbAttrs } from "#abilities/apply-ab-attrs";
 import { CLASSIC_MODE_MYSTERY_ENCOUNTER_WAVES } from "#app/constants";
 import { audioManager } from "#app/global-audio-manager";
 import { globalScene } from "#app/global-scene";
-import { speciesDataRegistry } from "#app/global-species-data-registry";
+//import { speciesDataRegistry } from "#app/global-species-data-registry";
 import { modifierTypes } from "#data/data-lists";
 import { SpeciesFormChangeAbilityTrigger } from "#data/form-change-triggers";
 import { AbilityId } from "#enums/ability-id";
@@ -10,16 +10,24 @@ import { BattlerTagType } from "#enums/battler-tag-type";
 import { MysteryEncounterMode } from "#enums/mystery-encounter-mode";
 import { MysteryEncounterTier } from "#enums/mystery-encounter-tier";
 import { MysteryEncounterType } from "#enums/mystery-encounter-type";
+import { PokemonType } from "#enums/pokemon-type";
 import { SpeciesId } from "#enums/species-id";
 import { TrainerType } from "#enums/trainer-type";
-import { showEncounterDialogue, showEncounterText } from "#mystery-encounters/encounter-dialogue-utils";
+import type { AttackTypeBoosterModifierType } from "#modifiers/modifier-type";
+import {
+  queueEncounterMessage,
+  showEncounterDialogue,
+  showEncounterText,
+} from "#mystery-encounters/encounter-dialogue-utils";
 import type { EnemyPartyConfig } from "#mystery-encounters/encounter-phase-utils";
 import {
+  generateModifierType,
   initBattleWithEnemyConfig,
   leaveEncounterWithoutBattle,
   setEncounterRewards,
   transitionMysteryEncounterIntroVisuals,
 } from "#mystery-encounters/encounter-phase-utils";
+import { applyModifierTypeToPlayerPokemon } from "#mystery-encounters/encounter-pokemon-utils";
 import type { MysteryEncounter } from "#mystery-encounters/mystery-encounter";
 import { MysteryEncounterBuilder } from "#mystery-encounters/mystery-encounter";
 import i18next from "i18next";
@@ -163,14 +171,18 @@ async function spawnNextTrainerOrEndEncounter() {
     globalScene.ui.clearText(); // Clears "Winstrate" title from screen as rewards get animated in
     //const machoBrace = generateModifierTypeOption(modifierTypes.MYSTERY_ENCOUNTER_MACHO_BRACE)!;
     //machoBrace.type.tier = ModifierTier.MASTER;
-    setEncounterRewards({
-      guaranteedModifierTypeFuncs: [
-        modifierTypes.MINI_BLACK_HOLE,
-        modifierTypes.HEALING_CHARM,
-        modifierTypes.BERRY_POUCH,
-      ],
-      fillRemaining: true,
-    });
+    setEncounterRewards(
+      {
+        guaranteedModifierTypeFuncs: [
+          modifierTypes.MINI_BLACK_HOLE,
+          modifierTypes.HEALING_CHARM,
+          modifierTypes.BERRY_POUCH,
+        ],
+        fillRemaining: true,
+      },
+      undefined,
+      () => giveLeadPokemonAttackTypeBoostItem(),
+    );
     encounter.doContinueEncounter = undefined;
     leaveEncounterWithoutBattle(false, MysteryEncounterMode.NO_BATTLE);
   }
@@ -534,4 +546,24 @@ function getVitoTrainerConfig(): EnemyPartyConfig {
       },
     ],*/
   };
+}
+
+function giveLeadPokemonAttackTypeBoostItem() {
+  // Give first party pokemon attack type boost item for free at end of battle
+  const leadPokemon = globalScene.getPlayerParty()?.[0];
+  if (leadPokemon) {
+    // Generate type booster held item, default to Charcoal if item fails to generate
+    let boosterModifierType = generateModifierType(modifierTypes.ATTACK_TYPE_BOOSTER) as AttackTypeBoosterModifierType;
+    if (!boosterModifierType) {
+      boosterModifierType = generateModifierType(modifierTypes.ATTACK_TYPE_BOOSTER, [
+        PokemonType.FIRE,
+      ]) as AttackTypeBoosterModifierType;
+    }
+    applyModifierTypeToPlayerPokemon(leadPokemon, boosterModifierType);
+
+    const encounter = globalScene.currentBattle.mysteryEncounter!;
+    encounter.setDialogueToken("itemName", boosterModifierType.name);
+    encounter.setDialogueToken("leadPokemon", leadPokemon.getNameToRender());
+    queueEncounterMessage(`${namespace}:foundItem`);
+  }
 }

@@ -495,7 +495,7 @@ const pokemonPool: BiomePokemonPools = {
       SpeciesId.HISUI_AVALUGG,
       SpeciesId.HISUI_DECIDUEYE,
       SpeciesId.PALDEA_TAUROS,
-        ],
+    ],
   },
   [BiomePoolTier.UNCOMMON]: {
     [TimeOfDay.DAWN]: [],
@@ -530,7 +530,15 @@ const pokemonPool: BiomePokemonPools = {
     [TimeOfDay.DAY]: [],
     [TimeOfDay.DUSK]: [],
     [TimeOfDay.NIGHT]: [],
-    [TimeOfDay.ALL]: [],
+    [TimeOfDay.ALL]: [
+      SpeciesId.PHIONE,
+      SpeciesId.ZYGARDE,
+      SpeciesId.SILVALLY,
+      SpeciesId.LUNALA,
+      SpeciesId.MELMETAL,
+      SpeciesId.URSHIFU,
+      SpeciesId.CALYREX,
+    ],
   },
   [BiomePoolTier.BOSS_RARE]: {
     [TimeOfDay.DAWN]: [],
