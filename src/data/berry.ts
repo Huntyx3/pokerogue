@@ -1,6 +1,7 @@
 import { applyAbAttrs } from "#abilities/apply-ab-attrs";
 import { globalScene } from "#app/global-scene";
 import { getPokemonNameWithAffix } from "#app/messages";
+import { getNatureStatMultiplier } from "#data/nature";
 import { getStatusEffectHealText } from "#data/status-effect";
 import { AbilityId } from "#enums/ability-id";
 import { BattlerTagType } from "#enums/battler-tag-type";
@@ -29,9 +30,14 @@ export function getBerryPredicate(berryType: BerryType): BerryPredicate {
     case BerryType.LUM:
       return (pokemon: Pokemon) =>
         (pokemon.status?.effect === StatusEffect.BURN
-          && pokemon.hasAbility(AbilityId.GUTS || AbilityId.QUICK_FEET || AbilityId.FLARE_BOOST))
+          && (pokemon.hasAbility(AbilityId.GUTS)
+            || (pokemon.hasAbility(AbilityId.MAGIC_GUARD) && getNatureStatMultiplier(pokemon.getNature(), Stat.ATK) < 1)
+            || pokemon.hasAbility(AbilityId.QUICK_FEET)
+            || pokemon.hasAbility(AbilityId.FLARE_BOOST)))
         || ((pokemon.status?.effect === StatusEffect.TOXIC || pokemon.status?.effect === StatusEffect.POISON)
-          && pokemon.hasAbility(AbilityId.POISON_HEAL || AbilityId.MAGIC_GUARD || AbilityId.TOXIC_BOOST))
+          && (pokemon.hasAbility(AbilityId.POISON_HEAL)
+            || pokemon.hasAbility(AbilityId.MAGIC_GUARD)
+            || pokemon.hasAbility(AbilityId.TOXIC_BOOST)))
           ? !!pokemon.getTag(BattlerTagType.CONFUSED)
           : !!pokemon.status || !!pokemon.getTag(BattlerTagType.CONFUSED);
     case BerryType.ENIGMA:
