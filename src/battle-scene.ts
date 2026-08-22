@@ -1977,7 +1977,6 @@ export class BattleScene extends SceneBase {
       case SpeciesId.WORMADAM:
       case SpeciesId.SHELLOS:
       case SpeciesId.GASTRODON:
-      case SpeciesId.ROTOM:
       case SpeciesId.DIALGA:
       case SpeciesId.PALKIA:
       case SpeciesId.GIRATINA:
@@ -2089,7 +2088,12 @@ export class BattleScene extends SceneBase {
         return 0;
       }
       case SpeciesId.ARCEUS:
-        randSeedInt(18);
+        return randSeedInt(18);
+      case SpeciesId.ROTOM:
+        if (this.currentBattle?.waveIndex < 55) {
+          return 0;
+        }
+        return randSeedInt(1, 5);
     }
 
     return 0;

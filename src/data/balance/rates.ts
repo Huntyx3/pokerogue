@@ -10,7 +10,7 @@
 export const BASE_SHINY_CHANCE = 64;
 
 /** `1 / 256` */
-export const BASE_HIDDEN_ABILITY_RATE = 5; // 20%
+export const BASE_HIDDEN_ABILITY_RATE = 3; //  1/3
 
 // #endregion Encounterable properties
 

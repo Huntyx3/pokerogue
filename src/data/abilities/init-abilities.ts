@@ -78,7 +78,7 @@ import {
   PostAttackApplyBattlerTagAbAttr,
   PostAttackApplyStatusEffectAbAttr,
   PostAttackContactApplyStatusEffectAbAttr,
-  PostAttackStealHeldItemAbAttr,
+  //PostAttackStealHeldItemAbAttr,
   PostBattleInitFormChangeAbAttr,
   PostBattleLootAbAttr,
   PostBiomeChangeTerrainChangeAbAttr,
@@ -96,7 +96,7 @@ import {
   PostDefendMoveDisableAbAttr,
   PostDefendPerishSongAbAttr,
   PostDefendStatStageChangeAbAttr,
-  PostDefendStealHeldItemAbAttr,
+  //PostDefendStealHeldItemAbAttr,
   PostDefendTerrainChangeAbAttr,
   PostDefendTypeChangeAbAttr,
   PostDefendWeatherChangeAbAttr,
@@ -255,7 +255,7 @@ export function initAbilities() {
       .ignorable()
       .build(),
     new AbBuilder(AbilityId.SAND_VEIL, 3) //
-      .attr(StatMultiplierAbAttr, Stat.EVA, 1.25)
+      .attr(StatMultiplierAbAttr, Stat.EVA, 1)
       .attr(BlockWeatherDamageAttr, WeatherType.SANDSTORM)
       .condition(getWeatherCondition(WeatherType.SANDSTORM))
       .ignorable()
@@ -623,7 +623,7 @@ export function initAbilities() {
       .attr(FlinchStatStageChangeAbAttr, [{ stat: Stat.SPD, stages: 1 }])
       .build(),
     new AbBuilder(AbilityId.SNOW_CLOAK, 4) //
-      .attr(StatMultiplierAbAttr, Stat.EVA, 1.25)
+      .attr(StatMultiplierAbAttr, Stat.EVA, 1)
       .attr(BlockWeatherDamageAttr, WeatherType.HAIL)
       .condition(getWeatherCondition(WeatherType.HAIL, WeatherType.SNOW))
       .ignorable()

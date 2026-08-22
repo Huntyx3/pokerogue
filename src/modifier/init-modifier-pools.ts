@@ -465,7 +465,11 @@ function initUltraModifierPool() {
                 p.hasAbility(a, false, true),
               );
 
-              return hasSpecificAbility || (hasGeneralAbility && !hasOppositeAbility) || hasStatusMoves;
+              return (
+                hasSpecificAbility
+                || (hasGeneralAbility && !hasOppositeAbility)
+                || (hasStatusMoves && !hasOppositeAbility)
+              );
             }
             return hasItemMoves;
           }

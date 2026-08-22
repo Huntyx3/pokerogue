@@ -1,5 +1,5 @@
 import { TYPE_BOOST_ITEM_BOOST_PERCENT } from "#app/constants";
-import { timedEventManager } from "#app/global-event-manager";
+//import { timedEventManager } from "#app/global-event-manager";
 import { globalScene } from "#app/global-scene";
 import { speciesDataRegistry } from "#app/global-species-data-registry";
 import { getPokemonNameWithAffix } from "#app/messages";
@@ -7,7 +7,7 @@ import { activeOverrides } from "#app/overrides";
 import { EvolutionItem } from "#balance/pokemon-evolutions";
 import { tmPoolTiers } from "#balance/tm-pool-tiers";
 import { getBerryEffectDescription, getBerryName } from "#data/berry";
-import { getDailyEventSeedLuck } from "#data/daily-seed/daily-run";
+//import { getDailyEventSeedLuck } from "#data/daily-seed/daily-run";
 import { allMoves, modifierTypes } from "#data/data-lists";
 import { SpeciesFormChangeItemTrigger } from "#data/form-change-triggers";
 import { getNatureName, getNatureStatMultiplier } from "#data/nature";
@@ -2639,13 +2639,14 @@ export function getPlayerShopModifierTypeOptionsForWave(waveIndex: number, baseC
       new ModifierTypeOption(modifierTypeInitObj.FULL_HEAL(), 0, baseCost),
       new ModifierTypeOption(modifierTypeInitObj.MEMORY_MUSHROOM(), 0, baseCost * 4),
       new ModifierTypeOption(modifierTypeInitObj.PP_MAX(), 0, baseCost),
+      new ModifierTypeOption(modifierTypeInitObj.ELIXIR(), 0, baseCost),
     ],
     [
       new ModifierTypeOption(modifierTypeInitObj.SUPER_POTION(), 0, baseCost * 0.45),
       //new ModifierTypeOption(modifierTypeInitObj.FULL_HEAL(), 0, baseCost),
     ],
     [
-      new ModifierTypeOption(modifierTypeInitObj.ELIXIR(), 0, baseCost),
+      //new ModifierTypeOption(modifierTypeInitObj.ELIXIR(), 0, baseCost),
       new ModifierTypeOption(modifierTypeInitObj.MAX_ETHER(), 0, baseCost),
     ],
     [
@@ -2909,7 +2910,7 @@ export class ModifierTypeOption {
  * @returns A number between 0 and 14 based on the party's total luck value, or a random number between 0 and 14 if the player is in Daily Run mode.
  */
 export function getPartyLuckValue(party: readonly Pokemon[]): number {
-  if (globalScene.gameMode.isDaily) {
+  /*   if (globalScene.gameMode.isDaily) {
     const DailyLuck = new NumberHolder(0);
     globalScene.executeWithSeedOffset(
       () => {
@@ -2928,14 +2929,16 @@ export function getPartyLuckValue(party: readonly Pokemon[]): number {
   }
 
   const eventSpecies = timedEventManager.getEventLuckBoostedSpecies();
-  const luck = 14/*Phaser.Math.Clamp(
+  const luck = Phaser.Math.Clamp(
     party
       .map(p => (p.isAllowedInBattle() ? p.getLuck() + (eventSpecies.includes(p.species.speciesId) ? 1 : 0) : 0))
       .reduce((total: number, value: number) => (total += value), 0),
     0,
     14,
-  );*/
-  return Math.min(timedEventManager.getEventLuckBoost() + (luck ?? 0), 14);
+  );
+  return Math.min(timedEventManager.getEventLuckBoost() + (luck ?? 0), 14); */
+  party = [];
+  return 14;
 }
 
 export function getLuckString(luckValue: number): string {
