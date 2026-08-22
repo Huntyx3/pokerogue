@@ -1,10 +1,12 @@
 import { globalScene } from "#app/global-scene";
 import { speciesDataRegistry } from "#app/global-species-data-registry";
 import { modifierTypes } from "#data/data-lists";
+import { getNatureStatMultiplier } from "#data/nature";
 import { AbilityId } from "#enums/ability-id";
 import { ModifierTier } from "#enums/modifier-tier";
 import { MoveId } from "#enums/move-id";
 import { SpeciesId } from "#enums/species-id";
+import { Stat } from "#enums/stat";
 import { StatusEffect } from "#enums/status-effect";
 import { Unlockables } from "#enums/unlockables";
 import type { Pokemon } from "#field/pokemon";
@@ -413,24 +415,20 @@ function initUltraModifierPool() {
                 //AbilityId.QUICK_FEET,
                 //AbilityId.GUTS,
                 //AbilityId.MARVEL_SCALE,
-                AbilityId.MAGIC_GUARD,
+                //AbilityId.MAGIC_GUARD,
               ].some(a => p.hasAbility(a, false, true));
               const hasSpecificAbility = [AbilityId.TOXIC_BOOST, AbilityId.POISON_HEAL].some(a =>
                 p.hasAbility(a, false, true),
               );
               const hasOppositeAbility = [AbilityId.FLARE_BOOST].some(a => p.hasAbility(a, false, true));
-
-              const hasUnfavoredAbility = [
-                AbilityId.QUICK_FEET,
-                AbilityId.GUTS,
-                //AbilityId.MARVEL_SCALE,
-              ].some(a => p.hasAbility(a, false, true));
+              const hasConditionalAbility = [AbilityId.MAGIC_GUARD].some(a => p.hasAbility(a, false, true));
 
               return (
                 hasSpecificAbility
                 || (hasGeneralAbility && !hasOppositeAbility)
                 || (hasStatusMoves && !hasOppositeAbility)
-                || (hasUnfavoredAbility && !canSetOpposingStatus)
+                || (hasConditionalAbility && !(getNatureStatMultiplier(p.getNature(), Stat.ATK) < 1))
+                || (hasConditionalAbility && !canSetOpposingStatus)
               );
             }
             return hasItemMoves;
@@ -455,6 +453,7 @@ function initUltraModifierPool() {
               .filter(m => m != null)
               .map(m => m.moveId);
             const canSetStatus = p.canSetStatus(StatusEffect.BURN, true, true, null, true);
+            const canSetOpposingStatus = p.canSetStatus(StatusEffect.TOXIC, true, true, null, true);
 
             // Moves that take advantage of obtaining the actual status effect
             const hasStatusMoves = [MoveId.FACADE, MoveId.PSYCHO_SHIFT].some(m => moveset.includes(m));
@@ -476,11 +475,14 @@ function initUltraModifierPool() {
               const hasOppositeAbility = [AbilityId.TOXIC_BOOST, AbilityId.POISON_HEAL].some(a =>
                 p.hasAbility(a, false, true),
               );
+              const hasConditionalAbility = [AbilityId.MAGIC_GUARD].some(a => p.hasAbility(a, false, true));
 
               return (
                 hasSpecificAbility
                 || (hasGeneralAbility && !hasOppositeAbility)
                 || (hasStatusMoves && !hasOppositeAbility)
+                || (hasConditionalAbility && getNatureStatMultiplier(p.getNature(), Stat.ATK) < 1)
+                || (hasConditionalAbility && !canSetOpposingStatus)
               );
             }
             return hasItemMoves;
