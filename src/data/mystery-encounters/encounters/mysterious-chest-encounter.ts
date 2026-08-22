@@ -15,7 +15,7 @@ import {
   setEncounterRewards,
   transitionMysteryEncounterIntroVisuals,
 } from "#mystery-encounters/encounter-phase-utils";
-import { getHighestLevelPlayerPokemon, koPlayerPokemon } from "#mystery-encounters/encounter-pokemon-utils";
+import { getHighestLevelPlayerPokemon /* koPlayerPokemon */ } from "#mystery-encounters/encounter-pokemon-utils";
 import type { MysteryEncounter } from "#mystery-encounters/mystery-encounter";
 import { MysteryEncounterBuilder } from "#mystery-encounters/mystery-encounter";
 import { MysteryEncounterOptionBuilder } from "#mystery-encounters/mystery-encounter-option";
@@ -142,6 +142,7 @@ export const MysteriousChestEncounter: MysteryEncounter = MysteryEncounterBuilde
           // Choose between 2 COMMON / 2 GREAT tier items (20%)
           setEncounterRewards({
             guaranteedModifierTiers: [ModifierTier.COMMON, ModifierTier.COMMON, ModifierTier.GREAT, ModifierTier.GREAT],
+            fillRemaining: true,
           });
           // Display result message then proceed to rewards
           queueEncounterMessage(`${namespace}:option.1.normal`);
@@ -150,6 +151,7 @@ export const MysteriousChestEncounter: MysteryEncounter = MysteryEncounterBuilde
           // Choose between 3 ULTRA tier items (30%)
           setEncounterRewards({
             guaranteedModifierTiers: [ModifierTier.ULTRA, ModifierTier.ULTRA, ModifierTier.ULTRA],
+            fillRemaining: true,
           });
           // Display result message then proceed to rewards
           queueEncounterMessage(`${namespace}:option.1.good`);
@@ -158,6 +160,7 @@ export const MysteriousChestEncounter: MysteryEncounter = MysteryEncounterBuilde
           // Choose between 2 ROGUE tier items (10%)
           setEncounterRewards({
             guaranteedModifierTiers: [ModifierTier.ROGUE, ModifierTier.ROGUE],
+            fillRemaining: true,
           });
           // Display result message then proceed to rewards
           queueEncounterMessage(`${namespace}:option.1.great`);
@@ -173,6 +176,7 @@ export const MysteriousChestEncounter: MysteryEncounter = MysteryEncounterBuilde
           // Choose 1 MASTER tier item (5%)
           setEncounterRewards({
             guaranteedModifierTiers: [ModifierTier.MASTER],
+            fillRemaining: true,
           });
           // Display result message then proceed to rewards
           queueEncounterMessage(`${namespace}:option.1.amazing`);

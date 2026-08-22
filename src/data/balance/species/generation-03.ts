@@ -9486,6 +9486,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     evolutions: [],
     passives: AbilityId.SEED_SOWER,
     levelMoves: [
+      [RELEARN_MOVE, MoveId.EARTH_POWER], // TM
       [1, MoveId.WRAP],
       [1, MoveId.LEECH_SEED],
       [1, MoveId.CONSTRICT],
@@ -9650,6 +9651,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     evolutions: [],
     passives: AbilityId.WATER_ABSORB,
     levelMoves: [
+      [RELEARN_MOVE, MoveId.EARTHQUAKE], // TM
       [1, MoveId.SCRATCH],
       [1, MoveId.HARDEN],
       [1, MoveId.FURY_CUTTER],

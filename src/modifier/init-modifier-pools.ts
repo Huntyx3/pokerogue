@@ -397,6 +397,7 @@ function initUltraModifierPool() {
               .filter(m => m != null)
               .map(m => m.moveId);
             const canSetStatus = p.canSetStatus(StatusEffect.TOXIC, true, true, null, true);
+            const canSetOpposingStatus = p.canSetStatus(StatusEffect.BURN, true, true, null, true);
 
             // Moves that take advantage of obtaining the actual status effect
             const hasStatusMoves = [MoveId.FACADE, MoveId.PSYCHO_SHIFT].some(m => moveset.includes(m));
@@ -419,7 +420,18 @@ function initUltraModifierPool() {
               );
               const hasOppositeAbility = [AbilityId.FLARE_BOOST].some(a => p.hasAbility(a, false, true));
 
-              return hasSpecificAbility || (hasGeneralAbility && !hasOppositeAbility) || hasStatusMoves;
+              const hasUnfavoredAbility = [
+                AbilityId.QUICK_FEET,
+                AbilityId.GUTS,
+                //AbilityId.MARVEL_SCALE,
+              ].some(a => p.hasAbility(a, false, true));
+
+              return (
+                hasSpecificAbility
+                || (hasGeneralAbility && !hasOppositeAbility)
+                || (hasStatusMoves && !hasOppositeAbility)
+                || (hasUnfavoredAbility && !canSetOpposingStatus)
+              );
             }
             return hasItemMoves;
           }

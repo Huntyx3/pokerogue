@@ -11111,8 +11111,7 @@ export function initMoves() {
     new AttackMove(MoveId.ACID_SPRAY, PokemonType.POISON, MoveCategory.SPECIAL, 40, 100, 20, 100, 0, 5)
       .attr(StatStageChangeAttr, [Stat.SPDEF], -2)
       .ballBombMove(),
-    new AttackMove(MoveId.FOUL_PLAY, PokemonType.DARK, MoveCategory.PHYSICAL, 95, 100, 15, -1, 0, 5) //
-      .attr(TargetAtkUserAtkAttr),
+    new AttackMove(MoveId.FOUL_PLAY, PokemonType.DARK, MoveCategory.PHYSICAL, 95, 100, 15, -1, 0, 5), // //.attr(TargetAtkUserAtkAttr),
     new StatusMove(MoveId.SIMPLE_BEAM, PokemonType.NORMAL, 100, 15, -1, 0, 5)
       .attr(AbilityChangeAttr, AbilityId.SIMPLE)
       // TODO: Enable / remove once balance reaches a consensus on ability overrides during boss fights
