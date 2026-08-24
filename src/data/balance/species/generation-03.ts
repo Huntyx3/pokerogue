@@ -9909,8 +9909,8 @@ export function initGenerationThree(): SpeciesDataMapConfig {
           height: 0.3,
           weight: 0.8,
           ability1: AbilityId.FORECAST,
-          ability2: AbilityId.NONE,
-          abilityHidden: AbilityId.NONE,
+          ability2: AbilityId.FORECAST,
+          abilityHidden: AbilityId.FORECAST,
           baseTotal: 420,
           baseHp: 70,
           baseAtk: 70,
@@ -9930,8 +9930,8 @@ export function initGenerationThree(): SpeciesDataMapConfig {
           height: 0.3,
           weight: 0.8,
           ability1: AbilityId.FORECAST,
-          ability2: AbilityId.NONE,
-          abilityHidden: AbilityId.NONE,
+          ability2: AbilityId.FORECAST,
+          abilityHidden: AbilityId.FORECAST,
           baseTotal: 420,
           baseHp: 70,
           baseAtk: 70,
@@ -9951,8 +9951,8 @@ export function initGenerationThree(): SpeciesDataMapConfig {
           height: 0.3,
           weight: 0.8,
           ability1: AbilityId.FORECAST,
-          ability2: AbilityId.NONE,
-          abilityHidden: AbilityId.NONE,
+          ability2: AbilityId.FORECAST,
+          abilityHidden: AbilityId.FORECAST,
           baseTotal: 420,
           baseHp: 70,
           baseAtk: 70,
@@ -10109,7 +10109,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     eggTier: EggTier.COMMON,
     passives: {
       0: AbilityId.FORECAST,
-      1: AbilityId.SOLAR_POWER,
+      1: AbilityId.CHLOROPHYLL,
       2: AbilityId.SWIFT_SWIM,
       3: AbilityId.SLUSH_RUSH,
     },
@@ -10728,6 +10728,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     ],
     passives: AbilityId.UNNERVE,
     levelMoves: [
+      [RELEARN_MOVE, MoveId.POWER_UP_PUNCH], // TM
       [RELEARN_MOVE, MoveId.FIRE_PUNCH],
       [RELEARN_MOVE, MoveId.ICE_PUNCH],
       [RELEARN_MOVE, MoveId.THUNDER_PUNCH],
@@ -11152,6 +11153,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       2: AbilityId.SHARPNESS,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.PLAY_ROUGH], // TM
       [RELEARN_MOVE, MoveId.CONFUSE_RAY],
       [RELEARN_MOVE, MoveId.KNOCK_OFF],
       [RELEARN_MOVE, MoveId.SHADOW_SNEAK],
@@ -11499,10 +11501,13 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       }),
     ],
     passives: {
-      0: AbilityId.INTIMIDATE,
-      1: AbilityId.MOODY,
+      0: AbilityId.GUTS,
+      1: AbilityId.GUTS,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.EARTHQUAKE], // TM
+      [RELEARN_MOVE, MoveId.FACADE], // TM
+      [RELEARN_MOVE, MoveId.ENDURE], // TM
       [RELEARN_MOVE, MoveId.ICE_BEAM],
       [EVOLVE_MOVE, MoveId.FREEZE_DRY],
       [1, MoveId.LEER],
@@ -11721,7 +11726,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.SPHEAL,
     evolutions: [],
-    passives: AbilityId.UNAWARE,
+    passives: AbilityId.NO_GUARD,
     levelMoves: [
       [EVOLVE_MOVE, MoveId.ICE_FANG],
       [1, MoveId.GROWL],
@@ -11790,10 +11795,12 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       new SpeciesEvolution({
         speciesId: SpeciesId.HUNTAIL,
         level: 30,
+        condition: { key: EvoCondKey.MOVE, move: MoveId.EARTHQUAKE },
       }),
       new SpeciesEvolution({
         speciesId: SpeciesId.GOREBYSS,
         level: 30,
+        condition: { key: EvoCondKey.MOVE, move: MoveId.GIGA_DRAIN },
       }),
     ],
     eggTier: EggTier.COMMON,
@@ -11870,8 +11877,9 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.CLAMPERL,
     evolutions: [],
-    passives: AbilityId.ARENA_TRAP,
+    passives: AbilityId.MULTISCALE,
     levelMoves: [
+      [RELEARN_MOVE, MoveId.WATERFALL], // TM
       [EVOLVE_MOVE, MoveId.FEINT_ATTACK],
       [1, MoveId.BITE],
       [1, MoveId.WHIRLPOOL],
@@ -11935,8 +11943,9 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.CLAMPERL,
     evolutions: [],
-    passives: AbilityId.ARENA_TRAP,
+    passives: AbilityId.MULTISCALE,
     levelMoves: [
+      [RELEARN_MOVE, MoveId.ICE_BEAM], // TM
       [EVOLVE_MOVE, MoveId.DRAINING_KISS],
       [1, MoveId.CONFUSION],
       [1, MoveId.WHIRLPOOL],
@@ -12007,6 +12016,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     eggTier: EggTier.RARE,
     passives: AbilityId.PRIMORDIAL_SEA,
     levelMoves: [
+      [RELEARN_MOVE, MoveId.BOUNCE], // TM
       [1, MoveId.TACKLE],
       [1, MoveId.HARDEN],
       [1, MoveId.MUD_SPORT],

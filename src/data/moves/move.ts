@@ -10578,9 +10578,7 @@ export function initMoves() {
     new AttackMove(MoveId.SAND_TOMB, PokemonType.GROUND, MoveCategory.PHYSICAL, 35, 85, 15, -1, 0, 3)
       .attr(TrapAttr, BattlerTagType.SAND_TOMB)
       .makesContact(false),
-    new AttackMove(MoveId.SHEER_COLD, PokemonType.ICE, MoveCategory.SPECIAL, 250, 30, 10, -1, 0, 3).attr(
-      IceNoEffectTypeAttr,
-    ),
+    new AttackMove(MoveId.SHEER_COLD, PokemonType.ICE, MoveCategory.SPECIAL, 250, 30, 10, -1, 0, 3), //.attr(IceNoEffectTypeAttr),
     //.attr(OneHitKOAttr)
     //.attr(SheerColdAccuracyAttr)
     new AttackMove(MoveId.MUDDY_WATER, PokemonType.WATER, MoveCategory.SPECIAL, 90, 85, 10, 30, 0, 3)
@@ -10714,7 +10712,7 @@ export function initMoves() {
     new StatusMove(MoveId.ACUPRESSURE, PokemonType.NORMAL, -1, 30, -1, 0, 4)
       .attr(AcupressureStatStageChangeAttr)
       .target(MoveTarget.USER_OR_NEAR_ALLY),
-    new AttackMove(MoveId.METAL_BURST, PokemonType.STEEL, MoveCategory.PHYSICAL, -1, 100, 10, -1, 0, 4)
+    new AttackMove(MoveId.METAL_BURST, PokemonType.STEEL, MoveCategory.PHYSICAL, -1, 100, 10, -1, -5, 4)
       .attr(CounterDamageAttr, 1.5)
       .attr(CounterRedirectAttr)
       .condition(counterAttackConditionBoth, 3)
@@ -12662,7 +12660,7 @@ export function initMoves() {
     new AttackMove(MoveId.GIGATON_HAMMER, PokemonType.STEEL, MoveCategory.PHYSICAL, 160, 100, 10, -1, 0, 9)
       .makesContact(false)
       .restriction(consecutiveUseRestriction),
-    new AttackMove(MoveId.COMEUPPANCE, PokemonType.DARK, MoveCategory.PHYSICAL, -1, 100, 10, -1, 0, 9)
+    new AttackMove(MoveId.COMEUPPANCE, PokemonType.DARK, MoveCategory.PHYSICAL, -1, 100, 10, -1, -5, 9)
       .attr(CounterDamageAttr, 1.5)
       .attr(CounterRedirectAttr)
       .condition(counterAttackConditionBoth, 3)

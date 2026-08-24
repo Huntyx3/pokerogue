@@ -5356,7 +5356,7 @@ export function initGenerationTwo(): SpeciesDataMapConfig {
     }),
     starter: SpeciesId.WYNAUT,
     evolutions: [],
-    passives: AbilityId.STURDY,
+    passives: AbilityId.PARENTAL_BOND,
     levelMoves: [
       [1, MoveId.COUNTER],
       [1, MoveId.DESTINY_BOND],

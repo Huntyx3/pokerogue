@@ -2038,8 +2038,6 @@ export class BattleScene extends SceneBase {
           return randSeedInt(3);
         }
         return randSeedInt(3, 3);
-      case SpeciesId.OGERPON:
-        return randSeedInt(4);
       case SpeciesId.ZYGARDE:
         if (this.currentBattle?.waveIndex < 95) {
           return 1;
@@ -2093,7 +2091,17 @@ export class BattleScene extends SceneBase {
         if (this.currentBattle?.waveIndex < 55) {
           return 0;
         }
-        return randSeedInt(1, 5);
+        return randSeedInt(5, 1);
+      case SpeciesId.OGERPON:
+        if (this.currentBattle?.waveIndex < 190) {
+          return randSeedInt(4);
+        }
+        return randSeedInt(4, 4);
+      case SpeciesId.TERAPAGOS:
+        if (this.currentBattle?.waveIndex < 195) {
+          return 0;
+        }
+        return 2;
     }
 
     return 0;

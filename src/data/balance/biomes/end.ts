@@ -37,6 +37,8 @@ const pokemonPool: BiomePokemonPools = {
       SpeciesId.CALYREX,
       SpeciesId.KORAIDON,
       SpeciesId.MIRAIDON,
+      SpeciesId.OGERPON,
+      SpeciesId.TERAPAGOS,
     ],
   },
   [BiomePoolTier.UNCOMMON]: {

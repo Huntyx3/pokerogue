@@ -2802,10 +2802,10 @@ export function initGenerationOne(): SpeciesDataMapConfig {
       2: AbilityId.TERAVOLT,
     },
     levelMoves: [
-      [EVOLVE_MOVE, MoveId.THUNDER_PUNCH],
       [RELEARN_MOVE, MoveId.CHARGE_BEAM], // TM
       [RELEARN_MOVE, MoveId.SURF], // TM
       [RELEARN_MOVE, MoveId.ZAP_CANNON], // TM
+      [EVOLVE_MOVE, MoveId.THUNDER_PUNCH],
       [1, MoveId.TAIL_WHIP],
       [1, MoveId.THUNDER_SHOCK],
       [1, MoveId.QUICK_ATTACK],
