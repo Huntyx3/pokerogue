@@ -12746,6 +12746,8 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       1: AbilityId.FULL_METAL_BODY,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.EARTHQUAKE], // TM
+      [RELEARN_MOVE, MoveId.POWER_UP_PUNCH], // TM
       [RELEARN_MOVE, MoveId.EXPLOSION],
       [EVOLVE_MOVE, MoveId.HAMMER_ARM],
       [1, MoveId.TACKLE],
@@ -12809,6 +12811,9 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     eggTier: EggTier.EPIC,
     passives: AbilityId.SAND_STREAM,
     levelMoves: [
+      [RELEARN_MOVE, MoveId.EARTHQUAKE], // TM
+      [RELEARN_MOVE, MoveId.POWER_UP_PUNCH], // TM
+      [RELEARN_MOVE, MoveId.ROCK_POLISH], // TM
       [1, MoveId.ROCK_THROW],
       [1, MoveId.CHARGE_BEAM],
       [6, MoveId.BULLDOZE],
@@ -12935,6 +12940,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     eggTier: EggTier.EPIC,
     passives: AbilityId.SNOW_WARNING,
     levelMoves: [
+      [RELEARN_MOVE, MoveId.ROCK_POLISH], // TM
       [1, MoveId.ICY_WIND],
       [1, MoveId.CHARGE_BEAM],
       [6, MoveId.BULLDOZE],
@@ -13059,6 +13065,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
     eggTier: EggTier.EPIC,
     passives: AbilityId.STEELY_SPIRIT,
     levelMoves: [
+      [RELEARN_MOVE, MoveId.EARTHQUAKE], // TM
       [1, MoveId.METAL_CLAW],
       [1, MoveId.CHARGE_BEAM],
       [6, MoveId.BULLDOZE],
@@ -13249,6 +13256,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       1: AbilityId.PRISM_ARMOR,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.AURA_SPHERE], // TM
       [1, MoveId.CONFUSION],
       [1, MoveId.HELPING_HAND],
       [1, MoveId.STORED_POWER],
@@ -13465,6 +13473,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       1: AbilityId.NEUROFORCE,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.CHARGE_BEAM], // TM
       [RELEARN_MOVE, MoveId.SIMPLE_BEAM],
       [RELEARN_MOVE, MoveId.ALLY_SWITCH],
       [1, MoveId.CONFUSION],
@@ -13680,6 +13689,7 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       1: AbilityId.TERAVOLT,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.THUNDER], // TM
       [1, MoveId.ANCIENT_POWER],
       [1, MoveId.WATER_PULSE],
       [5, MoveId.SCARY_FACE],
@@ -13857,6 +13867,8 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       1: AbilityId.TURBOBLAZE,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.THUNDER_PUNCH], // TM
+      [RELEARN_MOVE, MoveId.POWER_UP_PUNCH], // TM
       [1, MoveId.ANCIENT_POWER],
       [1, MoveId.BULLDOZE],
       [5, MoveId.SCARY_FACE],
@@ -14062,6 +14074,8 @@ export function initGenerationThree(): SpeciesDataMapConfig {
       1: AbilityId.UNNERVE,
     },
     levelMoves: [
+      [RELEARN_MOVE, MoveId.EARTHQUAKE], // TM
+      [RELEARN_MOVE, MoveId.SWORDS_DANCE], // TM
       [1, MoveId.TWISTER],
       [1, MoveId.ANCIENT_POWER],
       [5, MoveId.SCARY_FACE],
